@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Entities;        // punto 3
-using Data.Database;            // punto 3
+using Business.Entities;        
+using Data.Database;            
 
 
 namespace Business.Logic
 {
     public class UsuarioLogic : BusinessLogic
     {
-        public Data.Database.UsuarioAdapter UsuarioData     // propiedad, punto 4
+        public Data.Database.UsuarioAdapter UsuarioData  
         {
             get
             {
@@ -26,13 +26,13 @@ namespace Business.Logic
 
         private Data.Database.UsuarioAdapter _usuarioData;
 
-        public UsuarioLogic()       // constructor
+        public UsuarioLogic()    
         {
             UsuarioData = new UsuarioAdapter();
 
         }
 
-        public List<Usuario> GetAll()      // puntos 6 y 7
+        public List<Usuario> GetAll()   
         {
             try
             {

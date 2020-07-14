@@ -33,5 +33,13 @@ namespace UI.Desktop
             especialidades.ShowDialog();
             this.Show();
         }
+
+        private void btnPlan_Click(object sender, EventArgs e)
+        {
+            Planes formPlan = new Planes();
+            this.Hide();
+            formPlan.ShowDialog();
+            this.Show();
+        }
     }
 }
