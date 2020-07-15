@@ -88,6 +88,7 @@
     <Compile Include="PlanesDesktop.Designer.cs">
       <DependentUpon>PlanesDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="pruebagithubgerardo.cs" />
     <Compile Include="UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
