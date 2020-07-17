@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIDPlan = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbEspecialidad = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +47,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbEspecialidad, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -66,19 +66,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 114);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtIDPlan
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtIDPlan.Location = new System.Drawing.Point(95, 3);
+            this.txtIDPlan.Name = "txtIDPlan";
+            this.txtIDPlan.ReadOnly = true;
+            this.txtIDPlan.Size = new System.Drawing.Size(121, 20);
+            this.txtIDPlan.TabIndex = 0;
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtDescripcion.Location = new System.Drawing.Point(95, 29);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcion.TabIndex = 1;
             // 
             // btnAceptar
             // 
@@ -88,6 +89,7 @@
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -97,6 +99,7 @@
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label1
             // 
@@ -125,13 +128,13 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Especialidad";
             // 
-            // comboBox1
+            // cbEspecialidad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cbEspecialidad.FormattingEnabled = true;
+            this.cbEspecialidad.Location = new System.Drawing.Point(95, 55);
+            this.cbEspecialidad.Name = "cbEspecialidad";
+            this.cbEspecialidad.Size = new System.Drawing.Size(121, 21);
+            this.cbEspecialidad.TabIndex = 8;
             // 
             // PlanesDesktop
             // 
@@ -141,6 +144,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlanesDesktop";
             this.Text = "PlanesDesktop";
+            this.Load += new System.EventHandler(this.PlanesDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -150,13 +154,13 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIDPlan;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEspecialidad;
     }
 }

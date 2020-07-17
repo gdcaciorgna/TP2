@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
+using Business.Entities;
 
 namespace UI.Desktop
 {
@@ -49,9 +50,53 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            PlanesDesktop planDesk = new PlanesDesktop(ApplicationForm.ModoForm.Alta);
-            planDesk.ShowDialog();
+            PlanesDesktop pDesk = new PlanesDesktop(ApplicationForm.ModoForm.Alta);
+            pDesk.ShowDialog();
             this.Listar();
+        }
+
+        private void tbsNew_Click(object sender, EventArgs e)
+        {
+            PlanesDesktop pDesk = new PlanesDesktop(ApplicationForm.ModoForm.Alta);
+            pDesk.ShowDialog();
+            this.Listar();
+
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int ID = ((Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+
+                PlanesDesktop pDesk = new PlanesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+
+                pDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al recuperar datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+              try
+                {
+
+                int ID = ((Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
+
+                PlanesDesktop pDesk = new PlanesDesktop(ID, ApplicationForm.ModoForm.Baja);
+
+                pDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Error al eliminar plan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
