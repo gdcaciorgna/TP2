@@ -34,9 +34,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
             this.tsPlanes = new System.Windows.Forms.ToolStrip();
+            this.tbsNew = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.tbsNew = new System.Windows.Forms.ToolStripButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscPlanes.ContentPanel.SuspendLayout();
             this.tscPlanes.TopToolStripPanel.SuspendLayout();
             this.tscPlanes.SuspendLayout();
@@ -106,6 +107,8 @@
             // dgvPlanes
             // 
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID});
             this.tlPlanes.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPlanes.Location = new System.Drawing.Point(3, 3);
@@ -122,8 +125,18 @@
             this.tsbEliminar});
             this.tsPlanes.Location = new System.Drawing.Point(3, 0);
             this.tsPlanes.Name = "tsPlanes";
-            this.tsPlanes.Size = new System.Drawing.Size(112, 25);
+            this.tsPlanes.Size = new System.Drawing.Size(81, 25);
             this.tsPlanes.TabIndex = 0;
+            // 
+            // tbsNew
+            // 
+            this.tbsNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbsNew.Image = global::UI.Desktop.Properties.Resources.new1;
+            this.tbsNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbsNew.Name = "tbsNew";
+            this.tbsNew.Size = new System.Drawing.Size(23, 22);
+            this.tbsNew.Text = "toolStripButton1";
+            this.tbsNew.Click += new System.EventHandler(this.tbsNew_Click);
             // 
             // tsbEditar
             // 
@@ -145,15 +158,12 @@
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // tbsNew
+            // ID
             // 
-            this.tbsNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbsNew.Image = global::UI.Desktop.Properties.Resources.new1;
-            this.tbsNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbsNew.Name = "tbsNew";
-            this.tbsNew.Size = new System.Drawing.Size(23, 22);
-            this.tbsNew.Text = "toolStripButton1";
-            this.tbsNew.Click += new System.EventHandler(this.tbsNew_Click);
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Planes
             // 
@@ -188,5 +198,6 @@
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.ToolStripButton tbsNew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }
