@@ -134,14 +134,26 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (txtDescripcion.Text != "")    
+            
+            String error = "Se han encontrado los siguientes errores: \n\n";
+            bool vof = true;
+
+
+            if (txtDescripcion.Text == "")
+            {
+                error = error + "No puede quedar el campo descripción vacío. \n";
+                vof = false;
+            }
+
+
+            if (vof == true)
             {
                 return true;
             }
-       
+
             else
             {
-                this.Notificar("Error", "No deben quedar campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("Error", error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

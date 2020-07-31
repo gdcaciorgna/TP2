@@ -44,11 +44,9 @@ namespace UI.Desktop
             List <Especialidad> especialidades = new  List<Especialidad>();
 
             especialidades = espLog.GetAll();
-
-            foreach (Especialidad esp in especialidades) 
-            {
-                cbEspecialidad.Items.Add(esp.ID);                
-            }
+            cbEspecialidad.DataSource = especialidades;
+            cbEspecialidad.ValueMember = "ID";
+            cbEspecialidad.DisplayMember = "Descripcion";
 
         }
 
@@ -76,15 +74,36 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if (txtDescripcion.Text != "" && cbEspecialidad.Text != "")  
+            String error = "Se han encontrado los siguientes errores: \n\n";
+            bool vof = true;
+
+            
+
+            if (txtDescripcion.Text == "")  
+            {
+                error = error + "No puede quedar el campo descripción vacío. \n";
+                vof = false;
+            }
+
+            if (cbEspecialidad.Items.Count <= 0) 
+            {
+                error = error + "Se debe seleccionar una especialidad. \n";
+                vof = false;
+            }
+
+
+            if (vof == true) 
             {
                 return true;
             }
+
             else
             {
-                this.Notificar("Error", "No deben quedar campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("Error", error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
+
         }
         public override void GuardarCambios()
         {
@@ -136,7 +155,8 @@ namespace UI.Desktop
                 }
 
                 PlanActual.Descripcion = txtDescripcion.Text;
-                PlanActual.IDEspecialidad = Int32.Parse(cbEspecialidad.SelectedItem.ToString());
+                String str = cbEspecialidad.SelectedValue.ToString();
+                PlanActual.IDEspecialidad = Int32.Parse(str);
 
             }
 

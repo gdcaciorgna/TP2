@@ -20,9 +20,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar lista de especialidades", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 
@@ -34,9 +32,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos de la Especialidad", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 

@@ -104,40 +104,85 @@ namespace UI.Desktop
         
         public override bool Validar()
         {
-            if (txtNombre.Text != "" && txtApellido.Text != "" && txtEmail.Text != "" && txtUsuario.Text != "" && txtClave.Text != "" && txtConfirmarClave.Text != "") // this.chkHabilitado.Checked ¿se debe validar el checkbox?    
+            String error = "Se han encontrado los siguientes errores: \n\n";
+            bool vof = true;
+
+       
+
+            if(txtNombre.Text == "")
             {
-                if (txtClave.Text.Equals(txtConfirmarClave.Text))
-                {
-                    if ( txtClave.Text.Length >= 8)
-                    {
-                        if ( txtEmail.Text.Contains("@"))
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            this.Notificar("Error", "El mail es inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        this.Notificar("Error", "La clave debe contener al menos 8 caracteres", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                }
-                else
-                {
-                    this.Notificar("Error", "Las claves no coinciden", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                error = error + "El campo nombre no puede estar vacío. \n";
+                vof =  false;
             }
-            else
+
+            if(txtApellido.Text == "")
             {
-                this.Notificar("Error", "No deben quedar campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error = error + "El campo apellido no puede estar vacío. \n";
+                vof = false;
+            }
+
+            if (txtEmail.Text == "")
+            {
+                error = error + "El campo apellido no puede estar vacío. \n";
+                vof = false;
+            }
+
+            if (txtEmail.Text == "")
+            {
+                error = error + "El campo email no puede estar vacío. \n";
+                vof = false;
+            }
+
+            if (txtUsuario.Text == "")
+            {
+                error = error + "El campo usuario no puede estar vacío. \n";
+                vof = false;
+            }
+
+            if (txtClave.Text == "")
+            {
+                error = error + "El campo clave no puede estar vacío. \n";
+                vof = false;
+            }
+
+            if (txtConfirmarClave.Text == "")
+            {
+                error = error + "El campo confirmar clave no puede estar vacío. \n";
+                vof = false;
+            }
+
+            if (!txtEmail.Text.Contains("@"))
+            {
+                error = error + "El campo email no es válido. \n";
+                vof = false;
+            }
+
+            if (txtClave.Text.Length <= 8)
+            {
+                error = error + "La clave debe contener al menos 8 caracteres. \n";
+                vof = false;
+            }
+
+            if (!txtClave.Text.Equals(txtConfirmarClave.Text))
+            {
+                error = error + "Ambas claves deben coincidir. \n";
+                vof = false;
+            }
+
+
+            if (vof == true)
+            {
+                return true;
+            }            
+
+            else 
+            {
+                this.Notificar("Error", error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+
             }
         }
+
 
         public override void GuardarCambios()
         {

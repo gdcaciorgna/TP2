@@ -40,9 +40,7 @@ namespace Business.Logic
             }
             catch(Exception Ex)
             {
-               Exception ExcepcionManejada =
-               new Exception("Error al recuperar lista de usuarios", Ex);
-               throw ExcepcionManejada;
+               throw Ex;
             }
         }
 
@@ -54,9 +52,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos del usuario", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 
@@ -68,9 +64,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al eliminar usuario", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 

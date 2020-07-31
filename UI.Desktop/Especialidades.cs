@@ -62,7 +62,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al recuperar datos de la especialidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -80,7 +80,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al eliminar usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

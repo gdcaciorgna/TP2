@@ -26,9 +26,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar lista de planes", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 
@@ -40,9 +38,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar datos del plan", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 
@@ -54,9 +50,7 @@ namespace Business.Logic
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al eliminar plan", Ex);
-                throw ExcepcionManejada;
+                throw Ex;
             }
         }
 

@@ -30,7 +30,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al recuperar lista de planes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,7 +78,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al recuperar datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,7 +96,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al eliminar plan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

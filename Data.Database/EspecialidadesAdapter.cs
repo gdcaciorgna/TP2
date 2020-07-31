@@ -31,7 +31,7 @@ namespace Data.Database
                 }
                 drEspecialidades.Close();
             }
-            catch (Exception Ex)
+            catch (Exception  Ex)
             {
                 Exception ExcepcionManejada =
                 new Exception("Error al recuperar lista de especialidades", Ex);
@@ -103,12 +103,27 @@ namespace Data.Database
                 cmdDelete.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }
-            catch (Exception Ex)
+
+            catch(SqlException ex) 
+            {
+                if (ex.Errors.Count > 0) // Assume the interesting stuff is in the first error
+                {
+                    switch (ex.Errors[0].Number)
+                    {
+                        case 547: // Violacion de clave foranea
+                            throw new InvalidOperationException("Para poder eliminar la especialidad, previamente es necesario eliminar los planes que la contienen.", ex);
+                    }
+                }
+
+            }
+
+            catch(Exception ex)
             {
                 Exception ExcepcionManejada =
-                new Exception("Error al eliminar especialidad", Ex);
+                new Exception("Error al modificar datos de la especialidad", ex);
                 throw ExcepcionManejada;
             }
+
             finally
             {
                 this.CloseConnection();

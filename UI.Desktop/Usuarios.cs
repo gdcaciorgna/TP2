@@ -30,7 +30,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al recuperar lista de usuarios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,7 +71,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al recuperar datos del usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,7 +89,7 @@ namespace UI.Desktop
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error al eliminar usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             
