@@ -57,11 +57,13 @@
             // 
             this.tcUsuarios.ContentPanel.Controls.Add(this.tlUsuarios);
             this.tcUsuarios.ContentPanel.Controls.Add(this.tsUsuarios);
-            this.tcUsuarios.ContentPanel.Size = new System.Drawing.Size(800, 425);
+            this.tcUsuarios.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.tcUsuarios.ContentPanel.Size = new System.Drawing.Size(1067, 523);
             this.tcUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.tcUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tcUsuarios.Name = "tcUsuarios";
-            this.tcUsuarios.Size = new System.Drawing.Size(800, 450);
+            this.tcUsuarios.Size = new System.Drawing.Size(1067, 554);
             this.tcUsuarios.TabIndex = 0;
             this.tcUsuarios.Text = "toolStripContainer1";
             // 
@@ -74,12 +76,13 @@
             this.tlUsuarios.Controls.Add(this.btnActualizar, 0, 1);
             this.tlUsuarios.Controls.Add(this.btnSalir, 1, 1);
             this.tlUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlUsuarios.Location = new System.Drawing.Point(0, 25);
+            this.tlUsuarios.Location = new System.Drawing.Point(0, 27);
+            this.tlUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlUsuarios.Name = "tlUsuarios";
             this.tlUsuarios.RowCount = 2;
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlUsuarios.Size = new System.Drawing.Size(800, 400);
+            this.tlUsuarios.Size = new System.Drawing.Size(1067, 496);
             this.tlUsuarios.TabIndex = 1;
             // 
             // dgvUsuarios
@@ -94,53 +97,68 @@
             this.habilitado});
             this.tlUsuarios.SetColumnSpan(this.dgvUsuarios, 2);
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
+            this.dgvUsuarios.Location = new System.Drawing.Point(4, 4);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(794, 365);
+            this.dgvUsuarios.RowHeadersWidth = 51;
+            this.dgvUsuarios.Size = new System.Drawing.Size(1059, 452);
             this.dgvUsuarios.TabIndex = 0;
             // 
             // id
             // 
             this.id.DataPropertyName = "ID";
             this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
+            this.id.Width = 125;
             // 
             // nombre
             // 
             this.nombre.DataPropertyName = "Nombre";
             this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
             this.nombre.Name = "nombre";
+            this.nombre.Width = 125;
             // 
             // apellido
             // 
             this.apellido.DataPropertyName = "Apellido";
             this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
             this.apellido.Name = "apellido";
+            this.apellido.Width = 125;
             // 
             // usuario
             // 
             this.usuario.DataPropertyName = "NombreUsuario";
             this.usuario.HeaderText = "Usuario";
+            this.usuario.MinimumWidth = 6;
             this.usuario.Name = "usuario";
+            this.usuario.Width = 125;
             // 
             // email
             // 
             this.email.DataPropertyName = "Email";
             this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
             this.email.Name = "email";
+            this.email.Width = 125;
             // 
             // habilitado
             // 
             this.habilitado.DataPropertyName = "Habilitado";
             this.habilitado.HeaderText = "Habilitado";
+            this.habilitado.MinimumWidth = 6;
             this.habilitado.Name = "habilitado";
+            this.habilitado.Width = 125;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 374);
+            this.btnActualizar.Location = new System.Drawing.Point(855, 464);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -148,9 +166,10 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 374);
+            this.btnSalir.Location = new System.Drawing.Point(963, 464);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -158,13 +177,14 @@
             // 
             // tsUsuarios
             // 
+            this.tsUsuarios.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
             this.tsbEliminar});
             this.tsUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(800, 25);
+            this.tsUsuarios.Size = new System.Drawing.Size(1067, 27);
             this.tsUsuarios.TabIndex = 0;
             this.tsUsuarios.Text = "toolStrip1";
             // 
@@ -174,7 +194,7 @@
             this.tsbNuevo.Image = global::UI.Desktop.Properties.Resources.new1;
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
+            this.tsbNuevo.Size = new System.Drawing.Size(29, 28);
             this.tsbNuevo.Text = "toolStripButton1";
             this.tsbNuevo.ToolTipText = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
@@ -185,7 +205,7 @@
             this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.editar1;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Size = new System.Drawing.Size(29, 28);
             this.tsbEditar.Text = "toolStripButton1";
             this.tsbEditar.ToolTipText = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
@@ -196,16 +216,17 @@
             this.tsbEliminar.Image = global::UI.Desktop.Properties.Resources.file_delete;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEliminar.Size = new System.Drawing.Size(29, 28);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tcUsuarios);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Usuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
