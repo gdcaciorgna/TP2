@@ -54,11 +54,11 @@
             // tscPlanes.ContentPanel
             // 
             this.tscPlanes.ContentPanel.Controls.Add(this.tlPlanes);
-            this.tscPlanes.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tscPlanes.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tscPlanes.ContentPanel.Size = new System.Drawing.Size(1067, 523);
             this.tscPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscPlanes.Location = new System.Drawing.Point(0, 0);
-            this.tscPlanes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tscPlanes.Margin = new System.Windows.Forms.Padding(4);
             this.tscPlanes.Name = "tscPlanes";
             this.tscPlanes.Size = new System.Drawing.Size(1067, 554);
             this.tscPlanes.TabIndex = 0;
@@ -78,7 +78,7 @@
             this.tlPlanes.Controls.Add(this.dgvPlanes, 0, 0);
             this.tlPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlPlanes.Location = new System.Drawing.Point(0, 0);
-            this.tlPlanes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlPlanes.Margin = new System.Windows.Forms.Padding(4);
             this.tlPlanes.Name = "tlPlanes";
             this.tlPlanes.RowCount = 2;
             this.tlPlanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -90,7 +90,7 @@
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.Location = new System.Drawing.Point(855, 491);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.Location = new System.Drawing.Point(963, 491);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 28);
             this.btnSalir.TabIndex = 1;
@@ -121,7 +121,7 @@
             this.tlPlanes.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPlanes.Location = new System.Drawing.Point(4, 4);
-            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPlanes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPlanes.Name = "dgvPlanes";
             this.dgvPlanes.RowHeadersWidth = 51;
             this.dgvPlanes.Size = new System.Drawing.Size(1059, 479);
@@ -201,7 +201,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tscPlanes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Planes";
             this.Text = "Planes";
             this.Load += new System.EventHandler(this.Planes_Load);

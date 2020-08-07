@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
 
@@ -20,20 +19,22 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void tsComision_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void dgvComision_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         public void Listar()
         {
             ComisionLogic ul = new ComisionLogic();
-            this.dgvComision.DataSource = ul.GetAll();
+
+            try
+            {
+                this.dgvComision.DataSource = ul.GetAll();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        
         }
 
         private void Comisiones_Load(object sender, EventArgs e)
