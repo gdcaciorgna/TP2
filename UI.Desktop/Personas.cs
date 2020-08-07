@@ -9,24 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Business.Entities;
+
 
 namespace UI.Desktop
 {
-    public partial class Usuarios : Form
+    public partial class Personas : Form
     {
-        public Usuarios()
+        public Personas()
         {
             InitializeComponent();
-            this.dgvUsuarios.AutoGenerateColumns = false;
+            this.dgvPersonas.AutoGenerateColumns = false;
+
         }
 
         public void Listar()
         {
-            UsuarioLogic ul = new UsuarioLogic();
+            PersonaLogic ul = new PersonaLogic();
 
             try
             {
-                this.dgvUsuarios.DataSource = ul.GetAll();
+                this.dgvPersonas.DataSource = ul.GetAll();
             }
             catch (Exception Ex)
             {
@@ -34,7 +37,7 @@ namespace UI.Desktop
             }
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
+        private void Personas_Load(object sender, EventArgs e)
         {
             Listar();
         }
@@ -51,22 +54,29 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop usuDesk = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            usuDesk.ShowDialog(); 
-            this.Listar();
-
+            PersonasDesktop perDesk = new PersonasDesktop(ApplicationForm.ModoForm.Alta);
+            perDesk.ShowDialog();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEditar_Click_1(object sender, EventArgs e)
+        {
             try
             {
 
-                int ID = ((Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                int ID = ((Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
 
-                UsuarioDesktop usuDesk = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-
-                usuDesk.ShowDialog();
+                PersonasDesktop perDesk = new PersonasDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                perDesk.ShowDialog();
                 this.Listar();
             }
             catch (Exception Ex)
@@ -75,14 +85,16 @@ namespace UI.Desktop
             }
         }
 
-        private void tsbEliminar_Click(object sender, EventArgs e)
+        private void tsbEliminar_Click_1(object sender, EventArgs e)
         {
             try
             {
 
-                int ID = ((Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop usuDesk = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-                usuDesk.ShowDialog();
+                int ID = ((Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+
+                PersonasDesktop perDesk = new PersonasDesktop(ID, ApplicationForm.ModoForm.Baja);
+
+                perDesk.ShowDialog();
                 this.Listar();
             }
             catch (Exception Ex)
@@ -90,7 +102,6 @@ namespace UI.Desktop
                 MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
         }
     }
 }

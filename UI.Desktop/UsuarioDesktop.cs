@@ -123,15 +123,10 @@ namespace UI.Desktop
 
             if (txtEmail.Text == "")
             {
-                error = error + "El campo apellido no puede estar vacío. \n";
-                vof = false;
-            }
-
-            if (txtEmail.Text == "")
-            {
                 error = error + "El campo email no puede estar vacío. \n";
                 vof = false;
             }
+
 
             if (txtUsuario.Text == "")
             {
@@ -145,6 +140,7 @@ namespace UI.Desktop
                 vof = false;
             }
 
+     
             if (txtConfirmarClave.Text == "")
             {
                 error = error + "El campo confirmar clave no puede estar vacío. \n";
