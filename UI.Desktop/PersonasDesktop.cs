@@ -101,7 +101,9 @@ namespace UI.Desktop
 
                 PersonaActual.IDPlan = Int32.Parse(cmbPlan.SelectedValue.ToString());
                 PersonaActual.TipoP = (Persona.TiposPersona)Int32.Parse(cmbTipoPersona.SelectedValue.ToString());
-                PersonaActual.FechaNacimiento = dtpFechaNac.Value.Date;
+
+                DateTime fechaEj = dtpFechaNac.Value.Date;
+                PersonaActual.FechaNacimiento = fechaEj;
 
             }
 

@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
-using Business.Entities;
 
 
 namespace UI.Desktop
 {
     public partial class Personas : Form
     {
+        public int Modo { get; set; } // 1-Vista Personas, 2-Vista / Modo Docente, 3 - Vista / Modo alumno
+
         public Personas()
         {
             InitializeComponent();
@@ -23,13 +24,32 @@ namespace UI.Desktop
 
         }
 
+        public Personas(int modo) 
+        {
+            InitializeComponent();
+            Modo = modo; 
+        }
+
         public void Listar()
         {
-            PersonaLogic ul = new PersonaLogic();
+            
+
+
 
             try
             {
-                this.dgvPersonas.DataSource = ul.GetAll();
+                PersonaLogic ul = new PersonaLogic();
+
+                if (Modo == 0)
+                {
+                    this.dgvPersonas.DataSource = ul.GetAll();
+                }
+
+                else
+                {
+                    this.dgvPersonas.DataSource = ul.GetAllTipo(Modo);
+                }
+
             }
             catch (Exception Ex)
             {

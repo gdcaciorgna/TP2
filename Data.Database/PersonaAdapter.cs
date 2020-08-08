@@ -31,9 +31,11 @@ namespace Data.Database
                     per.Direccion = (string)drPersonas["direccion"];
                     per.Email = (string)drPersonas["email"];
                     per.Telefono = (string)drPersonas["telefono"];
-                    
-                    DateTime fechaN = (DateTime) drPersonas["fecha_nac"];
+
+                    DateTime fechaN = (DateTime)drPersonas["fecha_nac"];
                     per.FechaNacimiento = fechaN;
+
+                    per.TipoP = (Persona.TiposPersona)drPersonas["tipo_persona"];
 
                     per.Legajo = (int)drPersonas["legajo"];
                     per.IDPlan = (int)drPersonas["id_plan"];
@@ -131,7 +133,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNacimiento; //VER ESTO
                 cmdSave.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int) persona.TipoP;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)persona.TipoP;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
                 cmdSave.ExecuteNonQuery();
             }
@@ -162,11 +164,11 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int, 50).Value = (int) persona.TipoP;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int, 50).Value = (int)persona.TipoP;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int, 50).Value = persona.IDPlan;
 
 
-        
+
                 persona.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
 
@@ -225,5 +227,52 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
+
+        public List<Persona> GetAllTipo(int tipo_persona)
+        {
+            List<Persona> personas = new List<Persona>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPersona = new SqlCommand("select * from personas where tipo_persona = @tip", sqlConn);
+                cmdPersona.Parameters.Add("@tip", SqlDbType.Int).Value = tipo_persona;
+                SqlDataReader drPersonas = cmdPersona.ExecuteReader();
+                while (drPersonas.Read())
+                {
+                    Persona per = new Persona();
+
+                    per.ID = (int)drPersonas["id_persona"];
+                    per.Legajo = (int)drPersonas["legajo"];
+                    per.Nombre = (string)drPersonas["nombre"];
+                    per.Apellido = (string)drPersonas["apellido"];
+
+                    per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
+
+                    per.Direccion = (string)drPersonas["direccion"];
+                    per.Telefono = (string)drPersonas["telefono"];
+                    per.Email = (string)drPersonas["email"];
+                    per.TipoP = (Persona.TiposPersona)drPersonas["tipo_persona"];
+                    per.IDPlan = (int)drPersonas["id_plan"];
+
+                    personas.Add(per);
+                }
+
+                drPersonas.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de personas", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return personas;
+
+        }
+
     }
+    
 }

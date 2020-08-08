@@ -48,17 +48,50 @@ namespace UI.Desktop
         {
             UsuarioLogic usuLog = new UsuarioLogic();
             int tipo_per = usuLog.GetTipoPersona(Usuario.UsuarioActual);
-            
+
+            TextoBienvenida.Text = "¡Bienvenido: " + Usuario.UsuarioActual.Apellido + ", " + Usuario.UsuarioActual.Nombre + "!";
+
+            Persona.TiposPersona tipoUsuario = (Persona.TiposPersona)tipo_per;
+            textoRol.Text = "Rol: " + tipoUsuario.ToString();
+
+
             switch (tipo_per)
             {
+                case 0:
+                    tsmiAlumnos.Visible = true;
+                    tsmiComisiones.Visible = true;
+                    tsmiCursos.Visible = true;
+                    tsmiDocentes.Visible = true;
+                    tsmiEspecialidades.Visible = true;
+                    tsmiPersonas.Visible = true;
+                    tsmiPlanes.Visible = true;
+                    tsmiUsuarios.Visible = true;
+                    tsmiMaterias.Visible = true;
+
+                    tsmiArchivo.Visible = true;
+                    tsmiInformes.Visible = true;
+                    tsmiInscripciones.Visible = true;
+
+                    tsmiInformes.Visible = true;
+                    tsmiRegistroCursos.Visible = true;
+                    tsmiRegistroNotas.Visible = true;
+                    tsmiReportePlanes.Visible = true;
+                    
+                    break;
+
                 case 1:
-                     //pnlAdmin.Visible = true;
+
+                    tsmiArchivo.Visible = true;
+                    tsmiCursos.Visible = true;
+                    tsmiAlumnos.Visible = true;
+                    
+
                     break;
+
                 case 2:
-                    //pnlProf.Visible = true;
-                    break;
-                case 3:
-                    //pnlAlum.Visible = true;
+                    tsmiInformes.Visible = true;
+                    tsmiInscripciones.Visible = true;
+                    tsmiInscribirAlumnoCurso.Visible = true;
                     break;
             }
 
@@ -121,8 +154,21 @@ namespace UI.Desktop
 
         private void verPersonasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Personas per = new Personas();
+            Personas per = new Personas(0);
             per.ShowDialog();
+        }
+
+        private void verAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Personas personas = new Personas(2);
+            personas.ShowDialog();
+            
+        }
+
+        private void verDocentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Personas personas = new Personas(1);
+            personas.ShowDialog();
         }
     }
 }

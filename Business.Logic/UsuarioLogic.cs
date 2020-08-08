@@ -81,8 +81,7 @@ namespace Business.Logic
         {
             try
             {
-                int tipo_persona = 1;
-                return tipo_persona;
+                return UsuarioData.getTipoPersona(usu);
             }
             catch (Exception Ex)
             {

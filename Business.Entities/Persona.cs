@@ -58,12 +58,8 @@ namespace Business.Entities
             set { _Legajo = value; }
         }
 
-        private DateTime _FechaNacimiento;
-        public DateTime FechaNacimiento
-        {
-            get { return _FechaNacimiento; }
-            set { _FechaNacimiento = FechaNacimiento; }
-        }
+
+        public DateTime FechaNacimiento { get; set; }
 
 
 
