@@ -29,6 +29,8 @@ namespace UI.Desktop
                 UsuarioLogic usLog = new UsuarioLogic();
                 usr = usLog.GetUsuarioxUsrNombre(txtUsuario.Text);
 
+                Usuario.UsuarioActual = usr;
+
                 if (Validaciones.ControlaClave(txtPassword.Text, usr.Clave) == true)
                 {
                     Menu menu = new Menu();
@@ -36,7 +38,6 @@ namespace UI.Desktop
                     menu.ShowDialog();
                     txtPassword.Text = null;
                     txtUsuario.Text = null;
-                    this.Show();
                 }
                 else MessageBox.Show("Usuario y/o contraseña incorrectos");
             }

@@ -76,5 +76,18 @@ namespace Business.Logic
         {
             return UsuarioData.GetUsuarioxUsrNombre(nomUsuario);
         }
+
+        public int GetTipoPersona(Usuario usu) 
+        {
+            try
+            {
+                return UsuarioData.getTipoPersona(usu);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+        }
     }
 }

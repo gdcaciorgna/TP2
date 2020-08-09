@@ -81,9 +81,7 @@ namespace UI.Desktop
             {
 
                 int ID = ((Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-
                 UsuarioDesktop usuDesk = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-
                 usuDesk.ShowDialog();
                 this.Listar();
             }
