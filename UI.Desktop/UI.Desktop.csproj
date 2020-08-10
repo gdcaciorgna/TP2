@@ -129,6 +129,9 @@
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComisionesDesktop.resx">
+      <DependentUpon>ComisionesDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </EmbeddedResource>

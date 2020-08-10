@@ -17,6 +17,7 @@ namespace UI.Desktop
         public Comisiones()
         {
             InitializeComponent();
+            dgvComision.AutoGenerateColumns = false;
         }
 
      
@@ -54,7 +55,7 @@ namespace UI.Desktop
 
         private void btnAgregarComision_Click(object sender, EventArgs e)
         {
-            ComisionDesktop comDesk = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
+            ComisionesDesktop comDesk = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
             comDesk.ShowDialog();
             this.Listar();
         }
