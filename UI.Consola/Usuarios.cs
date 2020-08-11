@@ -141,7 +141,7 @@ namespace UI.Consola
                 UsuarioNegocio.Save(usuario);
 
             }
-            catch(FormatException fe)
+            catch(FormatException ef)
             {
                 Console.WriteLine();
                 Console.WriteLine("La ID ingresada debe ser un número entero.");

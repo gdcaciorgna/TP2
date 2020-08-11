@@ -20,7 +20,7 @@ namespace UI.Desktop
             dgvComision.AutoGenerateColumns = false;
         }
 
-     
+
 
         public void Listar()
         {
@@ -34,8 +34,8 @@ namespace UI.Desktop
             {
                 MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-        
+
+
         }
 
         private void Comisiones_Load(object sender, EventArgs e)
@@ -58,6 +58,45 @@ namespace UI.Desktop
             ComisionesDesktop comDesk = new ComisionesDesktop(ApplicationForm.ModoForm.Alta);
             comDesk.ShowDialog();
             this.Listar();
+        }
+
+        private void btnEditarComision_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int ID = ((Comision)this.dgvComision.SelectedRows[0].DataBoundItem).ID;
+
+                ComisionesDesktop cDesk = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+
+                cDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+        private void btnEliminarComision_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int ID = ((Comision)this.dgvComision.SelectedRows[0].DataBoundItem).ID;
+
+                ComisionesDesktop cDesk = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Baja);
+
+                cDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

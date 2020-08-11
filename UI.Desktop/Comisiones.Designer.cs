@@ -76,7 +76,7 @@
             this.tsComision.Size = new System.Drawing.Size(139, 27);
             this.tsComision.TabIndex = 0;
             this.tsComision.Text = "toolStrip1";
-            this.tsComision.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsComision_ItemClicked);
+            
             // 
             // tlComision
             // 
@@ -106,7 +106,7 @@
             this.dgvComision.RowTemplate.Height = 24;
             this.dgvComision.Size = new System.Drawing.Size(794, 384);
             this.dgvComision.TabIndex = 0;
-            this.dgvComision.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComision_CellContentClick);
+            
             // 
             // bntActualizar
             // 

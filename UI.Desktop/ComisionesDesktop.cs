@@ -19,6 +19,12 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
+        public ComisionesDesktop(ModoForm modo) : this()
+        {
+            this.Modo = modo;
+
+        }
+
         public ComisionesDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
