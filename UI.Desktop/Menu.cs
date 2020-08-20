@@ -170,5 +170,17 @@ namespace UI.Desktop
             Personas personas = new Personas(1);
             personas.ShowDialog();
         }
+
+        private void verMateriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materias mat = new Materias();
+            mat.ShowDialog();
+        }
+
+        private void nuevaMateriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MateriasDesktop matDesk = new MateriasDesktop();
+            matDesk.ShowDialog();
+        }
     }
 }
