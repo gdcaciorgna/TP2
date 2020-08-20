@@ -116,7 +116,7 @@ namespace UI.Desktop
         {
             this.txtIDPlan.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.cbEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+           // this.cbEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)

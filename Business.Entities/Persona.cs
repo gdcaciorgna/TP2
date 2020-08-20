@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    class Persona : BusinessEntity
+    public class Persona : BusinessEntity
     {
+
         private string _Apellido;
         public string Apellido
         {
@@ -57,12 +58,8 @@ namespace Business.Entities
             set { _Legajo = value; }
         }
 
-        private DateTime _FechaNacimiento;
-        public DateTime FechaNacimiento
-        {
-            get { return _FechaNacimiento; }
-            set { _FechaNacimiento = FechaNacimiento; }
-        }
+
+        public DateTime FechaNacimiento { get; set; }
 
 
 
@@ -75,9 +72,9 @@ namespace Business.Entities
 
         public enum TiposPersona
         {
-            Facho,
-            Zurdito,
-            FachoEncubierto
+            Administrador,
+            Docente,
+            Alumno
         }
 
         public Persona()

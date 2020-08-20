@@ -8,60 +8,8 @@ using System.Data.SqlClient;
 
 namespace Data.Database
 {
-    public class UsuarioAdapter:Adapter
+    public class UsuarioAdapter : Adapter
     {
-        #region DatosEnMemoria
-        // Esta región solo se usa en esta etapa donde los datos se mantienen en memoria.
-        // Al modificar este proyecto para que acceda a la base de datos esta será eliminada
-        private static List<Usuario> _Usuarios;
-
-        private static List<Usuario> Usuarios
-        {
-            get
-            {
-                if (_Usuarios == null)
-                {
-                    _Usuarios = new List<Business.Entities.Usuario>();
-                    Business.Entities.Usuario usr;
-                    usr = new Business.Entities.Usuario();
-                    usr.ID = 1;
-                    usr.State = Business.Entities.BusinessEntity.States.Unmodified;
-                    usr.Nombre = "Casimiro";
-                    usr.Apellido = "Cegado";
-                    usr.NombreUsuario = "casicegado";
-                    usr.Clave = "miro";
-                    usr.Email = "casimirocegado@gmail.com";
-                    usr.Habilitado = true;
-                    _Usuarios.Add(usr);
-
-                    usr = new Business.Entities.Usuario();
-                    usr.ID = 2;
-                    usr.State = Business.Entities.BusinessEntity.States.Unmodified;
-                    usr.Nombre = "Armando Esteban";
-                    usr.Apellido = "Quito";
-                    usr.NombreUsuario = "aequito";
-                    usr.Clave = "carpintero";
-                    usr.Email = "armandoquito@gmail.com";
-                    usr.Habilitado = true;
-                    _Usuarios.Add(usr);
-
-                    usr = new Business.Entities.Usuario();
-                    usr.ID = 3;
-                    usr.State = Business.Entities.BusinessEntity.States.Unmodified;
-                    usr.Nombre = "Alan";
-                    usr.Apellido = "Brado";
-                    usr.NombreUsuario = "alanbrado";
-                    usr.Clave = "abrete sesamo";
-                    usr.Email = "alanbrado@gmail.com";
-                    usr.Habilitado = true;
-                    _Usuarios.Add(usr);
-
-                }
-                return _Usuarios;
-            }
-        }
-        #endregion
-
         public List<Usuario> GetAll()
         {
             List<Usuario> usuarios = new List<Usuario>();
@@ -249,10 +197,36 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.Email = (string)drUsuarios["email"];
-                  //  usr.ID_Per = (int)drUsuarios["id_persona"];
+                    usr.ID_Persona = (int)drUsuarios["id_persona"];
+
                 }
                 drUsuarios.Close();
             return usr;
         }
+
+        public int getTipoPersona(Usuario usu) 
+        {
+            int tipo;
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuario = new SqlCommand("select distinct p.* from usuarios u inner join personas p on p.id_persona=(select id_persona from usuarios where id_usuario = @id)", sqlConn);
+                cmdUsuario.Parameters.Add("@id", SqlDbType.Int).Value = usu.ID;
+                SqlDataReader drUsuario = cmdUsuario.ExecuteReader();
+                drUsuario.Read();
+                tipo = (int)drUsuario["tipo_persona"];
+                return tipo;
+            }
+            catch (Exception Ex)
+            {
+                Exception exception = new Exception("Error al retornar el tipo de usuario.", Ex);
+                throw exception;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
     }
 }
