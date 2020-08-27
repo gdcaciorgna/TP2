@@ -47,6 +47,7 @@
     <Compile Include="ComisionAdapter.cs" />
     <Compile Include="EspecialidadesAdapter.cs" />
     <Compile Include="PersonaAdapter.cs" />
+    <Compile Include="MateriaAdapter.cs" />
     <Compile Include="PlanAdapter.cs" />
     <Compile Include="UsuarioAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

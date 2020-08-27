@@ -115,14 +115,14 @@
             // nuevoAlumnoToolStripMenuItem
             // 
             this.nuevoAlumnoToolStripMenuItem.Name = "nuevoAlumnoToolStripMenuItem";
-            this.nuevoAlumnoToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.nuevoAlumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoAlumnoToolStripMenuItem.Text = "Nuevo alumno";
             this.nuevoAlumnoToolStripMenuItem.Click += new System.EventHandler(this.nuevoAlumnoToolStripMenuItem_Click);
             // 
             // verAlumnosToolStripMenuItem
             // 
             this.verAlumnosToolStripMenuItem.Name = "verAlumnosToolStripMenuItem";
-            this.verAlumnosToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.verAlumnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verAlumnosToolStripMenuItem.Text = "Ver alumnos";
             this.verAlumnosToolStripMenuItem.Click += new System.EventHandler(this.verAlumnosToolStripMenuItem_Click);
             // 
@@ -139,13 +139,13 @@
             // nuevoDocenteToolStripMenuItem
             // 
             this.nuevoDocenteToolStripMenuItem.Name = "nuevoDocenteToolStripMenuItem";
-            this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoDocenteToolStripMenuItem.Text = "Nuevo docente";
             // 
             // verDocentesToolStripMenuItem
             // 
             this.verDocentesToolStripMenuItem.Name = "verDocentesToolStripMenuItem";
-            this.verDocentesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.verDocentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verDocentesToolStripMenuItem.Text = "Ver docentes";
             this.verDocentesToolStripMenuItem.Click += new System.EventHandler(this.verDocentesToolStripMenuItem_Click);
             // 
@@ -162,14 +162,14 @@
             // nuevaPersonaToolStripMenuItem
             // 
             this.nuevaPersonaToolStripMenuItem.Name = "nuevaPersonaToolStripMenuItem";
-            this.nuevaPersonaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.nuevaPersonaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaPersonaToolStripMenuItem.Text = "Nueva persona";
             this.nuevaPersonaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPersonaToolStripMenuItem_Click);
             // 
             // verPersonasToolStripMenuItem
             // 
             this.verPersonasToolStripMenuItem.Name = "verPersonasToolStripMenuItem";
-            this.verPersonasToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.verPersonasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verPersonasToolStripMenuItem.Text = "Ver personas";
             this.verPersonasToolStripMenuItem.Click += new System.EventHandler(this.verPersonasToolStripMenuItem_Click);
             // 
@@ -186,14 +186,14 @@
             // crearUsuarioToolStripMenuItem
             // 
             this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
-            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearUsuarioToolStripMenuItem.Text = "Crear usuario";
             this.crearUsuarioToolStripMenuItem.Click += new System.EventHandler(this.crearUsuarioToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
@@ -210,14 +210,14 @@
             // nuevaEspecialidadToolStripMenuItem
             // 
             this.nuevaEspecialidadToolStripMenuItem.Name = "nuevaEspecialidadToolStripMenuItem";
-            this.nuevaEspecialidadToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.nuevaEspecialidadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaEspecialidadToolStripMenuItem.Text = "Nueva especialidad";
             this.nuevaEspecialidadToolStripMenuItem.Click += new System.EventHandler(this.nuevaEspecialidadToolStripMenuItem_Click);
             // 
             // verEspecialidadesToolStripMenuItem
             // 
             this.verEspecialidadesToolStripMenuItem.Name = "verEspecialidadesToolStripMenuItem";
-            this.verEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.verEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verEspecialidadesToolStripMenuItem.Text = "Ver especialidades";
             this.verEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.verEspecialidadesToolStripMenuItem_Click);
             // 
@@ -234,14 +234,14 @@
             // nuevoPlanToolStripMenuItem
             // 
             this.nuevoPlanToolStripMenuItem.Name = "nuevoPlanToolStripMenuItem";
-            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoPlanToolStripMenuItem.Text = "Nuevo plan";
             this.nuevoPlanToolStripMenuItem.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem_Click);
             // 
             // verPlanesToolStripMenuItem
             // 
             this.verPlanesToolStripMenuItem.Name = "verPlanesToolStripMenuItem";
-            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verPlanesToolStripMenuItem.Text = "Ver planes";
             this.verPlanesToolStripMenuItem.Click += new System.EventHandler(this.verPlanesToolStripMenuItem_Click);
             // 
@@ -260,12 +260,14 @@
             this.nuevaMateriaToolStripMenuItem.Name = "nuevaMateriaToolStripMenuItem";
             this.nuevaMateriaToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.nuevaMateriaToolStripMenuItem.Text = "Nueva materia";
+            this.nuevaMateriaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMateriaToolStripMenuItem_Click);
             // 
             // verMateriasToolStripMenuItem
             // 
             this.verMateriasToolStripMenuItem.Name = "verMateriasToolStripMenuItem";
             this.verMateriasToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.verMateriasToolStripMenuItem.Text = "Ver materias";
+            this.verMateriasToolStripMenuItem.Click += new System.EventHandler(this.verMateriasToolStripMenuItem_Click);
             // 
             // tsmiComisiones
             // 
@@ -280,13 +282,13 @@
             // nuevaComisiónToolStripMenuItem
             // 
             this.nuevaComisiónToolStripMenuItem.Name = "nuevaComisiónToolStripMenuItem";
-            this.nuevaComisiónToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.nuevaComisiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaComisiónToolStripMenuItem.Text = "Nueva comisión";
             // 
             // verComisionesToolStripMenuItem
             // 
             this.verComisionesToolStripMenuItem.Name = "verComisionesToolStripMenuItem";
-            this.verComisionesToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
+            this.verComisionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verComisionesToolStripMenuItem.Text = "Ver comisiones";
             // 
             // tsmiCursos
@@ -302,13 +304,13 @@
             // nuevoCursoToolStripMenuItem
             // 
             this.nuevoCursoToolStripMenuItem.Name = "nuevoCursoToolStripMenuItem";
-            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoCursoToolStripMenuItem.Text = "Nuevo curso";
             // 
             // verCursosToolStripMenuItem
             // 
             this.verCursosToolStripMenuItem.Name = "verCursosToolStripMenuItem";
-            this.verCursosToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.verCursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verCursosToolStripMenuItem.Text = "Ver cursos";
             // 
             // tsmiInscripciones
@@ -341,19 +343,19 @@
             // tsmiRegistroNotas
             // 
             this.tsmiRegistroNotas.Name = "tsmiRegistroNotas";
-            this.tsmiRegistroNotas.Size = new System.Drawing.Size(213, 26);
+            this.tsmiRegistroNotas.Size = new System.Drawing.Size(180, 22);
             this.tsmiRegistroNotas.Text = "Registro de notas";
             // 
             // tsmiRegistroCursos
             // 
             this.tsmiRegistroCursos.Name = "tsmiRegistroCursos";
-            this.tsmiRegistroCursos.Size = new System.Drawing.Size(213, 26);
+            this.tsmiRegistroCursos.Size = new System.Drawing.Size(180, 22);
             this.tsmiRegistroCursos.Text = "Registro de cursos";
             // 
             // tsmiReportePlanes
             // 
             this.tsmiReportePlanes.Name = "tsmiReportePlanes";
-            this.tsmiReportePlanes.Size = new System.Drawing.Size(213, 26);
+            this.tsmiReportePlanes.Size = new System.Drawing.Size(180, 22);
             this.tsmiReportePlanes.Text = "Reporte de planes";
             // 
             // tableLayoutPanel1
