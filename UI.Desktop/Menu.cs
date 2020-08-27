@@ -182,5 +182,17 @@ namespace UI.Desktop
             MateriasDesktop matDesk = new MateriasDesktop();
             matDesk.ShowDialog();
         }
+
+        private void verComisionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Comisiones com = new Comisiones();
+            com.ShowDialog();
+        }
+
+        private void nuevaComisiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComisionesDesktop com = new ComisionesDesktop();
+            com.ShowDialog();
+        }
     }
 }
