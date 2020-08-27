@@ -36,18 +36,8 @@ namespace UI.Desktop
 
         public Comision ComisionActual {get; set;}
 
-    private void PlanesDesktop_Load(object sender, EventArgs e)
-        {
-            EspecialidadesLogic espLog = new EspecialidadesLogic();
-            List<Especialidad> especialidades = new List<Especialidad>();
-
-            especialidades = espLog.GetAll();
-            cmbIdPlan.DataSource = especialidades;
-            cmbIdPlan.ValueMember = "ID";
-            cmbIdPlan.DisplayMember = "Descripcion";
-
-        }
-
+   
+    
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
@@ -114,6 +104,7 @@ namespace UI.Desktop
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
+
                 this.btnAceptar.Text = "Guardar";
             }
 
@@ -150,6 +141,8 @@ namespace UI.Desktop
                 ComisionActual.Descripcion = txtDescripcion.Text;
                 String str = cmbIdPlan.SelectedValue.ToString();
                 ComisionActual.IDPlan= Int32.Parse(str);
+                String anio = txtAnioEspecialidad.Text.ToString();
+                ComisionActual.AnioEspecialidad = Int32.Parse(anio);
 
             }
 
@@ -164,6 +157,22 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ComisionesDesktop_Load(object sender, EventArgs e)
+        {
+            
+                PlanesLogic planLog = new PlanesLogic();
+                List<Plan> planes = new List<Plan>();
+
+                planes = planLog.GetAll();
+                cmbIdPlan.DataSource = planes;
+
+                cmbIdPlan.ValueMember = "ID";
+                cmbIdPlan.DisplayMember = "Descripcion";
+
+
+            
         }
     }
 }

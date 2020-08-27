@@ -45,10 +45,10 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.34062F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.10126F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.76525F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.56272F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -66,8 +66,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.42105F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.84211F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(869, 380);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -101,7 +101,7 @@
             // cmbIdPlan
             // 
             this.cmbIdPlan.FormattingEnabled = true;
-            this.cmbIdPlan.Location = new System.Drawing.Point(220, 192);
+            this.cmbIdPlan.Location = new System.Drawing.Point(145, 192);
             this.cmbIdPlan.Name = "cmbIdPlan";
             this.cmbIdPlan.Size = new System.Drawing.Size(121, 24);
             this.cmbIdPlan.TabIndex = 3;
@@ -117,7 +117,7 @@
             // 
             // txtIdPlan
             // 
-            this.txtIdPlan.Location = new System.Drawing.Point(220, 3);
+            this.txtIdPlan.Location = new System.Drawing.Point(145, 3);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.ReadOnly = true;
             this.txtIdPlan.Size = new System.Drawing.Size(100, 22);
@@ -125,21 +125,21 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(220, 66);
+            this.txtDescripcion.Location = new System.Drawing.Point(145, 66);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 22);
             this.txtDescripcion.TabIndex = 6;
             // 
             // txtAnioEspecialidad
             // 
-            this.txtAnioEspecialidad.Location = new System.Drawing.Point(220, 129);
+            this.txtAnioEspecialidad.Location = new System.Drawing.Point(145, 129);
             this.txtAnioEspecialidad.Name = "txtAnioEspecialidad";
             this.txtAnioEspecialidad.Size = new System.Drawing.Size(100, 22);
             this.txtAnioEspecialidad.TabIndex = 7;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(437, 255);
+            this.btnAceptar.Location = new System.Drawing.Point(563, 318);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
@@ -149,7 +149,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(654, 255);
+            this.btnCancelar.Location = new System.Drawing.Point(700, 318);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -163,6 +163,7 @@
             this.ClientSize = new System.Drawing.Size(869, 380);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ComisionesDesktop";
+            this.Load += new System.EventHandler(this.ComisionesDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

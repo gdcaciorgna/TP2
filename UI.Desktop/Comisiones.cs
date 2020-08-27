@@ -60,26 +60,10 @@ namespace UI.Desktop
             this.Listar();
         }
 
-        private void btnEditarComision_Click(object sender, EventArgs e)
-        {
-            try
-            {
+     
+       
 
-                int ID = ((Comision)this.dgvComision.SelectedRows[0].DataBoundItem).ID;
-
-                ComisionesDesktop cDesk = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-
-                cDesk.ShowDialog();
-                this.Listar();
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-        }
-        private void btnEliminarComision_Click(object sender, EventArgs e)
+        private void btnEliminarComision_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -95,8 +79,24 @@ namespace UI.Desktop
             {
                 MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void btnEditarComision_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
 
+                int ID = ((Comision)this.dgvComision.SelectedRows[0].DataBoundItem).ID;
+
+                ComisionesDesktop cDesk = new ComisionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+
+                cDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
