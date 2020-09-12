@@ -139,7 +139,8 @@ namespace UI.Web
                     {
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-                        
+                        this.formPanel.Visible = false;
+
                     }
                     break;
                 case FormModes.Alta:
@@ -149,13 +150,14 @@ namespace UI.Web
                     {
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
-
+                        this.formPanel.Visible = false;
+                        
                     }
                     break;
                 default:
                     break;
              }
-            this.formPanel.Visible = false;
+
         }
 
         private void EnableForm (bool enable)

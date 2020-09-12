@@ -46,5 +46,18 @@ namespace Business.Logic
             EspecialidadData = new EspecialidadesAdapter();
 
         }
+
+        public void Delete(int pID)      // punto 9
+        {
+            try
+            {
+                this.EspecialidadData.Delete(pID);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+
     }
 }
