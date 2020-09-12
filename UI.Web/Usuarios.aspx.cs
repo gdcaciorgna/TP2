@@ -129,6 +129,7 @@ namespace UI.Web
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Usuario();
@@ -140,7 +141,7 @@ namespace UI.Web
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
                         this.formPanel.Visible = false;
-
+                        this.PanelError.Visible = false;
                     }
                     break;
                 case FormModes.Alta:
@@ -151,13 +152,13 @@ namespace UI.Web
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
                         this.formPanel.Visible = false;
-                        
+                        this.PanelError.Visible = false;
                     }
                     break;
                 default:
                     break;
              }
-
+           
         }
 
         private void EnableForm (bool enable)

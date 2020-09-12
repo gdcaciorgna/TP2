@@ -35,7 +35,7 @@
             <asp:Label ID="lbClave" runat="server" Text="Clave"></asp:Label>
             <asp:TextBox ID="tbClave" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="lbRepetirClave" runat="server" Text="RepetirClave"></asp:Label>
+            <asp:Label ID="lbRepetirClave" runat="server" Text="Repetir Clave"></asp:Label>
             <asp:TextBox ID="tbRepetirClave" runat="server"></asp:TextBox>
             <asp:Panel ID="Panel2" runat="server">
                 <asp:LinkButton ID="lbAceptar" runat="server" OnClick="lbAceptar_Click">Aceptar</asp:LinkButton>
