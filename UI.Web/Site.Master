@@ -5,8 +5,32 @@
 </head>
 <body>
     <form id="bodyForm" runat="server">
-        <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
-        </asp:Menu>
+        <asp:Panel ID="Panel1" runat="server">
+            <asp:Menu ID="Menu1" runat="server">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Inicio" Value="Inicio"></asp:MenuItem>
+                    <asp:MenuItem Text="Archivo" Value="Nuevo elemento">
+                        <asp:MenuItem NavigateUrl="~/Alumnos.aspx" Text="Alumnos" Value="Alumnos"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Docentes.aspx" Text="Docentes" Value="Docentes"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Personas.aspx" Text="Personas" Value="Personas"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Usuarios.aspx" Text="Usuarios" Value="Usuarios"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Especialidades.aspx" Text="Especialidades" Value="Especialidades"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Planes.aspx" Text="Planes" Value="Planes"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Materias.aspx" Text="Materias" Value="Materias"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Comisiones.aspx" Text="Comisiones" Value="Comisiones"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Cursos.aspx" Text="Cursos" Value="Cursos"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Inscripciones" Value="Inscripciones">
+                        <asp:MenuItem Text="Inscribir Alumno a Curso" Value="Inscribir Alumno a Curso"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Informes" Value="Informes">
+                        <asp:MenuItem Text="Registro de Notas" Value="Registro de Notas"></asp:MenuItem>
+                        <asp:MenuItem Text="Registro de Cursos" Value="Registro de Cursos"></asp:MenuItem>
+                        <asp:MenuItem Text="Registro de Planes" Value="Registro de Planes"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </asp:Panel>
         <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
         <div>
             <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
