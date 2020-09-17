@@ -1,0 +1,17 @@
+﻿body {
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.contenedor {
+    width: 40% !important;
+    margin-top: 13% !important;
+    border: 5px;
+}
+
+#errores {
+    margin-top: 20px;
+}
