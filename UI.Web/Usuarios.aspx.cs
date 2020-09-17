@@ -171,6 +171,7 @@ namespace UI.Web
             this.lbClave.Visible = enable;
             this.tbRepetirClave.Visible = enable;
             this.lbRepetirClave.Visible = enable;
+            this.cbHabilitado.Enabled = enable;
         }
 
         protected void lbEliminar_Click(object sender, EventArgs e)
