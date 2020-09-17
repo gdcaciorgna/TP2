@@ -137,42 +137,6 @@ namespace UI.Web
             this.Logic.Save(especialidad);
         }
 
-        protected void lbAceptar_Click(object sender, EventArgs e)
-        {
-            switch (this.FormMode)
-            {
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Especialidad();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
-
-                    break;
-
-                case FormModes.Alta:
-                    this.Entity = new Especialidad();
-                    this.LoadEntity(this.Entity);
-
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
-
-                    break;
-                default:
-                    break;
-
-            }
-        }
-
         private void EnableForm(bool enable)
         {
             this.txtDescripcionEsp.Enabled = enable;
@@ -196,5 +160,75 @@ namespace UI.Web
             this.Logic.Delete(id);
         }
 
+        public bool Validar()
+        {
+            String error = "Se han encontrado los siguientes errores: <br /><br />";
+            bool vof = true;
+
+
+
+            if (txtDescripcionEsp.Text == "")
+            {
+                error = error + "El campo descripción no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (vof == true)
+            {
+                return true;
+            }
+
+            else
+            {
+                this.ErrorPanelEspecialidad.Visible = true;
+                this.labelErrorEspecialidad.Text = error;
+                return false;
+
+            }
+        }
+
+        protected void lbAceptar_Click1(object sender, EventArgs e)
+        {
+            switch (this.FormMode)
+            {
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    this.formPanel.Visible = false;
+                    break;
+                case FormModes.Modificacion:
+                    this.Entity = new Especialidad();
+                    this.Entity.ID = this.SelectedID;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    this.LoadEntity(this.Entity);
+
+                    if (this.Validar() == true)
+                    {
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                        this.ErrorPanelEspecialidad.Visible = false;
+                    }
+                    break;
+
+                case FormModes.Alta:
+                    this.Entity = new Especialidad();
+                    this.LoadEntity(this.Entity);
+
+                    if (this.Validar() == true)
+                    {
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                        this.ErrorPanelEspecialidad.Visible = false;
+                    }
+
+                    break;
+                default:
+                    break;
+
+            }
+
+        }
     }
 }

@@ -29,7 +29,7 @@
 
         <div class="form-group">        
         <asp:Panel ID="Panel3" runat="server">
-            <asp:LinkButton ID="lbAceptar" runat="server" CssClass="btn btn-primary">Aceptar</asp:LinkButton>
+            <asp:LinkButton ID="lbAceptar" runat="server" CssClass="btn btn-primary" OnClick="lbAceptar_Click1">Aceptar</asp:LinkButton>
             <asp:LinkButton ID="lbCancelar" runat="server" OnClick="lbCancelar_Click" CssClass="btn btn-secondary">Cancelar</asp:LinkButton>
         </asp:Panel>
         </div>
@@ -38,7 +38,7 @@
     <asp:Panel ID="ErrorPanelEspecialidad" runat="server" Visible="False">
         <div id="errores" class="container">
             <div class="alert alert-danger" role="alert">
-                <asp:Label ID="Label1" runat="server" Text="Mensaje de error"></asp:Label>
+                <asp:Label ID="labelErrorEspecialidad" runat="server" Text="Mensaje de error"></asp:Label>
             </div>
         </div>
     </asp:Panel>
