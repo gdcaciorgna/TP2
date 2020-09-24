@@ -52,6 +52,12 @@
         
         <asp:LinkButton ID="lnkRecordarClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
         
+        <br />
+        
+        <asp:Panel ID="PanelError" runat="server" CssClass="alert alert-danger" Visible="False">
+            <asp:Label ID="lbTextoError" runat="server" Text="Texto error"></asp:Label>
+            
+        </asp:Panel>
     </form>
     </div>
 </body>

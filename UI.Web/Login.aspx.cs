@@ -43,10 +43,18 @@ namespace UI.Web
 
                     Response.Redirect("~/Home.aspx");
                 }
-                else Page.Response.Write("Usuario y/o Contraseña incorrectos");
+                else 
+                {
+                    lbTextoError.Text = "Usuario y/o contraseña incorrecto";
+                    PanelError.Visible = true;
+                }
             }
-            else Page.Response.Write("Campos vacíos");
-          }
+            else
+            { 
+                lbTextoError.Text = "No puede haber campos vacíos";
+                PanelError.Visible = true;
+            }
+        }
 
         protected void lnkRecordarClave_Click(object sender, EventArgs e)
         {
