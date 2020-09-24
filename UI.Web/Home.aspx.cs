@@ -13,15 +13,24 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            UsuarioLogic usuLog = new UsuarioLogic();
-            int tipo_per = usuLog.GetTipoPersona(Usuario.UsuarioActual);
+          
+            UsuarioActual = (Usuario) (Session["UsuarioActual"]);
 
-            Usuario usuario = (Usuario) (Session["UsuarioActual"]);
 
-            Persona.TiposPersona tipoUsuario = (Persona.TiposPersona)tipo_per;
-            TextoRol.Text = "Rol: " + tipoUsuario.ToString();
-            this.TextoBienvenida.Text = "Bienvenido: " + usuario.Nombre + " " + usuario.Apellido ;
+
+            if(UsuarioActual != null) 
+            {
+
+                TipoPersonaActual = (Persona.TiposPersona)Session["TipoPersonaUsuarioActual"];
+                this.TextoBienvenida.Text = "Bienvenido: " + UsuarioActual.Nombre + " " + UsuarioActual.Apellido;
+                TextoRol.Text = "Rol: " + TipoPersonaActual.ToString();
+
+            }
+
 
         }
+
+        public Usuario UsuarioActual { get; set; }
+        public Persona.TiposPersona TipoPersonaActual { get; set; }
     }
 }

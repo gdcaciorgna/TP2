@@ -14,11 +14,36 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
+            UsuarioActual = (Usuario)Session["UsuarioActual"];
+
+            if (UsuarioActual != null)
             {
-                LoadGrid();
+                TipoPersonaActual = (Persona.TiposPersona)Session["TipoPersonaUsuarioActual"];
+
+
+                if (TipoPersonaActual.ToString().Equals("Administrador")) //verifico que sea administrador
+                {
+                    if (IsPostBack == false)
+                    {
+                        LoadGrid();
+                    }
+
+                }
+
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
+
+            else
+            {
+                Response.Redirect("~/Login.aspx");
             }
         }
+
+        public Usuario UsuarioActual { get; set; }
+        public Persona.TiposPersona TipoPersonaActual { get; set; }
 
         public enum FormModes
         {

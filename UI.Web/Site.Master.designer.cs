@@ -24,13 +24,31 @@ namespace UI.Web
         protected global::System.Web.UI.HtmlControls.HtmlForm bodyForm;
 
         /// <summary>
-        /// Control Panel1.
+        /// Control Panel3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel Panel3;
+
+        /// <summary>
+        /// Control Menu1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Menu Menu1;
+
+        /// <summary>
+        /// Control lbLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLogin;
 
         /// <summary>
         /// Control SiteMapDataSource.

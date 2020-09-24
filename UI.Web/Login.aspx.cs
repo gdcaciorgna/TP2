@@ -25,11 +25,22 @@ namespace UI.Web
                 UsuarioLogic usLog = new UsuarioLogic();
                 usr = usLog.GetUsuarioxUsrNombre(txtUsuario.Text);
 
+
+
+
                 Usuario.UsuarioActual = usr;
 
                 if (Validaciones.ControlaClave(txtClave.Text, Usuario.UsuarioActual.Clave) == true)
                 {
                     Session["UsuarioActual"] = usr;
+
+                    int tipo_per = usLog.GetTipoPersona(Usuario.UsuarioActual);
+                    Persona.TiposPersona TipoPersonaActual = (Persona.TiposPersona)tipo_per;
+
+
+                    Session["TipoPersonaUsuarioActual"] = TipoPersonaActual;
+
+
                     Response.Redirect("~/Home.aspx");
                 }
                 else Page.Response.Write("Usuario y/o Contraseña incorrectos");
