@@ -33,13 +33,31 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Panel Panel3;
 
         /// <summary>
-        /// Control Menu1.
+        /// Control MenuAdministrador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.Menu MenuAdministrador;
+
+        /// <summary>
+        /// Control MenuDocente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Menu MenuDocente;
+
+        /// <summary>
+        /// Control MenuAlumno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Menu MenuAlumno;
 
         /// <summary>
         /// Control lbLogin.

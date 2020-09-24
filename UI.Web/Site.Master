@@ -24,7 +24,7 @@
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" StaticMenuStyle-CssClass="nav-item" StaticSelectedStyle-CssClass="nav-item"  CssClass="navbar-nav mr-auto" Orientation="Horizontal" DynamicMenuStyle-CssClass="nav-item dropdown-menu" RenderingMode="List" role="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+            <asp:Menu ID="MenuAdministrador" runat="server" StaticSubMenuIndent="16px" StaticMenuStyle-CssClass="nav-item" StaticSelectedStyle-CssClass="nav-item"  CssClass="navbar-nav mr-auto" Orientation="Horizontal" DynamicMenuStyle-CssClass="nav-item dropdown-menu" RenderingMode="List" role="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" Visible="False">
 
                  <LevelMenuItemStyles>
                     <asp:MenuItemStyle CssClass="dropdown-item" HorizontalPadding="15px" Height="50px" VerticalPadding="15px" />
@@ -60,6 +60,46 @@
                     </asp:MenuItem>
                 </Items>
             </asp:Menu>
+                <asp:Menu ID="MenuDocente" runat="server" CssClass="navbar-nav mr-auto" DynamicMenuStyle-CssClass="nav-item dropdown-menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" Orientation="Horizontal" RenderingMode="List" role="menu" StaticMenuStyle-CssClass="nav-item" StaticSelectedStyle-CssClass="nav-item" StaticSubMenuIndent="16px" Visible="False">
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="dropdown-item" Height="50px" HorizontalPadding="15px" VerticalPadding="15px" />
+                    </LevelMenuItemStyles>
+                    <LevelSelectedStyles>
+                        <asp:MenuItemStyle CssClass="nav-item active" Font-Underline="False" />
+                    </LevelSelectedStyles>
+                    <StaticHoverStyle Font-Underline="true" />
+                    <StaticMenuStyle CssClass="nav-item" />
+                    <StaticSelectedStyle Font-Bold="true" />
+                    <DynamicMenuItemStyle CssClass="dropdown-item" />
+                    <DynamicMenuStyle CssClass="nav-item dropdown-menu" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Inicio" Value="Inicio"></asp:MenuItem>
+                        <asp:MenuItem Text="Informes" Value="Informes">
+                            <asp:MenuItem Text="Registro de notas" Value="Registro de notas"></asp:MenuItem>
+                            <asp:MenuItem Text="Registro de materias" Value="Registro de materias"></asp:MenuItem>
+                            <asp:MenuItem Text="Registro de cursos" Value="Registro de cursos"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                <asp:Menu ID="MenuAlumno" runat="server" CssClass="navbar-nav mr-auto" DynamicMenuStyle-CssClass="nav-item dropdown-menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" Orientation="Horizontal" RenderingMode="List" role="menu" StaticMenuStyle-CssClass="nav-item" StaticSelectedStyle-CssClass="nav-item" StaticSubMenuIndent="16px" Visible="False">
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="dropdown-item" Height="50px" HorizontalPadding="15px" VerticalPadding="15px" />
+                    </LevelMenuItemStyles>
+                    <LevelSelectedStyles>
+                        <asp:MenuItemStyle CssClass="nav-item active" Font-Underline="False" />
+                    </LevelSelectedStyles>
+                    <StaticHoverStyle Font-Underline="true" />
+                    <StaticMenuStyle CssClass="nav-item" />
+                    <StaticSelectedStyle Font-Bold="true" />
+                    <DynamicMenuItemStyle CssClass="dropdown-item" />
+                    <DynamicMenuStyle CssClass="nav-item dropdown-menu" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Inicio" Value="Inicio"></asp:MenuItem>
+                        <asp:MenuItem Text="Inscripciones" Value="Inscripciones">
+                            <asp:MenuItem Text="Inscribir alumno a materia" Value="Inscribir alumno a materia"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
                 <div class="nav-item">
                 <asp:LinkButton ID="lbLogin" runat="server" CssClass="nav-link" OnClick="lbLogin_Click" >TextoLogin</asp:LinkButton>
                 </div>

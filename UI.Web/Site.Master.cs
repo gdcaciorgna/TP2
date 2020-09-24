@@ -21,15 +21,34 @@ namespace UI.Web
 
             UsuarioActual = (Usuario)(Session["UsuarioActual"]);
 
-
             if (UsuarioActual != null)  //usuario logueado
             {
                 lbLogin.Text = "Cerrar sesión";
                 TipoPersonaActual = (Persona.TiposPersona)(Session["TipoPersonaUsuarioActual"]);
+                
+                switch (TipoPersonaActual)
+                {
+                    case Persona.TiposPersona.Administrador:
+                        MenuAdministrador.Visible = true;
+                        break;
+
+                    case Persona.TiposPersona.Alumno:
+                        MenuAlumno.Visible = true;
+                        break;
+
+                    case Persona.TiposPersona.Docente:
+                        MenuDocente.Visible = true;
+                        break;
+                    default:
+                        break;
+
+                 
+
+                }
             }
             else 
             {
-                lbLogin.Text = "Iniciar sesión";
+                Response.Redirect("~/Login.aspx");
             }
 
 
@@ -42,13 +61,9 @@ namespace UI.Web
 
         protected void lbLogin_Click(object sender, EventArgs e)
         {
-            if (UsuarioActual != null)
-            {
-                Session["UsuarioActual"] = null;  // limpiamos la sesión
-                Session["TipoPersonaUsuarioActual"] = null;
-            }
-
-            Response.Redirect("~/Login.aspx");
+          Session["UsuarioActual"] = null;  // limpiamos la sesión
+          Session["TipoPersonaUsuarioActual"] = null;
+          Response.Redirect("~/Login.aspx");
         }
     }
 }

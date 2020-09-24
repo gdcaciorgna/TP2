@@ -21,7 +21,7 @@ namespace UI.Web
                 TipoPersonaActual = (Persona.TiposPersona)Session["TipoPersonaUsuarioActual"];
 
 
-                if (TipoPersonaActual.ToString().Equals("Administrador")) //verifico que sea administrador
+                if (TipoPersonaActual.Equals(Persona.TiposPersona.Administrador)) //verifico que sea administrador
                 {
                     if (IsPostBack == false)
                     {
