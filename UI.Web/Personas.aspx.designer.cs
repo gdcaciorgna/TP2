@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class Usuarios
+    public partial class Personas
     {
 
         /// <summary>
@@ -87,15 +87,6 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label lbNombre;
 
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// Control tbNombre.
         /// </summary>
         /// <remarks>
@@ -123,6 +114,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox tbApellido;
 
         /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Control tbDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbDireccion;
+
+        /// <summary>
         /// Control lbEmail.
         /// </summary>
         /// <remarks>
@@ -141,76 +150,94 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox tbEmail;
 
         /// <summary>
-        /// Control cbHabilitado.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbHabilitado;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control lbHabilitado.
+        /// Control tbTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbHabilitado;
+        protected global::System.Web.UI.WebControls.TextBox tbTelefono;
 
         /// <summary>
-        /// Control lbUsuario.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUsuario;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control tbUsuario.
+        /// Control tbLegajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbUsuario;
+        protected global::System.Web.UI.WebControls.TextBox tbLegajo;
 
         /// <summary>
-        /// Control lbClave.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbClave;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control tbClave.
+        /// Control tbFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbClave;
+        protected global::System.Web.UI.WebControls.TextBox tbFechaNacimiento;
 
         /// <summary>
-        /// Control lbRepetirClave.
+        /// Control idplanLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbRepetirClave;
+        protected global::System.Web.UI.WebControls.Label idplanLabel;
 
         /// <summary>
-        /// Control tbRepetirClave.
+        /// Control ddl_tipo_persona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbRepetirClave;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_tipo_persona;
+
+        /// <summary>
+        /// Control Label4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// Control ddl_id_plan.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_id_plan;
 
         /// <summary>
         /// Control lbAceptar.
