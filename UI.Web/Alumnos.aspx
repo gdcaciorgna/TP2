@@ -1,20 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Personas.aspx.cs" Inherits="UI.Web.Personas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alumnos.aspx.cs" Inherits="UI.Web.Alumnos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
      <asp:Panel ID="gridPanel" runat="server">
         
         <br />
 
-        <h1>Personas</h1>
-        
-         
-         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            
-                     <asp:LinkButton ID="lbVerTodo" runat="server" OnClick="lbVerTodo_Click" CssClass="btn btn-secondary active">Ver todo</asp:LinkButton>
-                     <asp:LinkButton ID="lbVerDocentes" runat="server" OnClick="lbVerDocentes_Click" CssClass="btn btn-secondary align-content-center">Ver docentes</asp:LinkButton>
-                     <asp:LinkButton ID="lbVerAlumnos" runat="server" OnClick="lbVerAlumnos_Click" CssClass="btn btn-secondary align-content-center">Ver alumnos</asp:LinkButton>
-         </div>
+        <h1>Alumnos</h1>
 
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <asp:LinkButton ID="lbVerTodo" runat="server" OnClick="lbVerTodo_Click" CssClass="btn btn-secondary">Ver todo</asp:LinkButton>
+            <asp:LinkButton ID="lbVerDocentes" runat="server" OnClick="lbVerDocentes_Click" CssClass="btn btn-secondary align-content-center">Ver docentes</asp:LinkButton>
+            <asp:LinkButton ID="lbVerAlumnos" runat="server" OnClick="lbVerAlumnos_Click" CssClass="btn btn-secondary active align-content-center">Ver alumnos</asp:LinkButton>
+        </div>
+
+         <br />
 
         <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" PageSize="6">
             <Columns>
@@ -25,7 +24,6 @@
                 <asp:BoundField DataField="Telefono" HeaderText="Teléfono" />
                 <asp:BoundField DataField="Legajo" HeaderText="Legajo" />
                 <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha Nacimiento" />
-                <asp:BoundField DataField="TipoP" HeaderText="Tipo de Persona" />
                 <asp:BoundField DataField="IDPlan" HeaderText="ID Plan" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>

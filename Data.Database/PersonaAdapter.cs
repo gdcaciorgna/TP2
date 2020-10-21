@@ -228,14 +228,16 @@ namespace Data.Database
             }
         }
 
-        public List<Persona> GetAllTipo(int tipo_persona)
+        public List<Persona> GetAllTipo(Persona.TiposPersona tipo_persona)
         {
             List<Persona> personas = new List<Persona>();
             try
             {
+                int tipo_persona_int = (int)tipo_persona;
+
                 this.OpenConnection();
                 SqlCommand cmdPersona = new SqlCommand("select * from personas where tipo_persona = @tip", sqlConn);
-                cmdPersona.Parameters.Add("@tip", SqlDbType.Int).Value = tipo_persona;
+                cmdPersona.Parameters.Add("@tip", SqlDbType.Int).Value = tipo_persona_int;
                 SqlDataReader drPersonas = cmdPersona.ExecuteReader();
                 while (drPersonas.Read())
                 {

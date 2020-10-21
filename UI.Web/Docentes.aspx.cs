@@ -9,7 +9,7 @@ using Business.Entities;
 
 namespace UI.Web
 {
-    public partial class Personas : System.Web.UI.Page
+    public partial class Docentes : System.Web.UI.Page
     {
 
         public enum FormModes
@@ -151,7 +151,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.GridView.DataSource = this.Logic.GetAll();
+            this.GridView.DataSource = this.Logic.GetAllTipo(Persona.TiposPersona.Docente);
             this.GridView.DataBind();
         }
 
@@ -331,6 +331,7 @@ namespace UI.Web
             this.tbEmail.Text = string.Empty;
             this.tbTelefono.Text = string.Empty;
             this.tbDireccion.Text = string.Empty;
+            //this.tbFechaNacimiento.Text = 
             //this.calFechaNacimiento.SelectedDate = DateTime.Now.Date;
             this.tbLegajo.Text = string.Empty;
             
@@ -345,11 +346,6 @@ namespace UI.Web
 
         }
 
-        protected void lbVerTodo_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Personas.aspx");
-        }
-
         protected void lbVerDocentes_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Docentes.aspx");
@@ -358,6 +354,11 @@ namespace UI.Web
         protected void lbVerAlumnos_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Alumnos.aspx");
+        }
+
+        protected void lbVerTodo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Personas.aspx");
         }
     }
 }

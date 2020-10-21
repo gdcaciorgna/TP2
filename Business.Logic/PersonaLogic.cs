@@ -77,7 +77,7 @@ namespace Business.Logic
         }
 
 
-        public List<Persona> GetAllTipo(int tipo_per) 
+        public List<Persona> GetAllTipo(Persona.TiposPersona tipo_per) 
         {
             return PersonaData.GetAllTipo(tipo_per);
         }

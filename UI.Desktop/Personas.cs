@@ -15,7 +15,7 @@ namespace UI.Desktop
 {
     public partial class Personas : Form
     {
-        public int Modo { get; set; } // 1-Vista Personas, 2-Vista / Modo Docente, 3 - Vista / Modo alumno
+        public int Modo { get; set; } // 0-Vista Personas, 1-Vista / Modo Docente, 2 - Vista / Modo alumno
 
         public Personas()
         {
@@ -47,7 +47,16 @@ namespace UI.Desktop
 
                 else
                 {
-                    this.dgvPersonas.DataSource = ul.GetAllTipo(Modo);
+                    if (Modo == 1)// es docente
+                    {
+                        this.dgvPersonas.DataSource = ul.GetAllTipo(Persona.TiposPersona.Docente);
+                    }
+
+                    else if (Modo== 2) // es alumno
+                    {
+                        this.dgvPersonas.DataSource = ul.GetAllTipo(Persona.TiposPersona.Alumno);
+                    }
+                    
                 }
 
             }
