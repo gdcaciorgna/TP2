@@ -124,14 +124,14 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE personas set nombre = @nombre, apellido = @apellido, direccion = @direccion, email = @email, telefono = @telefono, fecha_nac = @fecha_nac, legajo = @legajo, tipo_persona = @tipo_persona, id_plan = @id_plan", sqlConn);
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
+                SqlCommand cmdSave = new SqlCommand("UPDATE personas set nombre = @nombre, apellido = @apellido, direccion = @direccion, email = @email, telefono = @telefono, fecha_nac = @fecha_nac, legajo = @legajo, tipo_persona = @tipo_persona, id_plan = @id_plan where id_persona = @id_persona", sqlConn);
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = persona.ID;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
-                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNacimiento; //VER ESTO
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.DateTime).Value = persona.FechaNacimiento; //VER ESTO
                 cmdSave.Parameters.Add("@legajo", SqlDbType.Int).Value = persona.Legajo;
                 cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)persona.TipoP;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IDPlan;
@@ -210,7 +210,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdUsuario = new SqlCommand("select distinct id_persona from personas where id_persona = @id_persona", sqlConn);
+                SqlCommand cmdUsuario = new SqlCommand("select distinct tipo_persona from personas where id_persona = @id_persona", sqlConn);
                 cmdUsuario.Parameters.Add("@id_persona", SqlDbType.Int).Value = per.ID;
                 SqlDataReader drPersona = cmdUsuario.ExecuteReader();
                 drPersona.Read();
