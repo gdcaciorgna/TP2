@@ -86,6 +86,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="Materias.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="resources\css\estilos.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Materias.aspx.cs">
+      <DependentUpon>Materias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Materias.aspx.designer.cs">
+      <DependentUpon>Materias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>
