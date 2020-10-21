@@ -41,6 +41,19 @@ namespace Business.Logic
             this.MateriaData.Save(mat);
         }
 
+
+        public void Delete(int mID)      // punto 9
+        {
+            try
+            {
+                this.MateriaData.Delete(mID);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+
         public MateriaLogic()       // constructor
         {
             MateriaData = new MateriaAdapter();

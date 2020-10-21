@@ -42,14 +42,14 @@
                  <Items>
                      <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Inicio" Value="Inicio"></asp:MenuItem>
                      <asp:MenuItem Text="Archivo" Value="Archivo">
-                         <asp:MenuItem NavigateUrl="~/Personas.aspx" Text="Personas" Value="Personas"></asp:MenuItem>
+                         <asp:MenuItem Text="Personas" Value="Personas" NavigateUrl="~/Personas.aspx"></asp:MenuItem>
                          <asp:MenuItem Text="Alumnos" Value="Alumnos"></asp:MenuItem>
                          <asp:MenuItem Text="Docentes" Value="Docentes"></asp:MenuItem>
                          <asp:MenuItem NavigateUrl="~/Usuarios.aspx" Text="Usuarios" Value="Usuarios"></asp:MenuItem>
                          <asp:MenuItem NavigateUrl="~/Especialidades.aspx" Text="Especialidades" Value="Especialidades"></asp:MenuItem>
                          <asp:MenuItem NavigateUrl="~/Planes.aspx" Text="Planes" Value="Planes"></asp:MenuItem>
-                         <asp:MenuItem Text="Materias" Value="Materias"></asp:MenuItem>
-                         <asp:MenuItem Text="Comisiones" Value="Comisiones"></asp:MenuItem>
+                         <asp:MenuItem NavigateUrl="~/Materias.aspx" Text="Materias" Value="Materias"></asp:MenuItem>
+                         <asp:MenuItem Text="Comisiones" Value="Comisiones" NavigateUrl="~/Comisiones.aspx"></asp:MenuItem>
                          <asp:MenuItem Text="Cursos" Value="Cursos"></asp:MenuItem>
                      </asp:MenuItem>
                      <asp:MenuItem Text="Inscripciones" Value="Inscripciones">
