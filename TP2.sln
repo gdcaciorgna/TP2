@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Consola", "UI.Consola\UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Web", "UI.Web\UI.Web.csproj", "{B3E2D857-6596-4B77-A990-D624395BEB6A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "base de datos", "base de datos", "{195B7FD7-AC1C-49B2-A383-D1E37056A8B0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Desktop\tp2_net.sql = ..\..\..\..\..\..\Desktop\tp2_net.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
