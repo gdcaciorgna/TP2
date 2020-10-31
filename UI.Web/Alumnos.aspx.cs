@@ -93,11 +93,7 @@ namespace UI.Web
 
 
         private void LoadForm(int id)
-        {
-
-
-            this.inicializarForm();
-            
+        {            
             this.Entity = this.Logic.GetOne(id);
             this.tbNombre.Text = this.Entity.Nombre;
             this.tbApellido.Text = this.Entity.Apellido;
@@ -153,11 +149,26 @@ namespace UI.Web
         {
             this.GridView.DataSource = this.Logic.GetAllTipo(Persona.TiposPersona.Alumno);
             this.GridView.DataBind();
+
+
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            ddl_id_plan.DataSource = planes;
+            ddl_id_plan.DataValueField = "ID";
+            ddl_id_plan.DataTextField = "Descripcion";
+            ddl_id_plan.DataBind();
+
+
+            ddl_tipo_persona.DataSource = Enum.GetNames(typeof(Persona.TiposPersona));
+            ddl_tipo_persona.DataBind();
+
+
         }
 
         protected void lbNuevo_Click(object sender, EventArgs e)
         {
-            this.inicializarForm();
             this.formPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();
@@ -177,23 +188,7 @@ namespace UI.Web
 
         }
 
-        private void inicializarForm() 
-        {
-            PlanesLogic planLog = new PlanesLogic();
-            List<Plan> planes = new List<Plan>();
 
-            planes = planLog.GetAll();
-            ddl_id_plan.DataSource = planes;
-            ddl_id_plan.DataValueField = "ID";
-            ddl_id_plan.DataTextField = "Descripcion";
-            ddl_id_plan.DataBind();
-
-
-            ddl_tipo_persona.DataSource = Enum.GetNames(typeof(Persona.TiposPersona));
-            ddl_tipo_persona.DataBind();
-
-
-        }
 
         private void EnableForm(bool enable)
         {
@@ -226,6 +221,8 @@ namespace UI.Web
 
         private void LoadEntity(Persona per)
         {
+
+            if (Validar()) { 
             
             per.Nombre = this.tbNombre.Text;
             per.Apellido = this.tbApellido.Text;
@@ -238,8 +235,9 @@ namespace UI.Web
 
 
             TipoPersonaLogic tPerLogic = new TipoPersonaLogic();
-            per.TipoP = tPerLogic.getTipoPersonaString(ddl_tipo_persona.SelectedValue.ToString()); 
-           
+            per.TipoP = tPerLogic.getTipoPersonaString(ddl_tipo_persona.SelectedValue.ToString());
+            }
+
 
         }
 
@@ -293,9 +291,46 @@ namespace UI.Web
             String error = "Se han encontrado los siguientes errores: <br /><br />";
             bool vof = true;
 
-            if (lblError.Text == "")
+            if (tbNombre.Text == "")
             {
                 error = error + "El campo nombre no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (tbApellido.Text == "")
+            {
+                error = error + "El campo apellido no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (tbDireccion.Text == "")
+            {
+                error = error + "El campo dirección no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (tbEmail.Text == "")
+            {
+                error = error + "El campo email no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (tbFechaNacimiento.Text == "")
+            {
+                error = error + "El campo fecha nacimiento no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (tbLegajo.Text == "")
+            {
+                error = error + "El campo legajo no puede estar vacío. <br />";
+                vof = false;
+            }
+
+
+            if (tbTelefono.Text == "")
+            {
+                error = error + "El campo telefono no puede estar vacío. <br />";
                 vof = false;
             }
 

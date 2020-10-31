@@ -3,7 +3,7 @@
 
     <br />
 
-    <h1>Usuarios</h1>
+    <h1>Especialidades</h1>
 
     <asp:Panel ID="Panel1" runat="server">
         <asp:GridView ID="GridViewEspecialidades" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridViewEspecialidades_SelectedIndexChanged" CssClass="table table-striped table-bordered table-hover">

@@ -115,6 +115,16 @@ namespace UI.Web
         {
             this.gridView.DataSource = this.Logic.GetAll();
             this.gridView.DataBind();
+
+            EspecialidadesLogic espLog = new EspecialidadesLogic();
+            List<Especialidad> especialidades = new List<Especialidad>();
+
+            especialidades = espLog.GetAll();
+            Id_Especialidaddrownlist.DataSource = especialidades;
+            Id_Especialidaddrownlist.DataValueField = "ID";
+            Id_Especialidaddrownlist.DataTextField = "Descripcion";
+            Id_Especialidaddrownlist.DataBind();
+
         }
 
         protected void EditarPlanLink_Click(object sender, EventArgs e)
@@ -140,12 +150,14 @@ namespace UI.Web
         }
         private void LoadEntity(Plan plan)
         {
+            if (Validar()) { 
+
             int a = Int32.Parse(Id_Especialidaddrownlist.SelectedValue);
             plan.IDEspecialidad = a;
 
             plan.Descripcion = this.Desc_PlanTextBox.Text;
-           
-       }
+            }
+        }
 
         private void SaveEntity(Plan plan)
         {
@@ -217,15 +229,6 @@ namespace UI.Web
         protected void AgregarPlanLink_Click(object sender, EventArgs e)
         {
           
-            EspecialidadesLogic espLog = new EspecialidadesLogic();
-            List<Especialidad> especialidades = new List<Especialidad>();
-
-            especialidades = espLog.GetAll();
-            Id_Especialidaddrownlist.DataSource = especialidades;
-            Id_Especialidaddrownlist.DataValueField = "ID";
-            Id_Especialidaddrownlist.DataTextField = "Descripcion";
-            Id_Especialidaddrownlist.DataBind();
-
             this.fomrPanel.Visible = true;
             this.FormMode = FormModes.Alta;
             this.ClearForm();

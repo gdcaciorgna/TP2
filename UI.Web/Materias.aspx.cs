@@ -120,6 +120,17 @@ namespace UI.Web
         {
             this.GridMaterias.DataSource = this.Logic.GetAll();
             this.GridMaterias.DataBind();
+
+
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            DplIDPlan.DataSource = planes;
+            DplIDPlan.DataValueField = "ID";
+            DplIDPlan.DataTextField = "Descripcion";
+            DplIDPlan.DataBind();
+
         }
         protected void GridMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -142,6 +153,7 @@ namespace UI.Web
 
         private void LoadEntity(Materia mat)
         {
+            if (Validar()) { 
             int a = Int32.Parse(DplIDPlan.SelectedValue);
             mat.IDPlan = a;
 
@@ -152,7 +164,7 @@ namespace UI.Web
             mat.HSTotales = c;
 
             mat.Descripcion = txbDescripcionmaterias.Text;
-
+            }
         }
 
         private void SaveEntity(Materia mat)
@@ -227,14 +239,6 @@ namespace UI.Web
         protected void BtnNuevo_Click(object sender, EventArgs e)
          {
 
-        PlanesLogic planLog = new PlanesLogic();
-        List<Planes> planes = new List<Planes>();
-
-       // planes = planLog.GetAll();
-        DplIDPlan.DataSource = planes;
-        DplIDPlan.DataValueField = "ID";
-        DplIDPlan.DataTextField = "Descripcion";
-        DplIDPlan.DataBind();
 
         this.PanelCampos.Visible = true;
         this.FormMode = FormModes.Alta;
@@ -247,7 +251,6 @@ namespace UI.Web
             this.txbDescripcionmaterias.Text = string.Empty;
             this.txbHorasTotales.Text = string.Empty;
             this.txbHsSemanales.Text = string.Empty;
-           // this.Id_Especialidaddrownlist.Text = string.Empty;
 
         }
         public bool Validar()
@@ -257,7 +260,19 @@ namespace UI.Web
 
             if (txbDescripcionmaterias.Text == "")
             {
-                error = error + "El campo nombre no puede estar vacío. <br />";
+                error = error + "El campo descripcion de materias no puede estar vacío. <br />";
+                vof = false;
+            }
+            
+            if (txbHorasTotales.Text == "")
+            {
+                error = error + "El campo horas totales no puede estar vacío. <br />";
+                vof = false;
+            }
+
+            if (txbHsSemanales.Text == "")
+            {
+                error = error + "El campo horas semanales no puede estar vacío. <br />";
                 vof = false;
             }
 
@@ -268,8 +283,8 @@ namespace UI.Web
 
             else
             {
-                //this.panelerror.Visible = true;
-                //this.lblerror.Text = error;
+                this.PanelError.Visible = true;
+                this.lblError.Text = error;
                 return false;
             }
 

@@ -2,14 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridpanel" runat="server">
         <asp:Label ID="Label1" runat="server" Text="Cursos"></asp:Label>
-        <asp:GridView ID="gridview" runat="server"  AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-         <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" />
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
-                <asp:BoundField DataField="IDMateria" HeaderText="ID Materia" />
-                <asp:BoundField DataField="IDComision" HeaderText="ID Comision" />
+        <br />
+        <asp:GridView ID="dgv_Cursos" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="dgv_Cursos_SelectedIndexChanged" DataKeyNames="ID">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="ID" />
+                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
+                <asp:BoundField DataField="IDMateria" HeaderText="Materia" />
+                <asp:BoundField DataField="IDComision" HeaderText="Comision" />
                 <asp:BoundField DataField="Cupo" HeaderText="Cupo" />
-                <asp:BoundField DataField="AnioCalendario" HeaderText="Anio Calendario" />
+                <asp:BoundField DataField="AnioCalendario" HeaderText="Año calendario" />
+                <asp:CommandField HeaderText="Seleccionar" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
     </asp:Panel>
@@ -24,11 +26,11 @@
         <asp:TextBox ID="tbDescripcion" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="lblIDMateria" runat="server" Text="Materia"></asp:Label>
-        <asp:DropDownList ID="id_Materia" runat="server">
+        <asp:DropDownList ID="ddl_Materia" runat="server">
         </asp:DropDownList>
         <br />
         <asp:Label ID="lblIDComision" runat="server" Text="Comision"></asp:Label>
-        <asp:DropDownList ID="id_Comision" runat="server">
+        <asp:DropDownList ID="ddl_Comision" runat="server">
         </asp:DropDownList>
         <br />
         <asp:Label ID="lblCupo" runat="server" Text="Cupo"></asp:Label>
@@ -37,7 +39,7 @@
         <br />
         <asp:Label ID="lblanio_calendario" runat="server" Text="anio_calendario"></asp:Label>
         <br />
-        <asp:TextBox ID="tbanio" runat="server" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="tbanio" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:LinkButton ID="lbAceptar" runat="server" OnClick="lbAceptar_Click1">Aceptar</asp:LinkButton>

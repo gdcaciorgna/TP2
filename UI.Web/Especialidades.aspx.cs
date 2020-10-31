@@ -155,7 +155,9 @@ namespace UI.Web
 
         private void LoadEntity(Especialidad especialidad)
         {
+            if (Validar()) { 
             especialidad.Descripcion = this.txtDescripcionEsp.Text;
+            }
         }
 
         private void SaveEntity(Especialidad especialidad)

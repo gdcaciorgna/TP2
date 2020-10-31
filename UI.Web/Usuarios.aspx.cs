@@ -140,12 +140,15 @@ namespace UI.Web
 
         private void LoadEntity (Usuario usuario)
         {
+
+            if (Validar()) { 
             usuario.Nombre = this.tbNombre.Text;
             usuario.Apellido = this.tbApellido.Text;
             usuario.Email = this.tbEmail.Text;
             usuario.NombreUsuario = this.tbUsuario.Text;
             usuario.Clave = this.tbClave.Text;
             usuario.Habilitado = this.cbHabilitado.Checked;
+            }
         }
 
         private void SaveEntity(Usuario usuario)

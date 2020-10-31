@@ -87,6 +87,8 @@ namespace UI.Web
             }
         }
 
+
+
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
@@ -126,6 +128,17 @@ namespace UI.Web
         {
             this.GridViewComisiones.DataSource = this.Logic.GetAll();
             this.GridViewComisiones.DataBind();
+
+
+
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            ddlIDPlan.DataSource = planes;
+            ddlIDPlan.DataValueField = "ID";
+            ddlIDPlan.DataTextField = "Descripcion";
+            ddlIDPlan.DataBind();
         }
 
         ComisionLogic _logic;
@@ -144,6 +157,9 @@ namespace UI.Web
 
         private void LoadEntity(Comision com)
         {
+            if (Validar()) 
+            { 
+
             int a = Int32.Parse(ddlIDPlan.SelectedValue);
             com.IDPlan = a;
 
@@ -151,7 +167,7 @@ namespace UI.Web
             com.AnioEspecialidad = b;
 
             com.Descripcion = txtDescripcion.Text;
-
+            }
         }
 
         private void SaveEntity(Comision com)
@@ -245,7 +261,14 @@ namespace UI.Web
 
             if (txtDescripcion.Text == "")
             {
-                error = error + "El campo nombre no puede estar vacío. <br />";
+                error = error + "El campo descripcion no puede estar vacío. <br />";
+                vof = false;
+            }
+
+
+            if (txtAnioEspecialidad.Text == "")
+            {
+                error = error + "El campo Año de especialidad no puede estar vacío. <br />";
                 vof = false;
             }
 
@@ -256,7 +279,8 @@ namespace UI.Web
 
             else
             {
-                
+                this.PanelError.Visible = true;
+                this.lblError.Text = error;
                 return false;
             }
 

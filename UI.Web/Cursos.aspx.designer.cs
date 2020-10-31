@@ -33,13 +33,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control gridview.
+        /// Control dgv_Cursos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridview;
+        protected global::System.Web.UI.WebControls.GridView dgv_Cursos;
 
         /// <summary>
         /// Control Panel4.
@@ -114,13 +114,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label lblIDMateria;
 
         /// <summary>
-        /// Control id_Materia.
+        /// Control ddl_Materia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList id_Materia;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Materia;
 
         /// <summary>
         /// Control lblIDComision.
@@ -132,13 +132,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label lblIDComision;
 
         /// <summary>
-        /// Control id_Comision.
+        /// Control ddl_Comision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList id_Comision;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Comision;
 
         /// <summary>
         /// Control lblCupo.

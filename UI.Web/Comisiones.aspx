@@ -33,4 +33,13 @@
         &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" />
     </asp:Panel>
+
+<br />
+<asp:Panel ID="PanelError" runat="server" Visible="False">
+    <div id="errores" class="container">
+        <div class="alert alert-danger" role="alert">
+            <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+        </div>
+    </div>
+</asp:Panel>
 </asp:Content>

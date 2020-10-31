@@ -51,16 +51,46 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-
+            CursosDesktop cursosDesk = new CursosDesktop();
+            cursosDesk.ShowDialog();
+            this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+                int ID = ((Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+
+                CursosDesktop espDesk = new CursosDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+
+                espDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+                int ID = ((Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+
+                CursosDesktop espDesk = new CursosDesktop(ID, ApplicationForm.ModoForm.Baja);
+
+                espDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

@@ -62,8 +62,8 @@ namespace UI.Web
             this.tbDescripcion.Text = this.Entity.Descripcion;
             this.tbCupo.Text = this.Entity.Cupo.ToString();
             this.tbanio.Text = this.Entity.AnioCalendario.ToString();
-            this.id_Comision.SelectedValue = this.Entity.IDComision.ToString();
-            this.id_Materia.SelectedValue = this.Entity.IDMateria.ToString();
+            this.ddl_Comision.SelectedValue = this.Entity.IDComision.ToString();
+            this.ddl_Materia.SelectedValue = this.Entity.IDMateria.ToString();
         }
         CursoLogic _logic;
         private CursoLogic Logic
@@ -79,19 +79,49 @@ namespace UI.Web
         }
         private void LoadGrid()
         {
-            this.gridview.DataSource = this.Logic.GetAll();
-            this.gridview.DataBind();
+            this.dgv_Cursos.DataSource = this.Logic.GetAll();
+            this.dgv_Cursos.DataBind();
+
+
+            List<Comision> comisiones = new List<Comision>();
+            ComisionLogic comLog = new ComisionLogic();
+            comisiones = comLog.GetAll();
+
+
+            ddl_Comision.DataSource = comisiones;
+            ddl_Comision.DataValueField = "Id";
+            ddl_Comision.DataTextField = "Descripcion";
+            ddl_Comision.DataBind();
+
+
+            List<Materia> materias = new List<Materia>();
+            MateriaLogic matLog = new MateriaLogic();
+            materias = matLog.GetAll();
+
+            ddl_Materia.DataSource = materias;
+            ddl_Materia.DataValueField = "Id";
+            ddl_Materia.DataTextField = "Descripcion";
+            ddl_Materia.DataBind();
+
+
+
+
         }
 
         private void LoadEntity(Curso curso)
         {
-            curso.Descripcion = this.tbDescripcion.Text;
-            curso.Cupo = Int32.Parse(this.tbDescripcion.Text);
-            curso.AnioCalendario = Int32.Parse(this.tbDescripcion.Text);
-            int b = Int32.Parse(id_Comision.SelectedValue);
-            curso.IDComision = b;
-            int a = Int32.Parse(id_Materia.SelectedValue);
-            curso.IDMateria = a;
+            if (this.Validar()) 
+            {
+
+                curso.Descripcion = this.tbDescripcion.Text;
+                curso.Cupo = Int32.Parse(this.tbCupo.Text);
+                curso.AnioCalendario = Int32.Parse(this.tbanio.Text);
+                int b = Int32.Parse(ddl_Comision.SelectedValue);
+                curso.IDComision = b;
+                int a = Int32.Parse(ddl_Materia.SelectedValue);
+                curso.IDMateria = a;
+            }
+
           
         }
 
@@ -106,8 +136,8 @@ namespace UI.Web
             this.tbDescripcion.Enabled = enable;
             this.tbCupo.Enabled = enable;
             this.tbanio.Enabled = enable;
-            this.id_Comision.Enabled = enable;
-            this.id_Materia.Enabled = enable;
+            this.ddl_Comision.Enabled = enable;
+            this.ddl_Materia.Enabled = enable;
         }
 
         private void DeleteEntity(int id)
@@ -192,10 +222,7 @@ namespace UI.Web
 
         }
 
-        protected void gridview_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.SelectedID = (int)this.gridview.SelectedValue;
-        }
+
 
         protected void lbEditar_Click1(object sender, EventArgs e)
         {
@@ -269,6 +296,13 @@ namespace UI.Web
         {
             this.formPanel.Visible = false;
             this.LoadGrid();
+        }
+
+
+        protected void dgv_Cursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.SelectedID = (int)this.dgv_Cursos.SelectedValue;
+
         }
     }
 }
