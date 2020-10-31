@@ -194,5 +194,17 @@ namespace UI.Desktop
             ComisionesDesktop com = new ComisionesDesktop();
             com.ShowDialog();
         }
+
+        private void verCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cursos cur = new Cursos();
+            cur.ShowDialog();
+        }
+
+        private void nuevoCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CursosDesktop cur = new CursosDesktop();
+            cur.ShowDialog();
+        }
     }
 }

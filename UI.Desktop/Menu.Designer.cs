@@ -81,7 +81,8 @@
             this.tsmiInformes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(708, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(531, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,7 +99,7 @@
             this.tsmiComisiones,
             this.tsmiCursos});
             this.tsmiArchivo.Name = "tsmiArchivo";
-            this.tsmiArchivo.Size = new System.Drawing.Size(73, 24);
+            this.tsmiArchivo.Size = new System.Drawing.Size(60, 20);
             this.tsmiArchivo.Text = "Archivo";
             this.tsmiArchivo.Visible = false;
             // 
@@ -108,21 +109,21 @@
             this.nuevoAlumnoToolStripMenuItem,
             this.verAlumnosToolStripMenuItem});
             this.tsmiAlumnos.Name = "tsmiAlumnos";
-            this.tsmiAlumnos.Size = new System.Drawing.Size(224, 26);
+            this.tsmiAlumnos.Size = new System.Drawing.Size(180, 22);
             this.tsmiAlumnos.Text = "Alumnos";
             this.tsmiAlumnos.Visible = false;
             // 
             // nuevoAlumnoToolStripMenuItem
             // 
             this.nuevoAlumnoToolStripMenuItem.Name = "nuevoAlumnoToolStripMenuItem";
-            this.nuevoAlumnoToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.nuevoAlumnoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.nuevoAlumnoToolStripMenuItem.Text = "Nuevo alumno";
             this.nuevoAlumnoToolStripMenuItem.Click += new System.EventHandler(this.nuevoAlumnoToolStripMenuItem_Click);
             // 
             // verAlumnosToolStripMenuItem
             // 
             this.verAlumnosToolStripMenuItem.Name = "verAlumnosToolStripMenuItem";
-            this.verAlumnosToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.verAlumnosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.verAlumnosToolStripMenuItem.Text = "Ver alumnos";
             this.verAlumnosToolStripMenuItem.Click += new System.EventHandler(this.verAlumnosToolStripMenuItem_Click);
             // 
@@ -132,20 +133,20 @@
             this.nuevoDocenteToolStripMenuItem,
             this.verDocentesToolStripMenuItem});
             this.tsmiDocentes.Name = "tsmiDocentes";
-            this.tsmiDocentes.Size = new System.Drawing.Size(224, 26);
+            this.tsmiDocentes.Size = new System.Drawing.Size(180, 22);
             this.tsmiDocentes.Text = "Docentes";
             this.tsmiDocentes.Visible = false;
             // 
             // nuevoDocenteToolStripMenuItem
             // 
             this.nuevoDocenteToolStripMenuItem.Name = "nuevoDocenteToolStripMenuItem";
-            this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.nuevoDocenteToolStripMenuItem.Text = "Nuevo docente";
             // 
             // verDocentesToolStripMenuItem
             // 
             this.verDocentesToolStripMenuItem.Name = "verDocentesToolStripMenuItem";
-            this.verDocentesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+            this.verDocentesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.verDocentesToolStripMenuItem.Text = "Ver docentes";
             this.verDocentesToolStripMenuItem.Click += new System.EventHandler(this.verDocentesToolStripMenuItem_Click);
             // 
@@ -155,21 +156,21 @@
             this.nuevaPersonaToolStripMenuItem,
             this.verPersonasToolStripMenuItem});
             this.tsmiPersonas.Name = "tsmiPersonas";
-            this.tsmiPersonas.Size = new System.Drawing.Size(224, 26);
+            this.tsmiPersonas.Size = new System.Drawing.Size(180, 22);
             this.tsmiPersonas.Text = "Personas";
             this.tsmiPersonas.Visible = false;
             // 
             // nuevaPersonaToolStripMenuItem
             // 
             this.nuevaPersonaToolStripMenuItem.Name = "nuevaPersonaToolStripMenuItem";
-            this.nuevaPersonaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.nuevaPersonaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.nuevaPersonaToolStripMenuItem.Text = "Nueva persona";
             this.nuevaPersonaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPersonaToolStripMenuItem_Click);
             // 
             // verPersonasToolStripMenuItem
             // 
             this.verPersonasToolStripMenuItem.Name = "verPersonasToolStripMenuItem";
-            this.verPersonasToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.verPersonasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.verPersonasToolStripMenuItem.Text = "Ver personas";
             this.verPersonasToolStripMenuItem.Click += new System.EventHandler(this.verPersonasToolStripMenuItem_Click);
             // 
@@ -179,21 +180,21 @@
             this.crearUsuarioToolStripMenuItem,
             this.verUsuariosToolStripMenuItem});
             this.tsmiUsuarios.Name = "tsmiUsuarios";
-            this.tsmiUsuarios.Size = new System.Drawing.Size(224, 26);
+            this.tsmiUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsmiUsuarios.Text = "Usuarios";
             this.tsmiUsuarios.Visible = false;
             // 
             // crearUsuarioToolStripMenuItem
             // 
             this.crearUsuarioToolStripMenuItem.Name = "crearUsuarioToolStripMenuItem";
-            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.crearUsuarioToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.crearUsuarioToolStripMenuItem.Text = "Crear usuario";
             this.crearUsuarioToolStripMenuItem.Click += new System.EventHandler(this.crearUsuarioToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
@@ -203,21 +204,21 @@
             this.nuevaEspecialidadToolStripMenuItem,
             this.verEspecialidadesToolStripMenuItem});
             this.tsmiEspecialidades.Name = "tsmiEspecialidades";
-            this.tsmiEspecialidades.Size = new System.Drawing.Size(224, 26);
+            this.tsmiEspecialidades.Size = new System.Drawing.Size(180, 22);
             this.tsmiEspecialidades.Text = "Especialidades";
             this.tsmiEspecialidades.Visible = false;
             // 
             // nuevaEspecialidadToolStripMenuItem
             // 
             this.nuevaEspecialidadToolStripMenuItem.Name = "nuevaEspecialidadToolStripMenuItem";
-            this.nuevaEspecialidadToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.nuevaEspecialidadToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.nuevaEspecialidadToolStripMenuItem.Text = "Nueva especialidad";
             this.nuevaEspecialidadToolStripMenuItem.Click += new System.EventHandler(this.nuevaEspecialidadToolStripMenuItem_Click);
             // 
             // verEspecialidadesToolStripMenuItem
             // 
             this.verEspecialidadesToolStripMenuItem.Name = "verEspecialidadesToolStripMenuItem";
-            this.verEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.verEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.verEspecialidadesToolStripMenuItem.Text = "Ver especialidades";
             this.verEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.verEspecialidadesToolStripMenuItem_Click);
             // 
@@ -227,21 +228,21 @@
             this.nuevoPlanToolStripMenuItem,
             this.verPlanesToolStripMenuItem});
             this.tsmiPlanes.Name = "tsmiPlanes";
-            this.tsmiPlanes.Size = new System.Drawing.Size(224, 26);
+            this.tsmiPlanes.Size = new System.Drawing.Size(180, 22);
             this.tsmiPlanes.Text = "Planes";
             this.tsmiPlanes.Visible = false;
             // 
             // nuevoPlanToolStripMenuItem
             // 
             this.nuevoPlanToolStripMenuItem.Name = "nuevoPlanToolStripMenuItem";
-            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.nuevoPlanToolStripMenuItem.Text = "Nuevo plan";
             this.nuevoPlanToolStripMenuItem.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem_Click);
             // 
             // verPlanesToolStripMenuItem
             // 
             this.verPlanesToolStripMenuItem.Name = "verPlanesToolStripMenuItem";
-            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.verPlanesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.verPlanesToolStripMenuItem.Text = "Ver planes";
             this.verPlanesToolStripMenuItem.Click += new System.EventHandler(this.verPlanesToolStripMenuItem_Click);
             // 
@@ -251,21 +252,21 @@
             this.nuevaMateriaToolStripMenuItem,
             this.verMateriasToolStripMenuItem});
             this.tsmiMaterias.Name = "tsmiMaterias";
-            this.tsmiMaterias.Size = new System.Drawing.Size(224, 26);
+            this.tsmiMaterias.Size = new System.Drawing.Size(180, 22);
             this.tsmiMaterias.Text = "Materias";
             this.tsmiMaterias.Visible = false;
             // 
             // nuevaMateriaToolStripMenuItem
             // 
             this.nuevaMateriaToolStripMenuItem.Name = "nuevaMateriaToolStripMenuItem";
-            this.nuevaMateriaToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.nuevaMateriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaMateriaToolStripMenuItem.Text = "Nueva materia";
             this.nuevaMateriaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMateriaToolStripMenuItem_Click);
             // 
             // verMateriasToolStripMenuItem
             // 
             this.verMateriasToolStripMenuItem.Name = "verMateriasToolStripMenuItem";
-            this.verMateriasToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.verMateriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verMateriasToolStripMenuItem.Text = "Ver materias";
             this.verMateriasToolStripMenuItem.Click += new System.EventHandler(this.verMateriasToolStripMenuItem_Click);
             // 
@@ -275,21 +276,21 @@
             this.nuevaComisiónToolStripMenuItem,
             this.verComisionesToolStripMenuItem});
             this.tsmiComisiones.Name = "tsmiComisiones";
-            this.tsmiComisiones.Size = new System.Drawing.Size(224, 26);
+            this.tsmiComisiones.Size = new System.Drawing.Size(180, 22);
             this.tsmiComisiones.Text = "Comisiones";
             this.tsmiComisiones.Visible = false;
             // 
             // nuevaComisiónToolStripMenuItem
             // 
             this.nuevaComisiónToolStripMenuItem.Name = "nuevaComisiónToolStripMenuItem";
-            this.nuevaComisiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevaComisiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaComisiónToolStripMenuItem.Text = "Nueva comisión";
             this.nuevaComisiónToolStripMenuItem.Click += new System.EventHandler(this.nuevaComisiónToolStripMenuItem_Click);
             // 
             // verComisionesToolStripMenuItem
             // 
             this.verComisionesToolStripMenuItem.Name = "verComisionesToolStripMenuItem";
-            this.verComisionesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.verComisionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verComisionesToolStripMenuItem.Text = "Ver comisiones";
             this.verComisionesToolStripMenuItem.Click += new System.EventHandler(this.verComisionesToolStripMenuItem_Click);
             // 
@@ -299,35 +300,37 @@
             this.nuevoCursoToolStripMenuItem,
             this.verCursosToolStripMenuItem});
             this.tsmiCursos.Name = "tsmiCursos";
-            this.tsmiCursos.Size = new System.Drawing.Size(224, 26);
+            this.tsmiCursos.Size = new System.Drawing.Size(180, 22);
             this.tsmiCursos.Text = "Cursos";
             this.tsmiCursos.Visible = false;
             // 
             // nuevoCursoToolStripMenuItem
             // 
             this.nuevoCursoToolStripMenuItem.Name = "nuevoCursoToolStripMenuItem";
-            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoCursoToolStripMenuItem.Text = "Nuevo curso";
+            this.nuevoCursoToolStripMenuItem.Click += new System.EventHandler(this.nuevoCursoToolStripMenuItem_Click);
             // 
             // verCursosToolStripMenuItem
             // 
             this.verCursosToolStripMenuItem.Name = "verCursosToolStripMenuItem";
-            this.verCursosToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.verCursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verCursosToolStripMenuItem.Text = "Ver cursos";
+            this.verCursosToolStripMenuItem.Click += new System.EventHandler(this.verCursosToolStripMenuItem_Click);
             // 
             // tsmiInscripciones
             // 
             this.tsmiInscripciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiInscribirAlumnoCurso});
             this.tsmiInscripciones.Name = "tsmiInscripciones";
-            this.tsmiInscripciones.Size = new System.Drawing.Size(108, 24);
+            this.tsmiInscripciones.Size = new System.Drawing.Size(88, 20);
             this.tsmiInscripciones.Text = "Inscripciones";
             this.tsmiInscripciones.Visible = false;
             // 
             // tsmiInscribirAlumnoCurso
             // 
             this.tsmiInscribirAlumnoCurso.Name = "tsmiInscribirAlumnoCurso";
-            this.tsmiInscribirAlumnoCurso.Size = new System.Drawing.Size(256, 26);
+            this.tsmiInscribirAlumnoCurso.Size = new System.Drawing.Size(207, 22);
             this.tsmiInscribirAlumnoCurso.Text = "Incscribir alumno a curso";
             this.tsmiInscribirAlumnoCurso.Visible = false;
             // 
@@ -338,26 +341,26 @@
             this.tsmiRegistroCursos,
             this.tsmiReportePlanes});
             this.tsmiInformes.Name = "tsmiInformes";
-            this.tsmiInformes.Size = new System.Drawing.Size(81, 24);
+            this.tsmiInformes.Size = new System.Drawing.Size(66, 20);
             this.tsmiInformes.Text = "Informes";
             this.tsmiInformes.Visible = false;
             // 
             // tsmiRegistroNotas
             // 
             this.tsmiRegistroNotas.Name = "tsmiRegistroNotas";
-            this.tsmiRegistroNotas.Size = new System.Drawing.Size(213, 26);
+            this.tsmiRegistroNotas.Size = new System.Drawing.Size(170, 22);
             this.tsmiRegistroNotas.Text = "Registro de notas";
             // 
             // tsmiRegistroCursos
             // 
             this.tsmiRegistroCursos.Name = "tsmiRegistroCursos";
-            this.tsmiRegistroCursos.Size = new System.Drawing.Size(213, 26);
+            this.tsmiRegistroCursos.Size = new System.Drawing.Size(170, 22);
             this.tsmiRegistroCursos.Text = "Registro de cursos";
             // 
             // tsmiReportePlanes
             // 
             this.tsmiReportePlanes.Name = "tsmiReportePlanes";
-            this.tsmiReportePlanes.Size = new System.Drawing.Size(213, 26);
+            this.tsmiReportePlanes.Size = new System.Drawing.Size(170, 22);
             this.tsmiReportePlanes.Text = "Reporte de planes";
             // 
             // tableLayoutPanel1
@@ -369,13 +372,12 @@
             this.tableLayoutPanel1.Controls.Add(this.TextoBienvenida, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textoRol, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(708, 374);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(531, 303);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // pictureBox1
@@ -383,10 +385,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::UI.Desktop.Properties.Resources.img_20200206_wa0019_1;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 53);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 43);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(700, 321);
+            this.pictureBox1.Size = new System.Drawing.Size(525, 261);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -395,10 +396,9 @@
             // 
             this.TextoBienvenida.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TextoBienvenida.AutoSize = true;
-            this.TextoBienvenida.Location = new System.Drawing.Point(144, 16);
-            this.TextoBienvenida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TextoBienvenida.Location = new System.Drawing.Point(107, 13);
             this.TextoBienvenida.Name = "TextoBienvenida";
-            this.TextoBienvenida.Size = new System.Drawing.Size(136, 17);
+            this.TextoBienvenida.Size = new System.Drawing.Size(104, 13);
             this.TextoBienvenida.TabIndex = 1;
             this.TextoBienvenida.Text = "Texto de bienvenida";
             // 
@@ -406,22 +406,20 @@
             // 
             this.textoRol.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textoRol.AutoSize = true;
-            this.textoRol.Location = new System.Drawing.Point(621, 16);
-            this.textoRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.textoRol.Location = new System.Drawing.Point(465, 13);
             this.textoRol.Name = "textoRol";
-            this.textoRol.Size = new System.Drawing.Size(83, 17);
+            this.textoRol.Size = new System.Drawing.Size(63, 13);
             this.textoRol.TabIndex = 2;
             this.textoRol.Text = "Texto de rol";
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 402);
+            this.ClientSize = new System.Drawing.Size(531, 327);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

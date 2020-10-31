@@ -50,7 +50,7 @@
                          <asp:MenuItem NavigateUrl="~/Planes.aspx" Text="Planes" Value="Planes"></asp:MenuItem>
                          <asp:MenuItem NavigateUrl="~/Materias.aspx" Text="Materias" Value="Materias"></asp:MenuItem>
                          <asp:MenuItem Text="Comisiones" Value="Comisiones" NavigateUrl="~/Comisiones.aspx"></asp:MenuItem>
-                         <asp:MenuItem Text="Cursos" Value="Cursos"></asp:MenuItem>
+                         <asp:MenuItem Text="Cursos" Value="Cursos" NavigateUrl="~/Cursos.aspx"></asp:MenuItem>
                      </asp:MenuItem>
                      <asp:MenuItem Text="Inscripciones" Value="Inscripciones">
                          <asp:MenuItem Text="Inscribir alumno a materia" Value="Inscribir alumno a materia"></asp:MenuItem>
