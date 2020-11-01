@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="GridPanelDatos" runat="server">
-    <asp:GridView ID="GridMaterias" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridMaterias_SelectedIndexChanged" DataKeyNames="ID">
+    <asp:GridView ID="GridMaterias" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridMaterias_SelectedIndexChanged" DataKeyNames="ID" EmptyDataText="Aún no hay materias cargadas." ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID materia" />
             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion Materia" />

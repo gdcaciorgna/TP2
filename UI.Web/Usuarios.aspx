@@ -5,7 +5,7 @@
         <br />
 
         <h1>Usuarios</h1>
-        <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" PageSize="6">
+        <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" PageSize="6" EmptyDataText="Aún no hay usuarios cargados." ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
@@ -57,6 +57,16 @@
                 <asp:Label ID="lbRepetirClave" runat="server" Text="Repetir Clave"></asp:Label>
                 <asp:TextBox ID="tbRepetirClave" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
             </div>
+
+            <div class="form-group">
+                <asp:Label ID="Label1" runat="server" Text="Persona"></asp:Label>
+                <br />
+                <asp:DropDownList ID="ddlPersonas" runat="server">
+                </asp:DropDownList>
+            </div>
+            
+           
+                <br />
             
            
                 <asp:LinkButton ID="lbAceptar" runat="server" OnClick="lbAceptar_Click" CssClass="btn btn-primary">Aceptar</asp:LinkButton>

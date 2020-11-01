@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comisiones.aspx.cs" Inherits="UI.Web.Comisiones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="PanelGrid" runat="server">
-        <asp:GridView ID="GridViewComisiones" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridViewComisiones_SelectedIndexChanged">
+        <asp:GridView ID="GridViewComisiones" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridViewComisiones_SelectedIndexChanged" EmptyDataText="Aún no hay comisiones cargadas." ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID comisiones" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion comisiones" />

@@ -3,7 +3,7 @@
     <asp:Panel ID="gridpanel" runat="server">
         <asp:Label ID="Label1" runat="server" Text="Cursos"></asp:Label>
         <br />
-        <asp:GridView ID="dgv_Cursos" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="dgv_Cursos_SelectedIndexChanged" DataKeyNames="ID">
+        <asp:GridView ID="dgv_Cursos" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="dgv_Cursos_SelectedIndexChanged" DataKeyNames="ID" EmptyDataText="Aún no hay cursos cargados." ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="ID" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />

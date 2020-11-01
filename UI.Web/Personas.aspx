@@ -16,7 +16,7 @@
          </div>
 
 
-        <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" PageSize="6">
+        <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="GridView_SelectedIndexChanged" AllowSorting="True" CssClass="table table-striped table-bordered table-hover" PageSize="6" EmptyDataText="Aún no hay personas cargadas." ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="Apellido" HeaderText="Apellido" />

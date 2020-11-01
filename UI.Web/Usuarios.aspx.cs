@@ -9,6 +9,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using System.Data;
+
 
 namespace UI.Web
 {
@@ -125,6 +127,20 @@ namespace UI.Web
         {
             this.GridView.DataSource = this.Logic.GetAll();
             this.GridView.DataBind();
+
+
+            List<Persona> personas = new List<Persona>();
+            PersonaLogic perLog = new PersonaLogic();
+
+            DataTable dt = perLog.GetAll();
+            dt.Columns.Add("FullName", typeof(string), "FirstName + ' ' + LastName");
+
+
+            ddlPersonas.DataSource = perLog.GetAll();
+            ddlPersonas.DataValueField = "ID";
+            ddlPersonas.DataTextField = "Apellido" +" " + "Nombre" + " - " +"Legajo" ;
+            ddlPersonas.DataBind();
+
         }
 
         protected void lbEditar_Click(object sender, EventArgs e)

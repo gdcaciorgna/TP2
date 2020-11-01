@@ -5,7 +5,7 @@
 
         <h1>Planes</h1>
 
-        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="table table-striped table-bordered table-hover">
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="table table-striped table-bordered table-hover" EmptyDataText="Aún no hay planes cargados." ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="IdPlan" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion plan" />
