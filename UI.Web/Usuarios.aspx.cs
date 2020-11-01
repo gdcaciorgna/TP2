@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
 using System.Data;
+using Util;
 
 
 namespace UI.Web
@@ -132,13 +133,17 @@ namespace UI.Web
             List<Persona> personas = new List<Persona>();
             PersonaLogic perLog = new PersonaLogic();
 
-            DataTable dt = perLog.GetAll();
-            dt.Columns.Add("FullName", typeof(string), "FirstName + ' ' + LastName");
+            personas = perLog.GetAll();
 
 
-            ddlPersonas.DataSource = perLog.GetAll();
+            DataTable dt = new DataTable();
+            dt = Util.FuncionesComunes.ConvertToDataTable(personas);
+            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
+
+            ddlPersonas.DataSource = dt;
+
             ddlPersonas.DataValueField = "ID";
-            ddlPersonas.DataTextField = "Apellido" +" " + "Nombre" + " - " +"Legajo" ;
+            ddlPersonas.DataTextField = "NombreApellidoLegajo" ;
             ddlPersonas.DataBind();
 
         }

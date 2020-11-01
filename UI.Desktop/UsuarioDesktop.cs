@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
@@ -213,7 +214,24 @@ namespace UI.Desktop
             this.Close();
         }
 
+        private void UsuarioDesktop_Load(object sender, EventArgs e)
+        {
+            PersonaLogic perLog = new PersonaLogic();
+            List<Persona> personas = new List<Persona>();
 
+            personas = perLog.GetAll();
+
+
+            DataTable dt = new DataTable();
+            dt = Util.FuncionesComunes.ConvertToDataTable(personas);
+            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
+
+            cmbPersonas.DataSource = dt;
+
+            cmbPersonas.ValueMember = "ID";
+            cmbPersonas.DisplayMember = "NombreApellidoLegajo";
+
+        }
     }
 
 
