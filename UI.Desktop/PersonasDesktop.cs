@@ -252,9 +252,9 @@ namespace UI.Desktop
 
 
             Dictionary<int, string> comboSource = new Dictionary<int, string>();
-            comboSource.Add(3, "Alumno");
-            comboSource.Add(2, "Profesor");
-            comboSource.Add(1, "Administrador");
+            comboSource.Add((int)Persona.TiposPersona.Administrador, "Administrador");
+            comboSource.Add((int)Persona.TiposPersona.Docente, "Docente");
+            comboSource.Add((int)Persona.TiposPersona.Alumno, "Alumno");
             cmbTipoPersona.DataSource = new BindingSource(comboSource, null);
             cmbTipoPersona.DisplayMember = "Value";
             cmbTipoPersona.ValueMember = "Key";

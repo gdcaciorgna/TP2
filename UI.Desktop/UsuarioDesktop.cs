@@ -46,6 +46,8 @@ namespace UI.Desktop
             this.txtClave.Text = this.UsuarioActual.Clave; 
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
 
+            this.cmbPersonas.SelectedValue = this.UsuarioActual.ID_Persona.ToString();
+
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
@@ -92,6 +94,7 @@ namespace UI.Desktop
                 UsuarioActual.Habilitado = chkHabilitado.Checked;
                 UsuarioActual.Clave = txtClave.Text;
 
+                UsuarioActual.ID_Persona = Int32.Parse(cmbPersonas.SelectedValue.ToString());
             }
 
             if (this.Modo == ModoForm.Baja)
