@@ -111,6 +111,7 @@ namespace UI.Web
             this.tbEmail.Text = this.Entity.Email;
             this.cbHabilitado.Checked = this.Entity.Habilitado;
             this.tbUsuario.Text = this.Entity.NombreUsuario;
+            this.ddlPersonas.SelectedValue = this.Entity.ID_Persona.ToString();
         }
         UsuarioLogic _logic;
         private UsuarioLogic Logic
@@ -169,6 +170,7 @@ namespace UI.Web
             usuario.NombreUsuario = this.tbUsuario.Text;
             usuario.Clave = this.tbClave.Text;
             usuario.Habilitado = this.cbHabilitado.Checked;
+            usuario.ID_Persona = Int32.Parse(ddlPersonas.SelectedValue.ToString());
             }
         }
 
@@ -227,6 +229,7 @@ namespace UI.Web
             this.tbRepetirClave.Visible = enable;
             this.lbRepetirClave.Visible = enable;
             this.cbHabilitado.Enabled = enable;
+            this.ddlPersonas.Enabled = enable;
         }
 
         protected void lbEliminar_Click(object sender, EventArgs e)

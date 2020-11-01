@@ -190,10 +190,14 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-
+            this.tbApellido.Enabled = enable;
+            this.tbDireccion.Enabled = enable;
+            this.tbEmail.Enabled = enable;
+            this.tbFechaNacimiento.Enabled = enable;
+            this.tbLegajo.Enabled = enable;
+            this.tbTelefono.Enabled = enable;
             this.ddl_id_plan.Enabled = enable;
             this.ddl_tipo_persona.Enabled = enable;
-            //this.calFechaNacimiento.Enabled = enable; 
 
         }
 

@@ -12,6 +12,7 @@
                 <asp:BoundField DataField="Email" HeaderText="Email" />
                 <asp:BoundField DataField="NombreUsuario" HeaderText="Usuario" />
                 <asp:BoundField DataField="Habilitado" HeaderText="Habilitado" />
+                <asp:BoundField DataField="ID_Persona" HeaderText="ID Persona" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
