@@ -29,22 +29,22 @@
     <div class="container">
         <div class="form-group">
              <asp:Label runat="server" Text="Horas semanales"></asp:Label>
-             <asp:TextBox ID="txbHsSemanales" runat="server"></asp:TextBox>
+             <asp:TextBox ID="txbHsSemanales" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group">
             <asp:Label runat="server" Text="Descripcion materia"></asp:Label>
-            <asp:TextBox ID="txbDescripcionmaterias" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txbDescripcionmaterias" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group">
             <asp:Label ID="lblHsTotales" runat="server" Text="Horas total"></asp:Label>
-            <asp:TextBox ID="txbHorasTotales" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txbHorasTotales" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Id Plan"></asp:Label>
-            <asp:DropDownList ID="DplIDPlan" runat="server">
+            <asp:DropDownList ID="DplIDPlan" runat="server" CssClass="form-control">
             </asp:DropDownList>
         </div>
     

@@ -31,17 +31,17 @@
         <div class="container">
             <div class="form-group">
                     <asp:Label ID="LblDescripcion" runat="server" Text="Descripcion"></asp:Label>
-                    <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" style="margin-bottom: 0"></asp:TextBox>
             </div>
 
             <div class="form-group">
                     <asp:Label ID="lblAnioEspecialidad" runat="server" Text="Año especialidad"></asp:Label>
-                    <asp:TextBox ID="txtAnioEspecialidad" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtAnioEspecialidad" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
 
             <div class="form-group">
                 <asp:Label ID="lvlIDPlan" runat="server" Text="ID plan"></asp:Label>
-                <asp:DropDownList ID="ddlIDPlan" runat="server">
+                <asp:DropDownList ID="ddlIDPlan" runat="server" CssClass="form-control">
                 </asp:DropDownList>
             </div>
             

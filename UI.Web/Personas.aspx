@@ -72,12 +72,12 @@
             <div class="form-group">
             <asp:Label ID="Label3" runat="server" Text="Fecha de nacimiento"></asp:Label>
                 <br />
-                <asp:TextBox ID="tbFechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
+                <asp:TextBox ID="tbFechaNacimiento" runat="server" TextMode="Date" CssClass="form-control"></asp:TextBox>
             </div>
 
             <div class="form-group">
             <asp:Label ID="idplanLabel" runat="server" Text="Tipo de persona"></asp:Label>
-                &nbsp;<asp:DropDownList ID="ddl_tipo_persona" CssClass="btn btn-secondary dropdown-toggle" runat="server">
+                &nbsp;<asp:DropDownList ID="ddl_tipo_persona" CssClass="form-control" runat="server">
             </asp:DropDownList>
 
             </div>
@@ -85,7 +85,7 @@
 
             <div class="form-group">
             <asp:Label ID="Label4" runat="server" Text="ID Plan"></asp:Label>
-                &nbsp;<asp:DropDownList ID="ddl_id_plan" CssClass="btn btn-secondary dropdown-toggle" runat="server">
+                &nbsp;<asp:DropDownList ID="ddl_id_plan" CssClass="form-control" runat="server">
             </asp:DropDownList>
 
             </div>

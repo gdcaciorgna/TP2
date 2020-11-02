@@ -82,5 +82,7 @@ namespace Business.Logic
             return PersonaData.GetAllTipo(tipo_per);
         }
 
+
+
     }
 }

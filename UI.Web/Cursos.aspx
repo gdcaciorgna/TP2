@@ -25,30 +25,30 @@
             <br />
             <div class="form-group">
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion"></asp:Label>
-                <asp:TextBox ID="tbDescripcion" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
 
             </div>
 
             <div class="form-group">
                 <asp:Label ID="lblIDMateria" runat="server" Text="Materia"></asp:Label>
-                <asp:DropDownList ID="ddl_Materia" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddl_Materia" runat="server" CssClass="form-control"></asp:DropDownList>
 
             </div>
 
             <div class="form-group">
                 <asp:Label ID="lblIDComision" runat="server" Text="Comision"></asp:Label>
-                <asp:DropDownList ID="ddl_Comision" runat="server">
+                <asp:DropDownList ID="ddl_Comision" runat="server" CssClass="form-control">
                 </asp:DropDownList>
             </div>
 
             <div class="form-group">
                 <asp:Label ID="lblCupo" runat="server" Text="Cupo"></asp:Label>
-                <asp:TextBox ID="tbCupo" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbCupo" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
 
             <div class="form-group">
-                <asp:Label ID="lblanio_calendario" runat="server" Text="anio_calendario"></asp:Label>
-                <asp:TextBox ID="tbanio" runat="server"></asp:TextBox>
+                <asp:Label ID="lblanio_calendario" runat="server" Text="Año calendario"></asp:Label>
+                <asp:TextBox ID="tbanio" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             
     

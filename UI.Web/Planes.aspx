@@ -20,9 +20,8 @@
        <div class="container">
         <asp:Label ID="desc_planLabel" runat="server" Text="Descripcion Plan"></asp:Label>
         <asp:TextBox ID="Desc_PlanTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-        <br />
         <asp:Label ID="IdespecialidadLabel" runat="server" Text="Id Especialidad"></asp:Label>
-        <asp:DropDownList ID="Id_Especialidaddrownlist" CssClass="btn btn-secondary dropdown-toggle" runat="server" OnSelectedIndexChanged="Id_EspecialidadcheckBox_SelectedIndexChanged">
+        <asp:DropDownList ID="Id_Especialidaddrownlist" CssClass="form-control" runat="server" OnSelectedIndexChanged="Id_EspecialidadcheckBox_SelectedIndexChanged">
         </asp:DropDownList>
 
         <asp:Panel ID="formActionPanel" runat="server">
