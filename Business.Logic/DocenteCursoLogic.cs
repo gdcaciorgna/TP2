@@ -18,12 +18,18 @@ namespace Business.Logic
             DocenteCursoData = new DocenteCursoAdapter();
         }
 
-        public List<DocenteCurso> GetAll() 
+        public List<DocenteCurso> GetAll()
         {
-            List<DocenteCurso> docentesCursos = DocenteCursoData.GetAllDocentes();
+            return DocenteCursoData.GetAll();
+        }
+
+
+        public List<DocenteCurso> GetAllCompleto() 
+        {
+            List<DocenteCurso> docentesCursos = this.GetAll();
             List<DocenteCurso> docentesCursosCompleto = new List<DocenteCurso>();
 
-            foreach(DocenteCurso doc in docentesCursos)
+            foreach (DocenteCurso doc in docentesCursos)
             {
                 DocenteCurso docCurAct = new DocenteCurso();
 
@@ -57,6 +63,38 @@ namespace Business.Logic
         {
             return this.DocenteCursoData.GetAllDocentesPorCurso(cur);
         }
+
+        public List<DocenteCurso> GetAllDocentesPorCursoCompleto(int cur)
+        {
+
+            List<DocenteCurso> docentesCursos = this.GetAllDocentesPorCurso(cur);
+            List<DocenteCurso> docentesCursosCompleto = new List<DocenteCurso>();
+
+            foreach (DocenteCurso doc in docentesCursos)
+            {
+                DocenteCurso docCurAct = new DocenteCurso();
+
+                docCurAct = doc;
+
+                CursoLogic curLog = new CursoLogic();
+                Curso curso = new Curso();
+
+                curso = curLog.GetOne(doc.IDCurso);
+                docCurAct.Curso = curso.Descripcion;
+
+
+                PersonaLogic perLog = new PersonaLogic();
+                Persona docente = new Persona();
+
+                docente = perLog.GetOne(docCurAct.IDDocente);
+                docCurAct.Docente = docente.Apellido + " " + docente.Nombre;
+
+                docentesCursosCompleto.Add(docCurAct);
+            }
+
+            return docentesCursosCompleto;
+        }
+
 
     }
 }

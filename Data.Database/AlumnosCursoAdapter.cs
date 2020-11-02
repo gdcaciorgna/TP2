@@ -55,7 +55,7 @@ namespace Data.Database
         }
 
 
-        public List<AlumnoInscripcion> GetAllAlumnosIncripciones()
+        public List<AlumnoInscripcion> GetAll()
         {
             List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
 

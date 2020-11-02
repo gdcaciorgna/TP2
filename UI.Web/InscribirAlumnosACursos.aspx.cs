@@ -133,7 +133,7 @@ namespace UI.Web
         private void LoadGrid()
         {
 
-            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAll();
+            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAllCompleto();
             this.dgv_AlumnosPorCurso.DataBind();
 
         }
@@ -260,7 +260,7 @@ namespace UI.Web
         {
             int cur = Int32.Parse(ddl_Cursos.SelectedValue.ToString());
 
-            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAllAlumnosPorCurso(cur);
+            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAllAlumnosPorCursoCompleto(cur);
             this.dgv_AlumnosPorCurso.DataBind();
         }
 

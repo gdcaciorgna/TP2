@@ -22,14 +22,17 @@ namespace Business.Logic
 
         public List<AlumnoInscripcion> GetAll()
         {
+            return this.AlumnoCursoData.GetAll();
+        }
+
+        public List<AlumnoInscripcion> GetAllCompleto() 
+        {
             List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
             List<AlumnoInscripcion> alumnosInscripcionesActualizado = new List<AlumnoInscripcion>();
-            
-            alumnosInscripciones = this.AlumnoCursoData.GetAllAlumnosIncripciones();
 
+            alumnosInscripciones = this.GetAll();
 
-
-            foreach(AlumnoInscripcion aluIns in alumnosInscripciones) 
+            foreach (AlumnoInscripcion aluIns in alumnosInscripciones)
             {
                 AlumnoInscripcion alumnoInscripcionActualizado = new AlumnoInscripcion();
 
@@ -53,10 +56,8 @@ namespace Business.Logic
             }
 
             return alumnosInscripcionesActualizado;
-            
-
-
         }
+
 
 
 
@@ -65,6 +66,41 @@ namespace Business.Logic
             return this.AlumnoCursoData.GetAllAlumnosPorCurso(cur);
 
         }
+
+        public List<AlumnoInscripcion> GetAllAlumnosPorCursoCompleto(int cur)
+        {
+            List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
+            List<AlumnoInscripcion> alumnosInscripcionesActualizado = new List<AlumnoInscripcion>();
+
+            alumnosInscripciones = this.GetAllAlumnosPorCurso(cur);
+
+            foreach (AlumnoInscripcion aluIns in alumnosInscripciones)
+            {
+                AlumnoInscripcion alumnoInscripcionActualizado = new AlumnoInscripcion();
+
+                alumnoInscripcionActualizado = aluIns;
+
+                CursoLogic curLog = new CursoLogic();
+                Curso curso = new Curso();
+
+                curso = curLog.GetOne(aluIns.IDCurso);
+                alumnoInscripcionActualizado.DescCurso = curso.Descripcion;
+
+
+                PersonaLogic perLog = new PersonaLogic();
+                Persona alumno = new Persona();
+
+                alumno = perLog.GetOne(aluIns.IDAlumno);
+                alumnoInscripcionActualizado.Alumno = alumno.Apellido + " " + alumno.Nombre + " - " + alumno.Legajo;
+
+                alumnosInscripcionesActualizado.Add(alumnoInscripcionActualizado);
+
+            }
+
+            return alumnosInscripcionesActualizado;
+        }
+
+
 
         public AlumnoInscripcion GetOne(int id) 
         {

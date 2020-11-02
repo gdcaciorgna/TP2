@@ -53,7 +53,7 @@ namespace Data.Database
         }
 
 
-        public List<DocenteCurso> GetAllDocentes() 
+        public List<DocenteCurso> GetAll() 
         {
             List<DocenteCurso> docentesCursos = new List<DocenteCurso>();
 

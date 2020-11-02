@@ -75,7 +75,7 @@ namespace UI.Web
         private void LoadGrid()
         {
     
-            this.dgvDocentesxCurso.DataSource = this.Logic.GetAll();
+            this.dgvDocentesxCurso.DataSource = this.Logic.GetAllCompleto();
             this.dgvDocentesxCurso.DataBind();
 
         }
@@ -92,7 +92,7 @@ namespace UI.Web
         {
             int cur = Int32.Parse(ddl_Cursos.SelectedValue.ToString());
 
-            this.dgvDocentesxCurso.DataSource = this.Logic.GetAllDocentesPorCurso(cur);
+            this.dgvDocentesxCurso.DataSource = this.Logic.GetAllDocentesPorCursoCompleto(cur);
             this.dgvDocentesxCurso.DataBind();
         }
 
