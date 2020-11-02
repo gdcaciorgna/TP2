@@ -43,10 +43,10 @@ namespace UI.Desktop
             this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtClave.Text = this.UsuarioActual.Clave; 
+            this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
-
-            this.cmbPersonas.SelectedValue = this.UsuarioActual.ID_Persona.ToString();
+            
+            this.cmbPersonas.SelectedValue  = Int32.Parse(UsuarioActual.ID_Persona.ToString());
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)

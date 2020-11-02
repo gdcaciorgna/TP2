@@ -99,9 +99,6 @@
                 <asp:LinkButton ID="lbAceptar" runat="server" OnClick="lbAceptar_Click" CssClass="btn btn-primary">Aceptar</asp:LinkButton>
                 <asp:LinkButton ID="lbCancelar" runat="server" OnClick="lbCancelar_Click" CssClass="btn btn-secondary">Cancelar</asp:LinkButton>
 
-     
-            <asp:Panel ID="Panel2" runat="server">
-            </asp:Panel>
         </div>
         </asp:Panel>
     </asp:Panel>

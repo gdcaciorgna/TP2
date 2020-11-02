@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="GridPanelDatos" runat="server">
-    <asp:GridView ID="GridMaterias" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridMaterias_SelectedIndexChanged" DataKeyNames="ID" EmptyDataText="Aún no hay materias cargadas." ShowHeaderWhenEmpty="True">
+
+    <br />
+
+    <h1>Materias</h1>
+
+    <asp:GridView ID="GridMaterias" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridMaterias_SelectedIndexChanged" DataKeyNames="ID" EmptyDataText="Aún no hay materias cargadas." ShowHeaderWhenEmpty="True" AllowSorting="True" CssClass="table table-striped table-bordered table-hover">
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID materia" />
             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion Materia" />
@@ -12,27 +17,45 @@
         </Columns>
     </asp:GridView>
 </asp:Panel>
-<asp:Panel ID="PanelCampos" runat="server" Visible="False">
-    Horas semanales<asp:TextBox ID="txbHsSemanales" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label runat="server" Text="Descripcion materia"></asp:Label>
-    <asp:TextBox ID="txbDescripcionmaterias" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="lblHsTotales" runat="server" Text="Horas total"></asp:Label>
-    <asp:TextBox ID="txbHorasTotales" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="Label1" runat="server" Text="Id Plan"></asp:Label>
-    <asp:DropDownList ID="DplIDPlan" runat="server">
-    </asp:DropDownList>
-    &nbsp;<br />
-    <asp:Button ID="BtnAceptar" runat="server" OnClick="BtnAceptar_Click" Text="Aceptar" />
-    <asp:Button ID="BtnCancelar" runat="server" OnClick="BtnCancelar_Click" Text="Cancelar" />
-</asp:Panel>
+
 <asp:Panel ID="PanelBotones" runat="server">
-    <asp:Button ID="BtnNuevo" runat="server" Text="Nuevo" OnClick="BtnNuevo_Click" />
-    <asp:Button ID="BtnEditar" runat="server" OnClick="BtnEditar_Click" Text="Editar" />
-    <asp:Button ID="BtnEliminar" runat="server" OnClick="BtnEliminar_Click" Text="Eliminar" />
+    <asp:Button ID="BtnNuevo" runat="server" Text="Nuevo" OnClick="BtnNuevo_Click" CssClass="btn btn-success" />
+    <asp:Button ID="BtnEditar" runat="server" OnClick="BtnEditar_Click" Text="Editar" CssClass="btn btn-warning" />
+    <asp:Button ID="BtnEliminar" runat="server" OnClick="BtnEliminar_Click" Text="Eliminar"  CssClass="btn btn-danger" />
 </asp:Panel>
+
+<asp:Panel ID="PanelCampos" runat="server" Visible="False">
+    <br />
+    <div class="container">
+        <div class="form-group">
+             <asp:Label runat="server" Text="Horas semanales"></asp:Label>
+             <asp:TextBox ID="txbHsSemanales" runat="server"></asp:TextBox>
+        </div>
+
+        <div class="form-group">
+            <asp:Label runat="server" Text="Descripcion materia"></asp:Label>
+            <asp:TextBox ID="txbDescripcionmaterias" runat="server"></asp:TextBox>
+        </div>
+
+        <div class="form-group">
+            <asp:Label ID="lblHsTotales" runat="server" Text="Horas total"></asp:Label>
+            <asp:TextBox ID="txbHorasTotales" runat="server"></asp:TextBox>
+        </div>
+
+        <div class="form-group">
+            <asp:Label ID="Label1" runat="server" Text="Id Plan"></asp:Label>
+            <asp:DropDownList ID="DplIDPlan" runat="server">
+            </asp:DropDownList>
+        </div>
+    
+        
+        <asp:Button ID="BtnAceptar" runat="server" OnClick="BtnAceptar_Click" Text="Aceptar" CssClass="btn btn-primary" />
+        <asp:Button ID="BtnCancelar" runat="server" OnClick="BtnCancelar_Click" Text="Cancelar" CssClass="btn btn-secondary" />
+    </div>
+
+</asp:Panel>
+
+
 <br />
 <asp:Panel ID="PanelError" runat="server" Visible="False">
     <div id="errores" class="container">
