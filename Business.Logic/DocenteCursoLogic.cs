@@ -20,7 +20,35 @@ namespace Business.Logic
 
         public List<DocenteCurso> GetAll() 
         {
-            return DocenteCursoData.GetAllDocentes();
+            List<DocenteCurso> docentesCursos = DocenteCursoData.GetAllDocentes();
+            List<DocenteCurso> docentesCursosCompleto = new List<DocenteCurso>();
+
+            foreach(DocenteCurso doc in docentesCursos)
+            {
+                DocenteCurso docCurAct = new DocenteCurso();
+
+                docCurAct = doc;
+
+                CursoLogic curLog = new CursoLogic();
+                Curso cur = new Curso();
+
+                cur = curLog.GetOne(doc.IDCurso);
+                docCurAct.Curso = cur.Descripcion;
+
+
+                PersonaLogic perLog = new PersonaLogic();
+                Persona docente = new Persona();
+
+                docente = perLog.GetOne(docCurAct.IDDocente);
+                docCurAct.Docente = docente.Apellido + " " + docente.Nombre;
+
+                docentesCursosCompleto.Add(docCurAct);
+            }
+
+            return docentesCursosCompleto;
+
+
+
         }
 
 

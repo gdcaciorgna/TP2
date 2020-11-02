@@ -29,11 +29,33 @@ namespace Business.Entities
             set { _IDCurso = value; }
         }
 
+
+
+
         private int _Nota;
         public int Nota
         {
             get { return _Nota; }
             set { _Nota = value; }
         }
+
+        
+        private string _descCurso;
+
+        public string DescCurso
+        {
+            get { return _descCurso; }
+            set { _descCurso = value; }
+        }
+
+        private string _alumno;
+
+        public string Alumno
+        {
+            get { return _alumno; }
+            set { _alumno = value; }
+        }
+
+
     }
 }

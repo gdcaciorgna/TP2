@@ -40,7 +40,7 @@
         <div class="form-group">
             <asp:Label ID="lblClave" runat="server" Text="Clave" CssClass="control-label col-sm-2"></asp:Label>
             <div class="col-lg-10">
-                <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtClave" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
 
             </div>
         </div>

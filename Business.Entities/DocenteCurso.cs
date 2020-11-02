@@ -15,12 +15,30 @@ namespace Business.Entities
             set { _IDCurso = value; }
         }
 
+        private string _curso;
+
+        public string Curso
+        {
+            get { return _curso; }
+            set { _curso = value; }
+        }
+
+
         private int _IDDocente;
         public int IDDocente
         {
             get { return _IDDocente; }
             set { _IDDocente = value; }
         }
+
+        private string _docente;
+
+        public string Docente
+        {
+            get { return _docente; }
+            set { _docente = value; }
+        }
+
 
         private TiposCargo _Cargo;
         public TiposCargo Cargo

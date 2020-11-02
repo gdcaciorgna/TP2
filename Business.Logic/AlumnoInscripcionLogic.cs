@@ -22,7 +22,40 @@ namespace Business.Logic
 
         public List<AlumnoInscripcion> GetAll()
         {
-            return this.AlumnoCursoData.GetAllAlumnosIncripciones();
+            List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
+            List<AlumnoInscripcion> alumnosInscripcionesActualizado = new List<AlumnoInscripcion>();
+            
+            alumnosInscripciones = this.AlumnoCursoData.GetAllAlumnosIncripciones();
+
+
+
+            foreach(AlumnoInscripcion aluIns in alumnosInscripciones) 
+            {
+                AlumnoInscripcion alumnoInscripcionActualizado = new AlumnoInscripcion();
+
+                alumnoInscripcionActualizado = aluIns;
+
+                CursoLogic curLog = new CursoLogic();
+                Curso cur = new Curso();
+
+                cur = curLog.GetOne(aluIns.IDCurso);
+                alumnoInscripcionActualizado.DescCurso = cur.Descripcion;
+
+
+                PersonaLogic perLog = new PersonaLogic();
+                Persona alumno = new Persona();
+
+                alumno = perLog.GetOne(aluIns.IDAlumno);
+                alumnoInscripcionActualizado.Alumno = alumno.Apellido + " " + alumno.Nombre + " - " + alumno.Legajo;
+
+                alumnosInscripcionesActualizado.Add(alumnoInscripcionActualizado);
+
+            }
+
+            return alumnosInscripcionesActualizado;
+            
+
+
         }
 
 

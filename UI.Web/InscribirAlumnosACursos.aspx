@@ -7,7 +7,7 @@
     <asp:GridView ID="dgv_AlumnosPorCurso" runat="server" AutoGenerateColumns="False" EmptyDataText="No hay inscripciones realizadas" ShowHeaderWhenEmpty="True" CssClass="table table-striped table-bordered table-hover" DataKeyNames="ID" OnSelectedIndexChanged="dgv_AlumnosPorCurso_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID Inscripcion" />
-            <asp:BoundField DataField="IDAlumno" HeaderText="ID Alumno" />
+            <asp:BoundField DataField="Alumno" HeaderText="Alumno" />
             <asp:BoundField DataField="Condicion" HeaderText="Condicion" />
             <asp:BoundField DataField="Nota" HeaderText="Nota" />
             <asp:CommandField ShowSelectButton="True" />

@@ -86,6 +86,7 @@
     <Content Include="Home.aspx" />
     <Content Include="InscribirAlumnosACursos.aspx" />
     <Content Include="InscribirDocenteACurso.aspx" />
+    <Content Include="InscribirseAMateria.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -156,6 +157,13 @@
     </Compile>
     <Compile Include="InscribirDocenteACurso.aspx.designer.cs">
       <DependentUpon>InscribirDocenteACurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InscribirseAMateria.aspx.cs">
+      <DependentUpon>InscribirseAMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InscribirseAMateria.aspx.designer.cs">
+      <DependentUpon>InscribirseAMateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
