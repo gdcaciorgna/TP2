@@ -103,7 +103,7 @@ namespace UI.Web
             this.tbTelefono.Text = this.Entity.Telefono;
             this.tbEmail.Text = this.Entity.Email;
             
-            string fechaString = this.Entity.FechaNacimiento.ToString("dd/MM/yyyy");  // NO FUNCIONA
+            string fechaString = this.Entity.FechaNacimiento.ToString("yyyy-MM-dd");  // NO FUNCIONA
             this.tbFechaNacimiento.Text = fechaString;
 
 

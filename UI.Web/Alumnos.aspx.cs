@@ -102,7 +102,7 @@ namespace UI.Web
             this.tbTelefono.Text = this.Entity.Telefono;
             this.tbEmail.Text = this.Entity.Email;
             
-            string fechaString = this.Entity.FechaNacimiento.ToString("dd/MM/yyyy");  // NO FUNCIONA
+            string fechaString = this.Entity.FechaNacimiento.ToString("yyyy-MM-dd");
             this.tbFechaNacimiento.Text = fechaString;
 
 
@@ -372,8 +372,6 @@ namespace UI.Web
             this.tbEmail.Text = string.Empty;
             this.tbTelefono.Text = string.Empty;
             this.tbDireccion.Text = string.Empty;
-            //this.tbFechaNacimiento.Text = 
-            //this.calFechaNacimiento.SelectedDate = DateTime.Now.Date;
             this.tbLegajo.Text = string.Empty;
             
  
