@@ -3,9 +3,6 @@
 
      <asp:Panel ID="gridPanel" runat="server">
         
-        <br />
-
-        <h1>Docentes</h1>
 
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <asp:LinkButton ID="lbVerTodo" runat="server" OnClick="lbVerTodo_Click" CssClass="btn btn-secondary">Ver todo</asp:LinkButton>

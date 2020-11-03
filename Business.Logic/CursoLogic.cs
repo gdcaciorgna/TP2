@@ -30,6 +30,20 @@ namespace Business.Logic
             }
         }
 
+        public List<Curso> GetAll(int anioCalendario)
+        {
+            try
+            {
+                return this.CursoData.GetAll(anioCalendario);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+
+
+
         public Curso GetOne(int cID)      // punto 8
         {
             try

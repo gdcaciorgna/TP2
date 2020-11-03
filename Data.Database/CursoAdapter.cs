@@ -51,6 +51,51 @@ namespace Data.Database
 
         }
 
+
+        public List<Curso> GetAll(int anioCalendario)
+        {
+            List<Curso> cursos = new List<Curso>();
+
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos where anio_calendario = @anio_calendario", sqlConn);
+                cmdCursos.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = anioCalendario;
+                
+                SqlDataReader drCursos = cmdCursos.ExecuteReader();
+
+
+
+                while (drCursos.Read())
+                {
+                    Curso curso = new Curso();
+                    curso.ID = (int)drCursos["id_curso"];
+                    curso.Descripcion = (string)drCursos["desc_curso"];
+                    curso.IDMateria = (int)drCursos["id_materia"];
+                    curso.IDComision = (int)drCursos["id_comision"];
+                    curso.AnioCalendario = (int)drCursos["anio_calendario"];
+                    curso.Cupo = (int)drCursos["cupo"];
+
+                    cursos.Add(curso);
+
+                }
+                drCursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return cursos;
+
+        }
+
+
         public Business.Entities.Curso GetOne(int ID)
         {
             Curso curso = new Curso();

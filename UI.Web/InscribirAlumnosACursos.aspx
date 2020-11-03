@@ -50,7 +50,6 @@
             </asp:Panel>
         </div>
         </asp:Panel>
-    </asp:Panel>
     <br />
     <asp:Panel ID="PanelError" runat="server" Visible="False">
         <div id="errores" class="container">

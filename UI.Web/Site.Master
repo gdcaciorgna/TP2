@@ -99,7 +99,7 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Inicio" Value="Inicio"></asp:MenuItem>
                         <asp:MenuItem Text="Inscripciones" Value="Inscripciones">
-                            <asp:MenuItem Text="Inscribir alumno a materia" Value="Inscribir alumno a materia"></asp:MenuItem>
+                            <asp:MenuItem Text="Ver inscripciones" Value="Ver inscripciones" NavigateUrl="~/InscribirseAMateria.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>
