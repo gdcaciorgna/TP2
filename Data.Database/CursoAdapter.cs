@@ -26,7 +26,7 @@ namespace Data.Database
                 {
                     Curso curso = new Curso();
                     curso.ID = (int)drCursos["id_curso"];
-                    curso.Descripcion = (string)drCursos["desc_curso"];
+                    curso.Descripcion = (string)drCursos["desc_cursos"];
                     curso.IDMateria = (int)drCursos["id_materia"];
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
@@ -70,7 +70,7 @@ namespace Data.Database
                 {
                     Curso curso = new Curso();
                     curso.ID = (int)drCursos["id_curso"];
-                    curso.Descripcion = (string)drCursos["desc_curso"];
+                    curso.Descripcion = (string)drCursos["desc_cursos"];
                     curso.IDMateria = (int)drCursos["id_materia"];
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
@@ -109,7 +109,7 @@ namespace Data.Database
                 if (drCursos.Read())
                 {
                     curso.ID = (int)drCursos["id_curso"];
-                    curso.Descripcion = (string)drCursos["desc_curso"];
+                    curso.Descripcion = (string)drCursos["desc_cursos"];
                     curso.IDMateria = (int)drCursos["id_materia"];
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
@@ -154,9 +154,9 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE cursos set desc_curso = @desc_curso, id_materia = @id_materia, id_comision = @id_comision, anio_calendario = @anio_calendario, cupo = @cupo WHERE id_curso = @id", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE cursos set desc_curso = @desc_cursos, id_materia = @id_materia, id_comision = @id_comision, anio_calendario = @anio_calendario, cupo = @cupo WHERE id_curso = @id", sqlConn);
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
-                cmdSave.Parameters.Add("@desc_curso", SqlDbType.VarChar, 50).Value = curso.Descripcion;
+                cmdSave.Parameters.Add("@desc_cursos", SqlDbType.VarChar, 50).Value = curso.Descripcion;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IDMateria;
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;
@@ -182,8 +182,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("insert into cursos (desc_curso, id_materia, id_comision, anio_calendario, cupo) values (@desc_curso, @id_materia, @id_comision, @anio_calendario, @cupo) select @@identity", sqlConn);
-                cmdSave.Parameters.Add("@desc_curso", SqlDbType.VarChar, 50).Value = curso.Descripcion;
+                SqlCommand cmdSave = new SqlCommand("insert into cursos (desc_cursos, id_materia, id_comision, anio_calendario, cupo) values (@desc_cursos, @id_materia, @id_comision, @anio_calendario, @cupo) select @@identity", sqlConn);
+                cmdSave.Parameters.Add("@desc_cursos", SqlDbType.VarChar, 50).Value = curso.Descripcion;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = curso.IDMateria;
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int).Value = curso.IDComision;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = curso.AnioCalendario;

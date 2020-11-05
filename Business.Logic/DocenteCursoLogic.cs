@@ -23,37 +23,69 @@ namespace Business.Logic
             return DocenteCursoData.GetAll();
         }
 
+        public void Delete(int id)
+        {
+            this.DocenteCursoData.Delete(id);
+        }
 
         public List<DocenteCurso> GetAllCompleto() 
-        {
+          {
             List<DocenteCurso> docentesCursos = this.GetAll();
-            List<DocenteCurso> docentesCursosCompleto = new List<DocenteCurso>();
+               List<DocenteCurso> docentesCursosCompleto = new List<DocenteCurso>();
 
-            foreach (DocenteCurso doc in docentesCursos)
-            {
+                foreach (DocenteCurso doc in docentesCursos)
+                {
                 DocenteCurso docCurAct = new DocenteCurso();
 
-                docCurAct = doc;
+               docCurAct = doc;
 
-                CursoLogic curLog = new CursoLogic();
-                Curso cur = new Curso();
+               CursoLogic curLog = new CursoLogic();
+               Curso cur = new Curso();
 
-                cur = curLog.GetOne(doc.IDCurso);
+               cur = curLog.GetOne(doc.IDCurso);
                 docCurAct.Curso = cur.Descripcion;
 
 
-                PersonaLogic perLog = new PersonaLogic();
-                Persona docente = new Persona();
+               PersonaLogic perLog = new PersonaLogic();
+               Persona docente = new Persona();
 
-                docente = perLog.GetOne(docCurAct.IDDocente);
-                docCurAct.Docente = docente.Apellido + " " + docente.Nombre;
+               docente = perLog.GetOne(docCurAct.IDDocente);
+               docCurAct.Docente = docente.Apellido + " " + docente.Nombre;
 
-                docentesCursosCompleto.Add(docCurAct);
+               docentesCursosCompleto.Add(docCurAct);
+
+           }
+
+           return docentesCursosCompleto;
+             
+      
+
+    }
+
+        public DocenteCurso.TiposCargo getTipoCargoString(String tipoCargoString)
+        {
+            DocenteCurso.TiposCargo tipo_cargo = new DocenteCurso.TiposCargo();
+            if (tipoCargoString.Equals("Titular"))
+            {
+                tipo_cargo = DocenteCurso.TiposCargo.Titular;
+            }
+            
+            else if (tipoCargoString.Equals("Teoria"))
+            {
+                tipo_cargo = DocenteCurso.TiposCargo.Teoria;
             }
 
-            return docentesCursosCompleto;
+            else if (tipoCargoString.Equals("Practica"))
+            {
+                tipo_cargo = DocenteCurso.TiposCargo.Practica;
+            }
 
+            else if (tipoCargoString.Equals("Auxiliar"))
+            {
+                tipo_cargo = DocenteCurso.TiposCargo.Auxiliar;
+            }
 
+            return tipo_cargo;
 
         }
 
@@ -64,37 +96,22 @@ namespace Business.Logic
             return this.DocenteCursoData.GetAllDocentesPorCurso(cur);
         }
 
-        public List<DocenteCurso> GetAllDocentesPorCursoCompleto(int cur)
+        public DocenteCurso GetOne(int id)
         {
-
-            List<DocenteCurso> docentesCursos = this.GetAllDocentesPorCurso(cur);
-            List<DocenteCurso> docentesCursosCompleto = new List<DocenteCurso>();
-
-            foreach (DocenteCurso doc in docentesCursos)
-            {
-                DocenteCurso docCurAct = new DocenteCurso();
-
-                docCurAct = doc;
-
-                CursoLogic curLog = new CursoLogic();
-                Curso curso = new Curso();
-
-                curso = curLog.GetOne(doc.IDCurso);
-                docCurAct.Curso = curso.Descripcion;
-
-
-                PersonaLogic perLog = new PersonaLogic();
-                Persona docente = new Persona();
-
-                docente = perLog.GetOne(docCurAct.IDDocente);
-                docCurAct.Docente = docente.Apellido + " " + docente.Nombre;
-
-                docentesCursosCompleto.Add(docCurAct);
-            }
-
-            return docentesCursosCompleto;
+            return this.DocenteCursoData.GetOne(id);
         }
 
+        public void Insert(DocenteCurso docInsc)
+        {
+            this.DocenteCursoData.Insert(docInsc);
+        }
+
+        public void Save(DocenteCurso docInsc)      // punto 10
+        {
+            this.DocenteCursoData.Save(docInsc);
+        }
+
+     
 
     }
 }
