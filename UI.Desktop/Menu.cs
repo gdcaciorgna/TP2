@@ -206,5 +206,11 @@ namespace UI.Desktop
             CursosDesktop cur = new CursosDesktop();
             cur.ShowDialog();
         }
+
+        private void tsmiRegistroCursos_Click(object sender, EventArgs e)
+        {
+            Reporte rep = new Reporte();
+            rep.ShowDialog();
+        }
     }
 }

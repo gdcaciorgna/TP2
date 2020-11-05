@@ -259,14 +259,14 @@
             // nuevaMateriaToolStripMenuItem
             // 
             this.nuevaMateriaToolStripMenuItem.Name = "nuevaMateriaToolStripMenuItem";
-            this.nuevaMateriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaMateriaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.nuevaMateriaToolStripMenuItem.Text = "Nueva materia";
             this.nuevaMateriaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMateriaToolStripMenuItem_Click);
             // 
             // verMateriasToolStripMenuItem
             // 
             this.verMateriasToolStripMenuItem.Name = "verMateriasToolStripMenuItem";
-            this.verMateriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verMateriasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.verMateriasToolStripMenuItem.Text = "Ver materias";
             this.verMateriasToolStripMenuItem.Click += new System.EventHandler(this.verMateriasToolStripMenuItem_Click);
             // 
@@ -283,14 +283,14 @@
             // nuevaComisiónToolStripMenuItem
             // 
             this.nuevaComisiónToolStripMenuItem.Name = "nuevaComisiónToolStripMenuItem";
-            this.nuevaComisiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaComisiónToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.nuevaComisiónToolStripMenuItem.Text = "Nueva comisión";
             this.nuevaComisiónToolStripMenuItem.Click += new System.EventHandler(this.nuevaComisiónToolStripMenuItem_Click);
             // 
             // verComisionesToolStripMenuItem
             // 
             this.verComisionesToolStripMenuItem.Name = "verComisionesToolStripMenuItem";
-            this.verComisionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verComisionesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.verComisionesToolStripMenuItem.Text = "Ver comisiones";
             this.verComisionesToolStripMenuItem.Click += new System.EventHandler(this.verComisionesToolStripMenuItem_Click);
             // 
@@ -307,14 +307,14 @@
             // nuevoCursoToolStripMenuItem
             // 
             this.nuevoCursoToolStripMenuItem.Name = "nuevoCursoToolStripMenuItem";
-            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.nuevoCursoToolStripMenuItem.Text = "Nuevo curso";
             this.nuevoCursoToolStripMenuItem.Click += new System.EventHandler(this.nuevoCursoToolStripMenuItem_Click);
             // 
             // verCursosToolStripMenuItem
             // 
             this.verCursosToolStripMenuItem.Name = "verCursosToolStripMenuItem";
-            this.verCursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verCursosToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.verCursosToolStripMenuItem.Text = "Ver cursos";
             this.verCursosToolStripMenuItem.Click += new System.EventHandler(this.verCursosToolStripMenuItem_Click);
             // 
@@ -348,19 +348,20 @@
             // tsmiRegistroNotas
             // 
             this.tsmiRegistroNotas.Name = "tsmiRegistroNotas";
-            this.tsmiRegistroNotas.Size = new System.Drawing.Size(170, 22);
+            this.tsmiRegistroNotas.Size = new System.Drawing.Size(180, 22);
             this.tsmiRegistroNotas.Text = "Registro de notas";
             // 
             // tsmiRegistroCursos
             // 
             this.tsmiRegistroCursos.Name = "tsmiRegistroCursos";
-            this.tsmiRegistroCursos.Size = new System.Drawing.Size(170, 22);
+            this.tsmiRegistroCursos.Size = new System.Drawing.Size(180, 22);
             this.tsmiRegistroCursos.Text = "Registro de cursos";
+            this.tsmiRegistroCursos.Click += new System.EventHandler(this.tsmiRegistroCursos_Click);
             // 
             // tsmiReportePlanes
             // 
             this.tsmiReportePlanes.Name = "tsmiReportePlanes";
-            this.tsmiReportePlanes.Size = new System.Drawing.Size(170, 22);
+            this.tsmiReportePlanes.Size = new System.Drawing.Size(180, 22);
             this.tsmiReportePlanes.Text = "Reporte de planes";
             // 
             // tableLayoutPanel1
