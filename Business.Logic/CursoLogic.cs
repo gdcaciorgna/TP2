@@ -30,11 +30,11 @@ namespace Business.Logic
             }
         }
 
-        public List<Curso> GetAll(int anioCalendario)
+        public List<int> GetAllAnios()
         {
             try
             {
-                return this.CursoData.GetAll(anioCalendario);
+                return this.CursoData.GetAllAnios();
             }
             catch (Exception Ex)
             {
@@ -44,11 +44,23 @@ namespace Business.Logic
 
 
 
-        public Curso GetOne(int cID)      // punto 8
+        public Curso GetOne(int cID)    
         {
             try
             {
                 return this.CursoData.GetOne(cID);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+
+        public Curso GetOne(int id_comision, int id_materia, int anio_calendario)      
+        {
+            try
+            {
+                return this.CursoData.GetOne(id_comision, id_materia, anio_calendario);
             }
             catch (Exception Ex)
             {

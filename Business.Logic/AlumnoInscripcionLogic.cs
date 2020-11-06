@@ -11,12 +11,17 @@ namespace Business.Logic
 {
     public class AlumnoInscripcionLogic : BusinessLogic
     {
-        public AlumnosCursoAdapter AlumnoCursoData { get; set; }
+        public AlumnosInscripcionesdapter AlumnoCursoData { get; set; }
 
         public AlumnoInscripcionLogic()
         {
-            AlumnoCursoData = new AlumnosCursoAdapter();
+            AlumnoCursoData = new AlumnosInscripcionesdapter();
 
+        }
+
+        public int ContarAlumnosInscriptosACurso(Curso cur)
+        {
+            return this.AlumnoCursoData.ContarAlumnosInscriptosACurso(cur);
         }
 
 
@@ -25,38 +30,18 @@ namespace Business.Logic
             return this.AlumnoCursoData.GetAll();
         }
 
-        public List<AlumnoInscripcion> GetAllCompleto() 
+        public List<AlumnoInscripcion> GetAllInscripcionesPorAlumno(int id_alumno)
         {
-            List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
-            List<AlumnoInscripcion> alumnosInscripcionesActualizado = new List<AlumnoInscripcion>();
-
-            alumnosInscripciones = this.GetAll();
-
-            foreach (AlumnoInscripcion aluIns in alumnosInscripciones)
-            {
-                AlumnoInscripcion alumnoInscripcionActualizado = new AlumnoInscripcion();
-
-                alumnoInscripcionActualizado = aluIns;
-
-                CursoLogic curLog = new CursoLogic();
-                Curso cur = new Curso();
-
-                cur = curLog.GetOne(aluIns.IDCurso);
-                alumnoInscripcionActualizado.DescCurso = cur.Descripcion;
-
-
-                PersonaLogic perLog = new PersonaLogic();
-                Persona alumno = new Persona();
-
-                alumno = perLog.GetOne(aluIns.IDAlumno);
-                alumnoInscripcionActualizado.Alumno = alumno.Apellido + " " + alumno.Nombre + " - " + alumno.Legajo;
-
-                alumnosInscripcionesActualizado.Add(alumnoInscripcionActualizado);
-
-            }
-
-            return alumnosInscripcionesActualizado;
+            return this.AlumnoCursoData.GetAllInscripcionesPorAlumno(id_alumno);
         }
+
+        public List<AlumnoInscripcion> GetAllInscripcionesPorAlumno(int id_alumno, int anio_cal)
+        {
+            return this.AlumnoCursoData.GetAllInscripcionesPorAlumno(id_alumno, anio_cal);
+        }
+
+
+
 
 
 
@@ -67,44 +52,14 @@ namespace Business.Logic
 
         }
 
-        public List<AlumnoInscripcion> GetAllAlumnosPorCursoCompleto(int cur)
-        {
-            List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
-            List<AlumnoInscripcion> alumnosInscripcionesActualizado = new List<AlumnoInscripcion>();
-
-            alumnosInscripciones = this.GetAllAlumnosPorCurso(cur);
-
-            foreach (AlumnoInscripcion aluIns in alumnosInscripciones)
-            {
-                AlumnoInscripcion alumnoInscripcionActualizado = new AlumnoInscripcion();
-
-                alumnoInscripcionActualizado = aluIns;
-
-                CursoLogic curLog = new CursoLogic();
-                Curso curso = new Curso();
-
-                curso = curLog.GetOne(aluIns.IDCurso);
-                alumnoInscripcionActualizado.DescCurso = curso.Descripcion;
-
-
-                PersonaLogic perLog = new PersonaLogic();
-                Persona alumno = new Persona();
-
-                alumno = perLog.GetOne(aluIns.IDAlumno);
-                alumnoInscripcionActualizado.Alumno = alumno.Apellido + " " + alumno.Nombre + " - " + alumno.Legajo;
-
-                alumnosInscripcionesActualizado.Add(alumnoInscripcionActualizado);
-
-            }
-
-            return alumnosInscripcionesActualizado;
-        }
-
-
 
         public AlumnoInscripcion GetOne(int id) 
         {
             return this.AlumnoCursoData.GetOne(id);
+        }
+        public AlumnoInscripcion GetOne(int id_alumno, int id_curso)
+        {
+            return this.AlumnoCursoData.GetOne(id_alumno, id_curso);
         }
 
         public void Delete(int id)

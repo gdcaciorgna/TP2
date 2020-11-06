@@ -36,6 +36,20 @@ namespace Business.Logic
             }
         }
 
+        public Materia GetOne(Curso cur)      // punto 8
+        {
+            try
+            {
+                return this.MateriaData.GetOne(cur);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+        }
+
+
+
         public void Save(Materia mat)      // punto 10
         {
             this.MateriaData.Save(mat);

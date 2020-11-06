@@ -13,6 +13,47 @@ namespace UI.Web
 {
     public partial class InscribirseAMateria : System.Web.UI.Page
     {
+        public enum FormModes
+        {
+            Alta,
+            Baja,
+            Modificacion
+        }
+
+        public FormModes FormMode
+        {
+            get { return (FormModes)this.ViewState["FormMode"]; }
+            set { this.ViewState["FormMode"] = value; }
+        }
+
+        private int SelectedID
+        {
+            get
+            {
+                if (this.ViewState["SelectedID"] != null)
+                {
+                    return (int)this.ViewState["SelectedID"];
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                this.ViewState["SelectedID"] = value;
+            }
+        }
+        private bool IsEntitySelected
+        {
+            get
+            {
+                return (this.SelectedID != 0);
+            }
+        }
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioActual = (Usuario)Session["UsuarioActual"];
@@ -22,39 +63,44 @@ namespace UI.Web
                 TipoPersonaActual = (Persona.TiposPersona)Session["TipoPersonaUsuarioActual"];
 
 
-                if (TipoPersonaActual.Equals(Persona.TiposPersona.Administrador)) //verifico que sea administrador
+                if (TipoPersonaActual.Equals(Persona.TiposPersona.Alumno)) //verifico que sea administrador
                 {
                     if (IsPostBack == false)
                     {
+
+                        MateriaLogic matLog = new MateriaLogic();
+                        List <Materia> materias = new List<Materia>();
+
+                        ddl_Materia.DataSource = matLog.GetAll();
+                        ddl_Materia.DataValueField = "ID";
+                        ddl_Materia.DataTextField = "Descripcion";
+                        ddl_Materia.DataBind();
+                        
+
+
+                        ComisionLogic comLog = new ComisionLogic();
+                        List<Comision> comisiones = new List<Comision>();
+
+                        ddl_Comision.DataSource = comLog.GetAll();
+                        ddl_Comision.DataValueField = "ID";
+                        ddl_Comision.DataTextField = "Descripcion";
+                        ddl_Comision.DataBind();
+
+
                         CursoLogic curLog = new CursoLogic();
-                        List<Curso> cursos = new List<Curso>();
 
-                        int anioCalendario = DateTime.Now.Year;
+                        List<int> anios = curLog.GetAllAnios();
 
-                        cursos = curLog.GetAll(anioCalendario);
-
-                        ddl_anioCalendario.DataSource = cursos;
-                        ddl_anioCalendario.DataValueField = "ID";
-                        ddl_anioCalendario.DataTextField = "Descripcion"; // Esto se podria mejorar quitando informacion redundante de Desc. Cursos
+                        ddl_anioCalendario.DataSource = anios;
                         ddl_anioCalendario.DataBind();
-
-
-                        PersonaLogic perLog = new PersonaLogic();
-                        List<Persona> alumnos = new List<Persona>();
-
-                        alumnos = perLog.GetAllTipo(Persona.TiposPersona.Alumno);
-
-
-                        DataTable dt = new DataTable();
-                        dt = Util.FuncionesComunes.ConvertToDataTable(alumnos);
-                        dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
 
                         LoadGrid();
                     }
 
 
 
-                }
+
+    }
 
                 else
                 {
@@ -86,11 +132,14 @@ namespace UI.Web
             }
         }
 
+        public Curso CursoActual { get; set; }
+
+
 
         private void LoadGrid()
         {
-
-            this.dgv_InscripcionesACurso.DataSource = this.Logic.GetAllCompleto();
+            int id_alumno = this.UsuarioActual.ID_Persona;
+            this.dgv_InscripcionesACurso.DataSource = this.Logic.GetAllInscripcionesPorAlumno(id_alumno);
             this.dgv_InscripcionesACurso.DataBind();
 
         }
@@ -107,16 +156,31 @@ namespace UI.Web
 
             this.Entity = this.Logic.GetOne(id);
 
-            this.ddl_Alumno.SelectedValue = this.Entity.IDAlumno.ToString();
 
-            this.tbCondicion.Text = this.Entity.Condicion;
-            this.tbNota.Text = this.Entity.Nota.ToString();
-
-
-            PersonaLogic perLog = new PersonaLogic();
-            Persona per = new Persona();
+            Curso cur = new Curso();
+            CursoLogic curLog = new CursoLogic();
 
 
+            int id_cur = Int32.Parse(this.Entity.IDCurso.ToString());
+            cur = curLog.GetOne(this.Entity.IDCurso);
+
+
+            MateriaLogic matLog = new MateriaLogic();
+            ComisionLogic comLog = new ComisionLogic();
+
+            Comision com = new Comision();
+            Materia mat = new Materia();
+
+
+            com = comLog.GetOne(cur.IDComision);
+            mat = matLog.GetOne(cur.IDMateria);
+
+            this.ddl_Comision.SelectedValue = cur.IDComision.ToString();
+            this.ddl_Materia.SelectedValue = cur.IDMateria.ToString();
+            this.ddl_anioCalendario.SelectedValue = cur.AnioCalendario.ToString();
+           
+           
+            
         }
 
 
@@ -127,13 +191,31 @@ namespace UI.Web
 
         private void LoadEntity(AlumnoInscripcion aluInsc)
         {
-            if (Validar())
-            {
-                aluInsc.IDAlumno = Int32.Parse();
-                aluInsc.IDCurso = Int32.Parse(this.ddl_anioCalendario.SelectedValue.ToString());
-                aluInsc.Condicion = tbCondicion.Text;
-                aluInsc.Nota = Int32.Parse(this.tbNota.Text.ToString());
-            }
+ 
+           
+            aluInsc.IDAlumno = UsuarioActual.ID_Persona;
+
+            int anio_cal = Int32.Parse(this.ddl_anioCalendario.SelectedValue.ToString());
+
+            int id_com = Int32.Parse(this.ddl_Comision.SelectedValue.ToString());
+
+            int id_mat = Int32.Parse(this.ddl_Materia.SelectedValue.ToString());
+
+
+            CursoLogic curLog = new CursoLogic();
+
+            CursoActual = curLog.GetOne(id_com, id_mat, anio_cal);
+
+            aluInsc.IDCurso = CursoActual.ID;
+            aluInsc.DescCurso = CursoActual.Descripcion;
+            aluInsc.Condicion = "Inscripto";
+
+
+
+
+
+
+           
 
         }
 
@@ -142,21 +224,48 @@ namespace UI.Web
             this.Logic.Save(aluInsc);
         }
 
-        public bool Validar()
+        public bool Validar(int id_cur)
         {
             String error = "Se han encontrado los siguientes errores: <br /><br />";
             bool vof = true;
 
-            if (tbCondicion.Text == "")
+            int id_alumno = this.UsuarioActual.ID;
+
+
+            AlumnoInscripcionLogic aluInscLogic = new AlumnoInscripcionLogic();
+            AlumnoInscripcion aluInsc = new AlumnoInscripcion();
+
+            aluInsc = aluInscLogic.GetOne(id_alumno, id_cur);
+
+            Curso cur = new Curso();
+            CursoLogic curLog = new CursoLogic();
+
+            cur = curLog.GetOne(id_cur);
+
+            int cant_alumnos = aluInscLogic.ContarAlumnosInscriptosACurso(cur);
+
+
+
+            if (cur.ID == 0)
             {
-                error = error + "El campo condicion no puede estar vacío. <br />";
+                error = error + "No se encontró curso para materia, comisión y año especificado. <br />";
+                vof = false;
+
+            }
+
+            else if (aluInsc.ID != 0)
+            {
+                error = error + "Ya se encuentra inscripto al curso. <br />";
                 vof = false;
             }
 
-            if (tbNota.Text == "")
+
+            else if((cant_alumnos + 1) > cur.Cupo)
             {
-                error = error + "El campo nota no puede estar vacío. <br />";
+                error = error + "El curso ya se encuentra completo. " + cant_alumnos +  "/" +cur.Cupo + " <br />";
                 vof = false;
+
+
             }
 
 
@@ -181,20 +290,15 @@ namespace UI.Web
         private void ClearForm()
         {
 
-            this.tbCondicion.Text = string.Empty;
-            this.tbNota.Text = string.Empty;
-
-
         }
 
         private void EnableForm(bool enable)
         {
 
-            this.tbNota.Enabled = enable;
-            this.tbCondicion.Enabled = enable;
             this.ddl_anioCalendario.Enabled = enable;
-            this.ddl_Alumno.Enabled = enable;
-
+            this.ddl_Comision.Enabled = enable;
+            this.ddl_Materia.Enabled = enable;
+           
         }
 
 
@@ -205,36 +309,98 @@ namespace UI.Web
 
         protected void dgv_InscripcionesACurso_SelectedIndexChanged(object sender, EventArgs e)
         {
-                         
+            this.SelectedID = (int)this.dgv_InscripcionesACurso.SelectedValue;
+
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            int id_alumno = this.UsuarioActual.ID_Persona;
+            int anio = Int32.Parse(ddl_anioCalendario.SelectedValue.ToString());
+            this.dgv_InscripcionesACurso.DataSource = Logic.GetAllInscripcionesPorAlumno(id_alumno, anio);
+            this.dgv_InscripcionesACurso.DataBind();
         }
 
         protected void lbNuevo_Click(object sender, EventArgs e)
         {
+            this.formPanel.Visible = true;
+            this.FormMode = FormModes.Alta;
+            this.ClearForm();
+            this.EnableForm(true);
 
         }
 
         protected void btnEditar2_Click(object sender, EventArgs e)
         {
+            if (this.IsEntitySelected)
+            {
+
+
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Modificacion;
+                this.LoadForm(this.SelectedID);
+
+            }
 
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Baja;
+                this.EnableForm(false);
+                this.LoadForm(this.SelectedID);
+            }
         }
 
         protected void lbAceptar_Click(object sender, EventArgs e)
         {
+            switch (this.FormMode)
+            {
+                case FormModes.Baja:
+                    this.DeleteEntity(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+
+                    this.Entity = new AlumnoInscripcion();
+                    this.Entity.ID = this.SelectedID;
+
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    this.LoadEntity(this.Entity);
+                    if (this.Validar(CursoActual.ID) == true)
+                    {
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+
+
+                    }
+                    break;
+                case FormModes.Alta:
+                    this.Entity = new AlumnoInscripcion();
+                    this.LoadEntity(this.Entity);
+                    if (this.Validar(CursoActual.ID) == true)
+                    {
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+
+                    }
+                    break;
+                default:
+                    break;
+            }
+            this.formPanel.Visible = false;
+
 
         }
 
         protected void lbCancelar_Click(object sender, EventArgs e)
         {
+            this.formPanel.Visible = false;
+            this.LoadGrid();
+
 
         }
     }

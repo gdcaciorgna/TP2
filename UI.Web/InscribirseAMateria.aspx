@@ -32,12 +32,6 @@
                 </asp:DropDownList>
             </div>
 
-            <div class="form-group">
-            <asp:Label ID="labelAnio" runat="server" Text="Año calendario"></asp:Label>
-                <asp:DropDownList ID="ddl_Anio" runat="server" CssClass="form-control">
-                </asp:DropDownList>
-            </div>
-
 
             <div class="form-group">
             <asp:Label ID="labelCurso" runat="server" Text="Comision"></asp:Label>
@@ -45,22 +39,6 @@
                 </asp:DropDownList>
             </div>
            
-            <div class="form-group">
-            <asp:Label ID="label2" runat="server" Text="Curso"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Enabled="False">
-                </asp:DropDownList>
-            </div>
-
-             <div class="form-group">
-            <asp:Label ID="lbCondicion" runat="server" Text="Condicion"></asp:Label>
-            <asp:TextBox ID="tbCondicion" runat="server" CssClass="form-control"></asp:TextBox>
-            </div>
-
-            <div class="form-group">
-            <asp:Label ID="lbNota" runat="server" Text="Nota"></asp:Label>
-            <asp:TextBox ID="tbNota" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
-            </div>
-
                 <br />
 
 

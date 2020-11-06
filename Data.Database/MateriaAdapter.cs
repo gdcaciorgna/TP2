@@ -80,6 +80,41 @@ namespace Data.Database
             return mat;
         }
 
+
+        public Business.Entities.Materia GetOne(Curso cur)
+        {
+            Materia mat = new Materia();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdMaterias = new SqlCommand("select * from materias where id_curso = @id", sqlConn);
+                cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = cur.ID;
+                SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
+
+                if (drMaterias.Read())
+                {
+                    mat.ID = (int)drMaterias["id_materia"];
+                    mat.Descripcion = (string)drMaterias["desc_materia"];
+                    mat.HSSemanales = (int)drMaterias["hs_semanales"];
+                    mat.HSTotales = (int)drMaterias["hs_totales"];
+                    mat.IDPlan = (int)drMaterias["id_plan"];
+                }
+                drMaterias.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar datos de la Materia", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return mat;
+        }
+
+
         public void Save(Materia mat)
         {
             if (mat.State == BusinessEntity.States.New)

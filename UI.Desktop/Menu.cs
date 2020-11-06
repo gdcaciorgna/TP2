@@ -55,9 +55,9 @@ namespace UI.Desktop
             textoRol.Text = "Rol: " + tipoUsuario.ToString();
 
 
-            switch (tipo_per)
+            switch (tipoUsuario)
             {
-                case 0:
+                case Persona.TiposPersona.Administrador:
                     tsmiAlumnos.Visible = true;
                     tsmiComisiones.Visible = true;
                     tsmiCursos.Visible = true;
@@ -79,7 +79,7 @@ namespace UI.Desktop
                     
                     break;
 
-                case 1:
+                case Persona.TiposPersona.Docente:
 
                     tsmiArchivo.Visible = true;
                     tsmiCursos.Visible = true;
@@ -88,7 +88,7 @@ namespace UI.Desktop
 
                     break;
 
-                case 2:
+                case Persona.TiposPersona.Alumno:
                     tsmiInformes.Visible = true;
                     tsmiInscripciones.Visible = true;
                     tsmiInscribirAlumnoCurso.Visible = true;

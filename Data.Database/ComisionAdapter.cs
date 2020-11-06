@@ -81,6 +81,39 @@ namespace Data.Database
             return com;
         }
 
+        public Business.Entities.Comision GetOne(Curso cur)
+        {
+            Comision com = new Comision();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones com inner join cursos cur where cur.id_curso = @id", sqlConn);
+                cmdComisiones.Parameters.Add("@id", SqlDbType.Int).Value = cur.ID;
+                SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
+
+                if (drComisiones.Read())
+                {
+                    com.ID = (int)drComisiones["id_comision"];
+                    com.Descripcion = (string)drComisiones["desc_comision"];
+                    com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
+                    com.IDPlan = (int)drComisiones["id_plan"];
+
+
+                }
+                drComisiones.Close();
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return com;
+        }
+
+
         public void Delete(int ID)
         {
             try

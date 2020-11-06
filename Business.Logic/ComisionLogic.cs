@@ -42,6 +42,20 @@ namespace Business.Logic
             }
         }
 
+        public Comision GetOne(Curso cur)
+        {
+            try
+            {
+                return this.ComisionData.GetOne(cur);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+
+        }
+
         public void Delete(int pID)      // punto 9
         {
             try

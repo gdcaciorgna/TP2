@@ -133,7 +133,7 @@ namespace UI.Web
         private void LoadGrid()
         {
 
-            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAllCompleto();
+            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAll();
             this.dgv_AlumnosPorCurso.DataBind();
 
         }
@@ -155,6 +155,7 @@ namespace UI.Web
            this.tbCondicion.Text = this.Entity.Condicion;
             this.tbNota.Text =  this.Entity.Nota.ToString();
 
+            
 
             PersonaLogic perLog = new PersonaLogic();
             Persona per = new Persona();
@@ -170,6 +171,7 @@ namespace UI.Web
 
         private void LoadEntity(AlumnoInscripcion aluInsc)
         {
+
             if (Validar())
             {
                 aluInsc.IDAlumno = Int32.Parse(ddl_Alumno.SelectedValue.ToString());
@@ -190,17 +192,6 @@ namespace UI.Web
             String error = "Se han encontrado los siguientes errores: <br /><br />";
             bool vof = true;
 
-            if (tbCondicion.Text == "")
-            {
-                error = error + "El campo condicion no puede estar vacío. <br />";
-                vof = false;
-            }
-
-            if (tbNota.Text == "")
-            {
-                error = error + "El campo nota no puede estar vacío. <br />";
-                vof = false;
-            }
 
           
 
@@ -260,7 +251,7 @@ namespace UI.Web
         {
             int cur = Int32.Parse(ddl_Cursos.SelectedValue.ToString());
 
-            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAllAlumnosPorCursoCompleto(cur);
+            this.dgv_AlumnosPorCurso.DataSource = this.Logic.GetAllAlumnosPorCurso(cur);
             this.dgv_AlumnosPorCurso.DataBind();
         }
 
