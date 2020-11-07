@@ -230,8 +230,8 @@
             // 
             // IDPlan
             // 
-            this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "ID Plan";
+            this.IDPlan.DataPropertyName = "DescEspecialidad";
+            this.IDPlan.HeaderText = "Plan";
             this.IDPlan.Name = "IDPlan";
             // 
             // Personas

@@ -51,6 +51,8 @@ namespace Business.Entities
             set { _IDPlan = value; }
         }
 
+        public string DescPlan { get; set; }
+
         private int _Legajo;
         public int Legajo
         {
@@ -58,6 +60,7 @@ namespace Business.Entities
             set { _Legajo = value; }
         }
 
+        
 
         public DateTime FechaNacimiento { get; set; }
 

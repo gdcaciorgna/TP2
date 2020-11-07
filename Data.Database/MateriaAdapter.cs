@@ -18,7 +18,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMaterias = new SqlCommand("select * from materias", sqlConn);
+                SqlCommand cmdMaterias = new SqlCommand("select * from materias mat inner join planes pl on pl.id_plan = mat.id_plan", sqlConn);
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
 
                 while (drMaterias.Read())
@@ -29,6 +29,8 @@ namespace Data.Database
                     mat.HSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
                     mat.IDPlan = (int)drMaterias["id_plan"];
+                    mat.DescPlan = (string)drMaterias["desc_plan"];
+
                     materias.Add(mat);
 
                 }
@@ -53,7 +55,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMaterias = new SqlCommand("select * from materias where id_materia = @id", sqlConn);
+                SqlCommand cmdMaterias = new SqlCommand("select * from materias mat inner join planes pl on pl.id_plan = mat.id_plan where id_materia = @id", sqlConn);
                 cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
 
@@ -64,6 +66,8 @@ namespace Data.Database
                     mat.HSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
                     mat.IDPlan = (int)drMaterias["id_plan"];
+                    mat.DescPlan = (string)drMaterias["desc_plan"];
+
                 }
                 drMaterias.Close();
             }
@@ -87,7 +91,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdMaterias = new SqlCommand("select * from materias where id_curso = @id", sqlConn);
+                SqlCommand cmdMaterias = new SqlCommand("select * from materias mat inner join planes pl on pl.id_plan = mat.id_plan where id_curso = @id", sqlConn);
                 cmdMaterias.Parameters.Add("@id", SqlDbType.Int).Value = cur.ID;
                 SqlDataReader drMaterias = cmdMaterias.ExecuteReader();
 
@@ -98,6 +102,8 @@ namespace Data.Database
                     mat.HSSemanales = (int)drMaterias["hs_semanales"];
                     mat.HSTotales = (int)drMaterias["hs_totales"];
                     mat.IDPlan = (int)drMaterias["id_plan"];
+                    mat.DescPlan = (string)drMaterias["desc_plan"];
+
                 }
                 drMaterias.Close();
             }

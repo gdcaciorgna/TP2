@@ -21,5 +21,7 @@ namespace Business.Entities
             get { return _IDEspecialidad; }
             set { _IDEspecialidad = value; }
         }
+
+        public string DescEspecialidad { get; set; }
     }
 }

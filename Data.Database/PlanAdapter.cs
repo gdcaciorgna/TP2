@@ -19,7 +19,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPlanes = new SqlCommand("select * from planes", sqlConn);
+                SqlCommand cmdPlanes = new SqlCommand("select * from planes pl inner join especialidades es on pl.id_especialidad = es.id_especialidad ", sqlConn);
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
 
                 while (drPlanes.Read())
@@ -28,6 +28,7 @@ namespace Data.Database
                     plan.ID = (int)drPlanes["id_plan"];
                     plan.Descripcion = (string)drPlanes["desc_plan"];
                     plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
+                    plan.DescEspecialidad = (string)drPlanes["desc_especialidad"];
                    
                     planes.Add(plan);
 
@@ -54,7 +55,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPlanes = new SqlCommand("select * from planes where id_plan = @id", sqlConn);
+                SqlCommand cmdPlanes = new SqlCommand("select * from planes pl inner join especialidades es on pl.id_especialidad = es.id_especialidad where id_plan = @id", sqlConn);
                 cmdPlanes.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPlanes = cmdPlanes.ExecuteReader();
 
@@ -63,7 +64,9 @@ namespace Data.Database
                     plan.ID = (int)drPlanes["id_plan"];
                     plan.Descripcion = (string)drPlanes["desc_plan"];
                     plan.IDEspecialidad = (int)drPlanes["id_especialidad"];
-                  
+                    plan.DescEspecialidad = (string)drPlanes["desc_especialidad"];
+
+
 
                 }
                 drPlanes.Close();

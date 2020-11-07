@@ -10,7 +10,7 @@
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID comisiones" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion comisiones" />
-                <asp:BoundField DataField="IDPlan" HeaderText="ID plan" />
+                <asp:BoundField DataField="DescPlan" HeaderText="Plan" />
                 <asp:BoundField DataField="AnioEspecialidad" HeaderText="Año especialidad" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>

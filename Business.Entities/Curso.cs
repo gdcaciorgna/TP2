@@ -42,5 +42,13 @@ namespace Business.Entities
             get { return _IDMateria; }
             set { _IDMateria = value; }
         }
+
+
+        public string Materia { get; set; }
+
+        public string Comision { get; set; }
+
+
+
     }
 }

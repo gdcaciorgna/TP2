@@ -9,7 +9,7 @@
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="IdPlan" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion plan" />
-                <asp:BoundField DataField="IDEspecialidad" HeaderText="Id Especialidad" />
+                <asp:BoundField DataField="DescEspecialidad" HeaderText="Especialidad" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
         </asp:GridView>

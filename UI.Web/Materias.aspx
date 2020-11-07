@@ -12,7 +12,7 @@
             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion Materia" />
             <asp:BoundField DataField="HSSemanales" HeaderText="Horas semanales" />
             <asp:BoundField DataField="HSTotales" HeaderText="Horas total" />
-            <asp:BoundField DataField="IDPlan" HeaderText="ID Plan" />
+            <asp:BoundField DataField="DescPlan" HeaderText="Plan" />
             <asp:CommandField ShowSelectButton="True" />
         </Columns>
     </asp:GridView>
