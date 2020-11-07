@@ -57,7 +57,7 @@
             this.tsmiCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiInscripciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAlumnoInscribirseCurso = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInscribirAlumnoCurso = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInformes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegistroNotas = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +77,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiArchivo,
-            this.tsmiInscripciones,
+            this.tsmiAlumnoInscribirseCurso,
             this.tsmiInformes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -109,7 +109,7 @@
             this.nuevoAlumnoToolStripMenuItem,
             this.verAlumnosToolStripMenuItem});
             this.tsmiAlumnos.Name = "tsmiAlumnos";
-            this.tsmiAlumnos.Size = new System.Drawing.Size(180, 22);
+            this.tsmiAlumnos.Size = new System.Drawing.Size(150, 22);
             this.tsmiAlumnos.Text = "Alumnos";
             this.tsmiAlumnos.Visible = false;
             // 
@@ -133,7 +133,7 @@
             this.nuevoDocenteToolStripMenuItem,
             this.verDocentesToolStripMenuItem});
             this.tsmiDocentes.Name = "tsmiDocentes";
-            this.tsmiDocentes.Size = new System.Drawing.Size(180, 22);
+            this.tsmiDocentes.Size = new System.Drawing.Size(150, 22);
             this.tsmiDocentes.Text = "Docentes";
             this.tsmiDocentes.Visible = false;
             // 
@@ -156,7 +156,7 @@
             this.nuevaPersonaToolStripMenuItem,
             this.verPersonasToolStripMenuItem});
             this.tsmiPersonas.Name = "tsmiPersonas";
-            this.tsmiPersonas.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPersonas.Size = new System.Drawing.Size(150, 22);
             this.tsmiPersonas.Text = "Personas";
             this.tsmiPersonas.Visible = false;
             // 
@@ -180,7 +180,7 @@
             this.crearUsuarioToolStripMenuItem,
             this.verUsuariosToolStripMenuItem});
             this.tsmiUsuarios.Name = "tsmiUsuarios";
-            this.tsmiUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsmiUsuarios.Size = new System.Drawing.Size(150, 22);
             this.tsmiUsuarios.Text = "Usuarios";
             this.tsmiUsuarios.Visible = false;
             // 
@@ -204,7 +204,7 @@
             this.nuevaEspecialidadToolStripMenuItem,
             this.verEspecialidadesToolStripMenuItem});
             this.tsmiEspecialidades.Name = "tsmiEspecialidades";
-            this.tsmiEspecialidades.Size = new System.Drawing.Size(180, 22);
+            this.tsmiEspecialidades.Size = new System.Drawing.Size(150, 22);
             this.tsmiEspecialidades.Text = "Especialidades";
             this.tsmiEspecialidades.Visible = false;
             // 
@@ -228,7 +228,7 @@
             this.nuevoPlanToolStripMenuItem,
             this.verPlanesToolStripMenuItem});
             this.tsmiPlanes.Name = "tsmiPlanes";
-            this.tsmiPlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPlanes.Size = new System.Drawing.Size(150, 22);
             this.tsmiPlanes.Text = "Planes";
             this.tsmiPlanes.Visible = false;
             // 
@@ -252,7 +252,7 @@
             this.nuevaMateriaToolStripMenuItem,
             this.verMateriasToolStripMenuItem});
             this.tsmiMaterias.Name = "tsmiMaterias";
-            this.tsmiMaterias.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMaterias.Size = new System.Drawing.Size(150, 22);
             this.tsmiMaterias.Text = "Materias";
             this.tsmiMaterias.Visible = false;
             // 
@@ -276,7 +276,7 @@
             this.nuevaComisiónToolStripMenuItem,
             this.verComisionesToolStripMenuItem});
             this.tsmiComisiones.Name = "tsmiComisiones";
-            this.tsmiComisiones.Size = new System.Drawing.Size(180, 22);
+            this.tsmiComisiones.Size = new System.Drawing.Size(150, 22);
             this.tsmiComisiones.Text = "Comisiones";
             this.tsmiComisiones.Visible = false;
             // 
@@ -300,7 +300,7 @@
             this.nuevoCursoToolStripMenuItem,
             this.verCursosToolStripMenuItem});
             this.tsmiCursos.Name = "tsmiCursos";
-            this.tsmiCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCursos.Size = new System.Drawing.Size(150, 22);
             this.tsmiCursos.Text = "Cursos";
             this.tsmiCursos.Visible = false;
             // 
@@ -318,21 +318,22 @@
             this.verCursosToolStripMenuItem.Text = "Ver cursos";
             this.verCursosToolStripMenuItem.Click += new System.EventHandler(this.verCursosToolStripMenuItem_Click);
             // 
-            // tsmiInscripciones
+            // tsmiAlumnoInscribirseCurso
             // 
-            this.tsmiInscripciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAlumnoInscribirseCurso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiInscribirAlumnoCurso});
-            this.tsmiInscripciones.Name = "tsmiInscripciones";
-            this.tsmiInscripciones.Size = new System.Drawing.Size(88, 20);
-            this.tsmiInscripciones.Text = "Inscripciones";
-            this.tsmiInscripciones.Visible = false;
+            this.tsmiAlumnoInscribirseCurso.Name = "tsmiAlumnoInscribirseCurso";
+            this.tsmiAlumnoInscribirseCurso.Size = new System.Drawing.Size(88, 20);
+            this.tsmiAlumnoInscribirseCurso.Text = "Inscripciones";
+            this.tsmiAlumnoInscribirseCurso.Visible = false;
             // 
             // tsmiInscribirAlumnoCurso
             // 
             this.tsmiInscribirAlumnoCurso.Name = "tsmiInscribirAlumnoCurso";
-            this.tsmiInscribirAlumnoCurso.Size = new System.Drawing.Size(207, 22);
-            this.tsmiInscribirAlumnoCurso.Text = "Incscribir alumno a curso";
+            this.tsmiInscribirAlumnoCurso.Size = new System.Drawing.Size(185, 22);
+            this.tsmiInscribirAlumnoCurso.Text = "Inscribirse a un curso";
             this.tsmiInscribirAlumnoCurso.Visible = false;
+            this.tsmiInscribirAlumnoCurso.Click += new System.EventHandler(this.tsmiInscribirAlumnoCurso_Click);
             // 
             // tsmiInformes
             // 
@@ -348,20 +349,20 @@
             // tsmiRegistroNotas
             // 
             this.tsmiRegistroNotas.Name = "tsmiRegistroNotas";
-            this.tsmiRegistroNotas.Size = new System.Drawing.Size(180, 22);
+            this.tsmiRegistroNotas.Size = new System.Drawing.Size(170, 22);
             this.tsmiRegistroNotas.Text = "Registro de notas";
             // 
             // tsmiRegistroCursos
             // 
             this.tsmiRegistroCursos.Name = "tsmiRegistroCursos";
-            this.tsmiRegistroCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsmiRegistroCursos.Size = new System.Drawing.Size(170, 22);
             this.tsmiRegistroCursos.Text = "Registro de cursos";
             this.tsmiRegistroCursos.Click += new System.EventHandler(this.tsmiRegistroCursos_Click);
             // 
             // tsmiReportePlanes
             // 
             this.tsmiReportePlanes.Name = "tsmiReportePlanes";
-            this.tsmiReportePlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReportePlanes.Size = new System.Drawing.Size(170, 22);
             this.tsmiReportePlanes.Text = "Reporte de planes";
             // 
             // tableLayoutPanel1
@@ -465,7 +466,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCursos;
         private System.Windows.Forms.ToolStripMenuItem nuevoCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCursosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiInscripciones;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAlumnoInscribirseCurso;
         private System.Windows.Forms.ToolStripMenuItem tsmiInscribirAlumnoCurso;
         private System.Windows.Forms.ToolStripMenuItem tsmiInformes;
         private System.Windows.Forms.ToolStripMenuItem tsmiRegistroNotas;

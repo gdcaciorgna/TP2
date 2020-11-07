@@ -70,7 +70,7 @@ namespace UI.Desktop
 
                     tsmiArchivo.Visible = true;
                     tsmiInformes.Visible = true;
-                    tsmiInscripciones.Visible = true;
+                    tsmiAlumnoInscribirseCurso.Visible = true;
 
                     tsmiInformes.Visible = true;
                     tsmiRegistroCursos.Visible = true;
@@ -90,7 +90,7 @@ namespace UI.Desktop
 
                 case Persona.TiposPersona.Alumno:
                     tsmiInformes.Visible = true;
-                    tsmiInscripciones.Visible = true;
+                    tsmiAlumnoInscribirseCurso.Visible = true;
                     tsmiInscribirAlumnoCurso.Visible = true;
                     break;
             }
@@ -211,6 +211,12 @@ namespace UI.Desktop
         {
             Reporte rep = new Reporte();
             rep.ShowDialog();
+        }
+
+        private void tsmiInscribirAlumnoCurso_Click(object sender, EventArgs e)
+        {
+            AlumnoInscripciones aluDesk = new AlumnoInscripciones();
+            aluDesk.ShowDialog();
         }
     }
 }

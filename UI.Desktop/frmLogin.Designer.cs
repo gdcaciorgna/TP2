@@ -47,7 +47,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 122);
+            this.label2.Location = new System.Drawing.Point(34, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -62,16 +62,17 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(101, 122);
+            this.txtPassword.Location = new System.Drawing.Point(101, 106);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(145, 20);
             this.txtPassword.TabIndex = 3;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(180, 174);
+            this.btnAceptar.Location = new System.Drawing.Point(101, 152);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(96, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(145, 23);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Iniciar sesión";
             this.btnAceptar.UseVisualStyleBackColor = true;
