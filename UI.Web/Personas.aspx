@@ -24,7 +24,7 @@
                 <asp:BoundField DataField="Email" HeaderText="Email" />
                 <asp:BoundField DataField="Telefono" HeaderText="Teléfono" />
                 <asp:BoundField DataField="Legajo" HeaderText="Legajo" />
-                <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha Nacimiento" />
+                <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha Nacimiento" DataFormatString="{0:dd/MM/yyyy}" />
                 <asp:BoundField DataField="TipoP" HeaderText="Tipo de Persona" />
                 <asp:BoundField DataField="DescPlan" HeaderText="Plan" />
                 <asp:CommandField ShowSelectButton="True" />
