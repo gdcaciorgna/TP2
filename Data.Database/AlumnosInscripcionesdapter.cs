@@ -402,6 +402,8 @@ namespace Data.Database
 
         public void Insert(AlumnoInscripcion aluInsc)
         {
+
+
             try
             {
                 this.OpenConnection();

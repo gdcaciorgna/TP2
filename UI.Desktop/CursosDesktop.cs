@@ -139,7 +139,23 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.CursoActual.Descripcion;
             this.txtAnio.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.Cupo.ToString();
-            // this.cbEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+
+
+
+            MateriaLogic matLog = new MateriaLogic();
+            Materia mat = new Materia();
+            mat = matLog.GetOne(CursoActual.IDMateria);
+
+            ComisionLogic comLog = new ComisionLogic();
+            Comision com = new Comision();
+            com = comLog.GetOne(CursoActual.IDComision);
+
+
+            this.cbMateria.SelectedItem = mat;
+
+            this.cbComision.SelectedItem = com;
+
+
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)

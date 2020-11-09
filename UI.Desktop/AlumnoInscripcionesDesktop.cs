@@ -36,8 +36,13 @@ namespace UI.Desktop
 
         public AlumnoInscripcion AlumnoInscripcionActual { get; set; }
 
+        public Curso CursoActual { get; set; }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+            LoadForm();
+
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
                 if (this.Validar())
@@ -62,48 +67,43 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
+
+
             String error = "Se han encontrado los siguientes errores: \n\n";
             bool vof = true;
 
 
-            Curso cur = new Curso();
             CursoLogic curLog = new CursoLogic();
 
             AlumnoInscripcionLogic aluInscLog = new AlumnoInscripcionLogic();
-            AlumnoInscripcion aluInsc = new AlumnoInscripcion();
 
 
-            try {
+                int cant_alumnos = aluInscLog.ContarAlumnosInscriptosACurso(CursoActual);
 
 
-                cur = curLog.GetOne(AlumnoInscripcionActual.IDCurso);
-                int cant_alumnos = aluInscLog.ContarAlumnosInscriptosACurso(cur);
-
-                aluInsc = aluInscLog.GetOne(AlumnoInscripcionActual.IDAlumno, AlumnoInscripcionActual.IDCurso);
-
-
-
-                if ((cant_alumnos + 1) > cur.Cupo)
+                if (CursoActual.ID == 0)
                 {
-                    error = error + "El curso ya se encuentra completo. " + cant_alumnos + "/" + cur.Cupo + " <br />";
                     vof = false;
-                    
+                    error = error + "No se encontró curso para materia, comisión y año especificado \n";
+
                 }
 
-                else if (aluInsc.ID != 0)
+                else if ((cant_alumnos + 1) > CursoActual.Cupo)
                 {
-                    error = error + "Ya se encuentra inscripto al curso. <br />";
+                    error = error + "El curso ya se encuentra completo. " + cant_alumnos + "/" + CursoActual.Cupo + "\n";
+                    vof = false;
+
+                }
+            
+
+                
+
+                else if (AlumnoInscripcionActual.ID != 0)
+                {
+                    error = error + "Ya se encuentra inscripto al curso. \n";
                     vof = false;
                 }
 
-
-
-            }
-            catch (Exception e) 
-            {
-                vof = false;
-                error = error + "No se encontró curso para materia, comisión y año especificado";
-            }
 
 
             if (vof == true)
@@ -171,12 +171,6 @@ namespace UI.Desktop
         public override void MapearADatos()
         {
 
-            if (this.Modo == ModoForm.Alta)
-            {
-                AlumnoInscripcion alInsc = new AlumnoInscripcion();
-                AlumnoInscripcionActual = alInsc;
-
-            }
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
@@ -186,34 +180,41 @@ namespace UI.Desktop
                 {
                     AlumnoInscripcionActual.State = BusinessEntity.States.Modified;
                 }
-
-
-
-                Materia mat = new Materia();
-                Comision com = new Comision();
-
-                com = (Comision) cmbComision.SelectedItem;
-                mat = (Materia) cmbMateria.SelectedItem;
-                int anio = Int32.Parse(cmbAnioCalendario.SelectedItem.ToString());
-               
-
-                Curso cur = new Curso();
-                CursoLogic curLog = new CursoLogic();
-
-                cur = curLog.GetOne(com.ID, mat.ID, anio);
-
-
-                AlumnoInscripcionActual.IDAlumno = Usuario.UsuarioActual.ID_Persona;
-                AlumnoInscripcionActual.IDCurso = cur.ID;
-
-                
+                      
             }
+
 
             if (this.Modo == ModoForm.Baja)
             {
                 AlumnoInscripcionActual.State = BusinessEntity.States.Deleted;
             }
 
+
+            AlumnoInscripcionActual.IDAlumno = Usuario.UsuarioActual.ID_Persona;
+            AlumnoInscripcionActual.IDCurso = CursoActual.ID;
+            AlumnoInscripcionActual.Condicion = "Inscripto";
+
+
+        }
+
+        public void LoadForm()
+        {
+            Materia mat = new Materia();
+            Comision com = new Comision();
+
+            com = (Comision)cmbComision.SelectedItem;
+            mat = (Materia)cmbMateria.SelectedItem;
+            int anio = Int32.Parse(cmbAnioCalendario.SelectedItem.ToString());
+
+
+            CursoLogic curLog = new CursoLogic();
+
+            CursoActual = curLog.GetOne(com.ID, mat.ID, anio);
+
+            AlumnoInscripcionLogic alInscLogic = new AlumnoInscripcionLogic();
+
+            AlumnoInscripcionActual = alInscLogic.GetOne(Usuario.UsuarioActual.ID_Persona, CursoActual.ID);
+            
 
         }
 
