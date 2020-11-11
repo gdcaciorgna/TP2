@@ -33,6 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
             this.cmbDocente = new System.Windows.Forms.ComboBox();
+            this.IDCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -83,6 +87,11 @@
             // dgvCursos
             // 
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDCurso,
+            this.Materia,
+            this.Comision,
+            this.AnioCalendario});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvCursos, 2);
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCursos.Location = new System.Drawing.Point(3, 43);
@@ -98,6 +107,30 @@
             this.cmbDocente.Name = "cmbDocente";
             this.cmbDocente.Size = new System.Drawing.Size(121, 21);
             this.cmbDocente.TabIndex = 3;
+            // 
+            // IDCurso
+            // 
+            this.IDCurso.DataPropertyName = "ID";
+            this.IDCurso.HeaderText = "ID";
+            this.IDCurso.Name = "IDCurso";
+            // 
+            // Materia
+            // 
+            this.Materia.DataPropertyName = "Materia";
+            this.Materia.HeaderText = "Materia";
+            this.Materia.Name = "Materia";
+            // 
+            // Comision
+            // 
+            this.Comision.DataPropertyName = "Comision";
+            this.Comision.HeaderText = "Comision";
+            this.Comision.Name = "Comision";
+            // 
+            // AnioCalendario
+            // 
+            this.AnioCalendario.DataPropertyName = "AnioCalendario";
+            this.AnioCalendario.HeaderText = "Año calendario";
+            this.AnioCalendario.Name = "AnioCalendario";
             // 
             // VerCursosDocente
             // 
@@ -124,5 +157,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvCursos;
         private System.Windows.Forms.ComboBox cmbDocente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnioCalendario;
     }
 }

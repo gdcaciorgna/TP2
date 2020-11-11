@@ -87,9 +87,7 @@ namespace UI.Desktop
 
                 case Persona.TiposPersona.Docente:
 
-                    tsmiArchivo.Visible = true;
-                    tsmiCursos.Visible = true;
-                    tsmiAlumnos.Visible = true;
+                    tsmiVerCursosxDocente.Visible = true;
                     
 
                     break;
@@ -235,6 +233,12 @@ namespace UI.Desktop
         {
             DocenteCurso docCur = new DocenteCurso();
             docCur.ShowDialog();
+        }
+
+        private void tsmiVerCursosxDocente_Click(object sender, EventArgs e)
+        {
+            VerCursosDocente desk = new VerCursosDocente();
+            desk.ShowDialog(); 
         }
     }
 }

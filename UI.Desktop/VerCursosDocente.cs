@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class VerCursosDocente : Form
+    public partial class VerCursosDocente : ApplicationForm
     {
         public VerCursosDocente()
         {
@@ -44,27 +44,25 @@ namespace UI.Desktop
 
         }
 
+     
 
         public void Listar()
         {
-            /*
+            
             DocenteCursoLogic docCurLog = new DocenteCursoLogic();
             List<Curso> cursos = new List<Curso>();
             try
             {
 
-
-                cursos = docCurLog.GetAl
-                this.dgvInscripciones.DataSource = alInsc;
-
-
+                cursos = docCurLog.GetAll(DocenteActual.ID);
+                this.dgvCursos.DataSource = cursos;
 
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+            
 
             
         }
