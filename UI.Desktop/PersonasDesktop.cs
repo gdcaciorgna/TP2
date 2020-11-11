@@ -81,6 +81,8 @@ namespace UI.Desktop
 
 
 
+
+
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
                 this.btnAceptar.Text = "Guardar";

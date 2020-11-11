@@ -19,7 +19,7 @@ namespace Data.Database
             {
 
                 this.OpenConnection();
-                SqlCommand cmdAlumnoInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona  where ai.id_curso = @id_curso", sqlConn);
+                SqlCommand cmdAlumnoInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona inner join materias mat on mat.id_materia=cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision  where ai.id_curso = @id_curso", sqlConn);
                 cmdAlumnoInsc.Parameters.Add("@id_curso", SqlDbType.Int).Value = cur;
 
 
@@ -33,7 +33,8 @@ namespace Data.Database
                     aluInsc.Condicion = (string)drAlumnoInsc["condicion"];
                     aluInsc.IDCurso = (int)drAlumnoInsc["id_curso"];
                     aluInsc.Nota = (int)drAlumnoInsc["nota"];
-                    aluInsc.DescCurso = (string)drAlumnoInsc["desc_curso"];
+                    aluInsc.DescCurso = drAlumnoInsc["desc_materia"] + " " + drAlumnoInsc["desc_comision"] + " " + drAlumnoInsc["anio_calendario"];
+
 
 
                     string nombre = (string)drAlumnoInsc["nombre"];
@@ -71,7 +72,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdAlumnosInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona", sqlConn);
+                SqlCommand cmdAlumnosInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona inner join materias mat on mat.id_materia=cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision", sqlConn);
                 SqlDataReader drAlumnosInsc = cmdAlumnosInsc.ExecuteReader();
 
                 while (drAlumnosInsc.Read())
@@ -89,7 +90,7 @@ namespace Data.Database
                     
                     string descAlumno = apellido + " " + nombre + " - " + legajo;
                     aluInsc.Alumno = descAlumno;
-                    aluInsc.DescCurso = (string)drAlumnosInsc["desc_curso"];
+                    aluInsc.DescCurso = drAlumnosInsc["desc_materia"] + " " + drAlumnosInsc["desc_comision"] + " " + drAlumnosInsc["anio_calendario"];
 
                     alumnosInscripciones.Add(aluInsc);
 
@@ -116,7 +117,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdAlumnosInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona where id_inscripcion = @id", sqlConn);
+                SqlCommand cmdAlumnosInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona inner join materias mat on mat.id_materia=cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision where id_inscripcion = @id", sqlConn);
                 cmdAlumnosInsc.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drAlumnosInsc = cmdAlumnosInsc.ExecuteReader();
 
@@ -135,7 +136,7 @@ namespace Data.Database
                     string descAlumno = apellido + " " + nombre + " - " + legajo;
 
                     aluInsc.Alumno = descAlumno;
-                    aluInsc.DescCurso = (string)drAlumnosInsc["desc_curso"];
+                    aluInsc.DescCurso = drAlumnosInsc["desc_materia"] + " " + drAlumnosInsc["desc_comision"] + " " + drAlumnosInsc["anio_calendario"];
 
 
                 }
@@ -181,7 +182,7 @@ namespace Data.Database
                     string descAlumno = apellido + " " + nombre + " - " + legajo;
 
                     aluInsc.Alumno = descAlumno;
-                    aluInsc.DescCurso = (string)drAlumnosInsc["desc_curso"];
+                    aluInsc.DescCurso = drAlumnosInsc["desc_materia"] + " " + drAlumnosInsc["desc_comision"] + " " + drAlumnosInsc["anio_calendario"];
 
 
                 }
@@ -247,7 +248,7 @@ namespace Data.Database
             {
 
                 this.OpenConnection();
-                SqlCommand cmdAlumnoInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona  where id_alumno = @id_alumno", sqlConn);
+                SqlCommand cmdAlumnoInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona inner join materias mat on mat.id_materia=cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision  where id_alumno = @id_alumno", sqlConn);
                 cmdAlumnoInsc.Parameters.Add("@id_alumno", SqlDbType.Int).Value = id_alumno;
 
 
@@ -261,7 +262,7 @@ namespace Data.Database
                     aluInsc.Condicion = (string)drAlumnoInsc["condicion"];
                     aluInsc.IDCurso = (int)drAlumnoInsc["id_curso"];
                     aluInsc.Nota = (int)drAlumnoInsc["nota"];
-                    aluInsc.DescCurso = (string)drAlumnoInsc["desc_curso"];
+                    aluInsc.DescCurso = drAlumnoInsc["desc_materia"] + " " + drAlumnoInsc["desc_comision"] + " " + drAlumnoInsc["anio_calendario"];
 
 
                     string nombre = (string)drAlumnoInsc["nombre"];
@@ -300,7 +301,7 @@ namespace Data.Database
             {
 
                 this.OpenConnection();
-                SqlCommand cmdAlumnoInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona  where id_alumno = @id_alumno and anio_calendario = @anio_calendario", sqlConn);
+                SqlCommand cmdAlumnoInsc = new SqlCommand("SELECT * from alumnos_inscripciones ai inner join cursos cu on ai.id_curso = cu.id_curso inner join personas pe on ai.id_alumno = pe.id_persona inner join materias mat on mat.id_materia=cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision where id_alumno = @id_alumno and anio_calendario = @anio_calendario", sqlConn);
                 cmdAlumnoInsc.Parameters.Add("@id_alumno", SqlDbType.Int).Value = id_alumno;
                 cmdAlumnoInsc.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = anio_cal;
 
@@ -315,7 +316,7 @@ namespace Data.Database
                     aluInsc.Condicion = (string)drAlumnoInsc["condicion"];
                     aluInsc.IDCurso = (int)drAlumnoInsc["id_curso"];
                     aluInsc.Nota = (int)drAlumnoInsc["nota"];
-                    aluInsc.DescCurso = (string)drAlumnoInsc["desc_curso"];
+                    aluInsc.DescCurso = drAlumnoInsc["desc_materia"] + " " + drAlumnoInsc["desc_comision"] + " " + drAlumnoInsc["anio_calendario"];
 
 
                     string nombre = (string)drAlumnoInsc["nombre"];

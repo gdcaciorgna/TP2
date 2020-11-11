@@ -31,8 +31,12 @@ namespace Data.Database
                     docCur.IDCurso = (int)drDocentesCursos["id_curso"];
                     docCur.IDDocente = (int)drDocentesCursos["id_docente"];
                     docCur.Cargo = (DocenteCurso.TiposCargo)drDocentesCursos["cargo"];
-                    docCur.Docente = (string)drDocentesCursos["nombre"];
-                    docCur.apellidoDocente = (string)drDocentesCursos["apellido"];
+                    
+                    string apellido = (string)drDocentesCursos["apellido"];
+                    string nombre = (string)drDocentesCursos["nombre"];
+
+                    docCur.Docente = apellido + " " + nombre;
+
 
                     docentesCurso.Add(docCur);
 
@@ -55,14 +59,14 @@ namespace Data.Database
         }
 
 
-        public List<DocenteCurso> GetAll() 
+        public List<DocenteCurso> GetAll()
         {
             List<DocenteCurso> docentesCursos = new List<DocenteCurso>();
 
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos", sqlConn);
+                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc join personas p on dc.id_docente = p.id_persona", sqlConn);
                 SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
 
                 while (drDocentesCursos.Read())
@@ -72,6 +76,11 @@ namespace Data.Database
                     docCurso.IDCurso = (int)drDocentesCursos["id_curso"];
                     docCurso.IDDocente = (int)drDocentesCursos["id_docente"];
                     docCurso.Cargo = (DocenteCurso.TiposCargo)drDocentesCursos["cargo"];
+
+                    string apellido = (string)drDocentesCursos["apellido"];
+                    string nombre = (string)drDocentesCursos["nombre"];
+
+                    docCurso.Docente = apellido + " " + nombre;
 
                     docentesCursos.Add(docCurso);
 
@@ -92,13 +101,54 @@ namespace Data.Database
         }
 
 
+        public List<Curso> GetAll(int id_docente)
+        {
+            List<Curso> cursos = new List<Curso>();
+
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc inner join cursos cu on dc.id_curso = cu.id_curso inner join materia mat on mat.id_materia = cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision where id_docente = @id_docente ", sqlConn);
+                cmdDocentesCursos.Parameters.Add("@id_docente", SqlDbType.Int).Value = id_docente;
+                SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
+
+                while (drDocentesCursos.Read())
+                {
+                    Curso curso = new Curso();
+                    curso.ID = (int)drDocentesCursos["id_curso"];
+                    curso.IDMateria = (int)drDocentesCursos["id_materia"];
+                    curso.IDComision = (int)drDocentesCursos["id_comision"];
+                    curso.AnioCalendario = (int)drDocentesCursos["anio_calendario"];
+                    curso.Cupo = (int)drDocentesCursos["cupo"];
+
+                    curso.Descripcion = drDocentesCursos["desc_materia"] + " " + drDocentesCursos["desc_comision"] + " " +  curso.AnioCalendario;
+
+                    cursos.Add(curso);
+
+                }
+                drDocentesCursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return cursos;
+        }
+
+
         public DocenteCurso GetOne(int ID)
         {
            DocenteCurso docCur = new DocenteCurso();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmddocCur = new SqlCommand("select * from docentes_cursos where id_dictado = @id", sqlConn);
+                SqlCommand cmddocCur = new SqlCommand("select * from docentes_cursos dc join personas p on dc.id_docente = p.id_persona where id_dictado = @id", sqlConn);
                 cmddocCur.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drdocCur = cmddocCur.ExecuteReader();
 
@@ -108,7 +158,13 @@ namespace Data.Database
                     docCur.IDCurso = (int)drdocCur["id_curso"];
                     docCur.IDDocente = (int)drdocCur["id_docente"];
                     docCur.Cargo = (DocenteCurso.TiposCargo)drdocCur["cargo"];
-                 
+
+                    string apellido = (string)drdocCur["apellido"];
+                    string nombre = (string)drdocCur["nombre"];
+
+                    docCur.Docente = apellido + " " + nombre;
+
+
 
                 }
                 drdocCur.Close();
@@ -231,8 +287,12 @@ namespace Data.Database
                     docCurso.IDCurso = (int)drDocentesCursos["id_curso"];
                     docCurso.IDDocente = (int)drDocentesCursos["id_docente"];
                     docCurso.Cargo = (DocenteCurso.TiposCargo)drDocentesCursos["cargo"];
-                    docCurso.apellidoDocente = (string)drDocentesCursos["apellido"];
-                    docCurso.Docente = (string)drDocentesCursos["nombre"];
+
+                    string apellido = (string)drDocentesCursos["apellido"];
+                    string nombre = (string)drDocentesCursos["nombre"];
+
+                    docCurso.Docente = apellido + " " + nombre;
+
 
 
                     docentesCursos.Add(docCurso);

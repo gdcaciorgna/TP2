@@ -59,7 +59,6 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.tbDescripcion.Text = this.Entity.Descripcion;
             this.tbCupo.Text = this.Entity.Cupo.ToString();
             this.tbanio.Text = this.Entity.AnioCalendario.ToString();
             this.ddl_Comision.SelectedValue = this.Entity.IDComision.ToString();
@@ -113,7 +112,6 @@ namespace UI.Web
             if (this.Validar()) 
             {
 
-                curso.Descripcion = this.tbDescripcion.Text;
                 curso.Cupo = Int32.Parse(this.tbCupo.Text);
                 curso.AnioCalendario = Int32.Parse(this.tbanio.Text);
                 int b = Int32.Parse(ddl_Comision.SelectedValue);
@@ -133,7 +131,6 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.tbDescripcion.Enabled = enable;
             this.tbCupo.Enabled = enable;
             this.tbanio.Enabled = enable;
             this.ddl_Comision.Enabled = enable;
@@ -147,7 +144,6 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.tbDescripcion.Text = string.Empty;
             this.tbCupo.Text = string.Empty;
             this.tbanio.Text = string.Empty;
         }
@@ -158,13 +154,6 @@ namespace UI.Web
             String error = "Se han encontrado los siguientes errores: <br /><br />";
             bool vof = true;
 
-
-
-            if (tbDescripcion.Text == "")
-            {
-                error = error + "El campo Descripcion no puede estar vacío. <br />";
-                vof = false;
-            }
 
             if (tbCupo.Text == "")
             {

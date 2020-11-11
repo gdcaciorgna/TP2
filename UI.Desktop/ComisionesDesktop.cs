@@ -18,6 +18,15 @@ namespace UI.Desktop
         public ComisionesDesktop()
         {
             InitializeComponent();
+
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            cmbIdPlan.DataSource = planes;
+
+            cmbIdPlan.ValueMember = "ID";
+            cmbIdPlan.DisplayMember = "Descripcion";
         }
         public ComisionesDesktop(ModoForm modo) : this()
         {
@@ -96,20 +105,16 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+            PlanesLogic pLog = new PlanesLogic();
+            Plan plan = new Plan();
 
-            PlanesLogic planLog = new PlanesLogic();
-            List<Plan> planes = new List<Plan>();
+            plan = pLog.GetOne(this.ComisionActual.IDPlan);
 
-            planes = planLog.GetAll();
-            cmbIdPlan.DataSource = planes;
 
-            cmbIdPlan.ValueMember = "ID";
-            cmbIdPlan.DisplayMember = "Descripcion";
+            this.cmbIdPlan.SelectedValue = plan.ID;
 
-            this.txtIdPlan.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            // this.cbEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
