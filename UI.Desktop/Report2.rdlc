@@ -2,17 +2,14 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.18049cm</Width>
+              <Width>4.89479cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.27271cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.00271cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -24,21 +21,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox40">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Alumno</Value>
+                              <Value>Desc Curso</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -54,7 +51,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox42">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -68,7 +65,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox42</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -84,7 +81,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox44">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -98,37 +95,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox44</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox1">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Asistencias</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -149,21 +116,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Alumno">
+                    <Textbox Name="DescCurso">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Alumno.Value</Value>
+                              <Value>=Fields!DescCurso.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Alumno</rd:DefaultName>
+                      <rd:DefaultName>DescCurso</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -237,43 +204,12 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox2">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
-            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -290,35 +226,35 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.03412cm</Top>
-        <Left>0.97578cm</Left>
+        <Top>1.76953cm</Top>
+        <Left>0.47307cm</Left>
         <Height>1.2cm</Height>
-        <Width>14.4532cm</Width>
+        <Width>10.3975cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox3">
+      <Textbox Name="Textbox8">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!DescCurso.Value</Value>
+                <Value>=Fields!Alumno.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.86995cm</Top>
-        <Left>2.17932cm</Left>
-        <Height>0.635cm</Height>
-        <Width>6.06653cm</Width>
+        <rd:DefaultName>Textbox8</rd:DefaultName>
+        <Top>0.55245cm</Top>
+        <Left>1.91474cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.8975cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -337,7 +273,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Fecha:</Value>
+                <Value>Alumno:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -345,10 +281,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.90495cm</Top>
-        <Left>11.72544cm</Left>
+        <Top>0.55245cm</Top>
+        <Left>0.47307cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.20354cm</Width>
+        <Width>1.44167cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -360,25 +296,25 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox8">
+      <Textbox Name="Textbox7">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Curso:</Value>
+                <Value>Fecha:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>0.86995cm</Top>
-        <Left>0.97578cm</Left>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>0.55245cm</Top>
+        <Left>10.84474cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.20354cm</Width>
+        <Width>1.21708cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -405,10 +341,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>0.90495cm</Top>
-        <Left>12.96426cm</Left>
+        <Top>0.55245cm</Top>
+        <Left>12.06183cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.46472cm</Width>
+        <Width>2.19604cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -421,24 +357,38 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.21875in</Height>
+    <Height>3.35417in</Height>
     <Style />
   </Body>
-  <Width>6.8089in</Width>
+  <Width>6.36459in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox22">
+        <Image Name="Image2">
+          <Source>Embedded</Source>
+          <Value>logoutn</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.76412cm</Top>
+          <Left>12.0978cm</Left>
+          <Height>1.44709cm</Height>
+          <Width>3.96242cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Panilla de asistencias </Value>
+                  <Value>Notas por Alumno</Value>
                   <Style>
                     <FontSize>20pt</FontSize>
                   </Style>
@@ -447,11 +397,12 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>0.66711cm</Top>
-          <Left>0.97578cm</Left>
-          <Height>0.92604cm</Height>
-          <Width>7.21368cm</Width>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.76412cm</Top>
+          <Left>0.84349cm</Left>
+          <Height>0.94396cm</Height>
+          <Width>6.07187cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -462,21 +413,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>logoutn</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.66711cm</Top>
-          <Left>12.92898cm</Left>
-          <Height>1.48167cm</Height>
-          <Width>4.2598cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
       </ReportItems>
       <Style>
         <Border>
@@ -501,7 +437,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>db827bfa-b1b8-45ba-93e6-b8c19597c8ec</rd:DataSourceID>
+      <rd:DataSourceID>20147694-79ae-4b14-b99a-c0c0bbbe739a</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -623,5 +559,5 @@ AAAAAAAAMArjJwAAAAAAAAAAAAAAAAAAAADAKIyfAAAAAAAAAAAAAAAAAAAAAACjMH4CAAAAAAAAAAAA
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>300953b6-7eee-42ab-8d36-1161590e91b5</rd:ReportID>
+  <rd:ReportID>1f088ff2-fd17-47ee-8d5e-e8c33bba8b92</rd:ReportID>
 </Report>

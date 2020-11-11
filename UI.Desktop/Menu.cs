@@ -77,7 +77,6 @@ namespace UI.Desktop
                     tsmiInformes.Visible = true;
                     tsmiRegistroCursos.Visible = true;
                     tsmiRegistroNotas.Visible = true;
-                    tsmiReportePlanes.Visible = true;
 
                     tsmiInscribirDocente.Visible = true;
 
@@ -86,11 +85,7 @@ namespace UI.Desktop
                     break;
 
                 case Persona.TiposPersona.Docente:
-
-                    tsmiArchivo.Visible = true;
-                    tsmiCursos.Visible = true;
-                    tsmiAlumnos.Visible = true;
-                    
+                    tsmiVerCursosAsignadosDocente.Visible = true;                    
 
                     break;
 
@@ -105,7 +100,8 @@ namespace UI.Desktop
 
         private void nuevoAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PersonasDesktop formper = new PersonasDesktop();
+            formper.ShowDialog();
         }
 
         private void nuevaEspecialidadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -215,7 +211,7 @@ namespace UI.Desktop
 
         private void tsmiRegistroCursos_Click(object sender, EventArgs e)
         {
-            Reporte rep = new Reporte();
+            ReporteAsistencias rep = new ReporteAsistencias();
             rep.ShowDialog();
         }
 
@@ -223,6 +219,18 @@ namespace UI.Desktop
         {
             AlumnoInscripciones aluDesk = new AlumnoInscripciones();
             aluDesk.ShowDialog();
+        }
+
+        private void nuevoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PersonasDesktop formper = new PersonasDesktop();
+            formper.ShowDialog();
+        }
+
+        private void tsmiRegistroNotas_Click(object sender, EventArgs e)
+        {
+            NotasAlumnos noal = new NotasAlumnos();
+            noal.ShowDialog();
         }
 
         private void inscribirAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -235,6 +243,14 @@ namespace UI.Desktop
         {
             DocenteCurso docCur = new DocenteCurso();
             docCur.ShowDialog();
+        }
+
+
+        private void verCursosAsignadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerCursosDocente desk = new VerCursosDocente();
+            desk.ShowDialog();
+
         }
     }
 }

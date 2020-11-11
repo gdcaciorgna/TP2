@@ -12,7 +12,7 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class VerCursosDocente : Form
+    public partial class VerCursosDocente : ApplicationForm
     {
         public VerCursosDocente()
         {
@@ -25,46 +25,38 @@ namespace UI.Desktop
 
             docentes = perLog.GetAllTipo(Persona.TiposPersona.Docente);
 
-            DataTable dt = new DataTable();
-            dt = Util.FuncionesComunes.ConvertToDataTable(docentes);
-            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
-
-            cmbDocente.DataSource = dt;
-
-            cmbDocente.ValueMember = "ID";
-            cmbDocente.DisplayMember = "NombreApellidoLegajo";
-
+            
             int id_per = Usuario.UsuarioActual.ID_Persona;
             DocenteActual = perLog.GetOne(id_per);
 
-            cmbDocente.SelectedItem = DocenteActual;
+            string apellidoNombre = DocenteActual.Apellido + ", " + DocenteActual.Nombre;
+
+            txtDocente.Text = apellidoNombre;
 
 
             Listar();
 
         }
 
+     
 
         public void Listar()
         {
-            /*
+            
             DocenteCursoLogic docCurLog = new DocenteCursoLogic();
             List<Curso> cursos = new List<Curso>();
             try
             {
 
-
-                cursos = docCurLog.GetAl
-                this.dgvInscripciones.DataSource = alInsc;
-
-
+                cursos = docCurLog.GetAll(DocenteActual.ID);
+                this.dgvCursos.DataSource = cursos;
 
             }
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+            
 
             
         }
@@ -72,5 +64,21 @@ namespace UI.Desktop
         public AlumnoInscripcionLogic Logic { get; set; }
         public Persona  DocenteActual { get; set; }
 
+        private void btnVerCurso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int ID = ((Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+
+                VerCursoPorDocente pDesk = new VerCursoPorDocente(ID);
+                pDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
