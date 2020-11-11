@@ -31,7 +31,12 @@ namespace Data.Database
                     docCur.IDCurso = (int)drDocentesCursos["id_curso"];
                     docCur.IDDocente = (int)drDocentesCursos["id_docente"];
                     docCur.Cargo = (DocenteCurso.TiposCargo)drDocentesCursos["cargo"];
-                    docCur.Docente = (string)drDocentesCursos["nombre"];
+                    
+                    string apellido = (string)drDocentesCursos["apellido"];
+                    string nombre = (string)drDocentesCursos["nombre"];
+
+                    docCur.Docente = apellido + " " + nombre;
+
 
                     docentesCurso.Add(docCur);
 
@@ -54,14 +59,14 @@ namespace Data.Database
         }
 
 
-        public List<DocenteCurso> GetAll() 
+        public List<DocenteCurso> GetAll()
         {
             List<DocenteCurso> docentesCursos = new List<DocenteCurso>();
 
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos", sqlConn);
+                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc join personas p on dc.id_docente = p.id_persona", sqlConn);
                 SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
 
                 while (drDocentesCursos.Read())
@@ -71,6 +76,11 @@ namespace Data.Database
                     docCurso.IDCurso = (int)drDocentesCursos["id_curso"];
                     docCurso.IDDocente = (int)drDocentesCursos["id_docente"];
                     docCurso.Cargo = (DocenteCurso.TiposCargo)drDocentesCursos["cargo"];
+
+                    string apellido = (string)drDocentesCursos["apellido"];
+                    string nombre = (string)drDocentesCursos["nombre"];
+
+                    docCurso.Docente = apellido + " " + nombre;
 
                     docentesCursos.Add(docCurso);
 
@@ -91,26 +101,75 @@ namespace Data.Database
         }
 
 
-        public DocenteCurso GetOne(int ID)
+        public List<Curso> GetAll(int id_docente)
         {
-           DocenteCurso docInsc = new DocenteCurso();
+            List<Curso> cursos = new List<Curso>();
+
             try
             {
                 this.OpenConnection();
-                SqlCommand cmddocInsc = new SqlCommand("select * from docentes_cursos where id_dictado = @id", sqlConn);
-                cmddocInsc.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                SqlDataReader drdocInsc = cmddocInsc.ExecuteReader();
+                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc inner join cursos cu on dc.id_curso = cu.id_curso inner join materias mat on mat.id_materia = cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision where id_docente = @id_docente", sqlConn);
+                cmdDocentesCursos.Parameters.Add("@id_docente", SqlDbType.Int).Value = id_docente;
+                SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
 
-                if (drdocInsc.Read())
+                while (drDocentesCursos.Read())
                 {
-                    docInsc.ID = (int)drdocInsc["id_dictado"];
-                    docInsc.IDCurso = (int)drdocInsc["id_curso"];
-                    docInsc.IDDocente = (int)drdocInsc["id_docente"];
-                    docInsc.Cargo = (DocenteCurso.TiposCargo)drdocInsc["cargo"];
-                 
+                    Curso curso = new Curso();
+                    curso.ID = (int)drDocentesCursos["id_curso"];
+                    curso.IDMateria = (int)drDocentesCursos["id_materia"];
+                    curso.IDComision = (int)drDocentesCursos["id_comision"];
+                    curso.AnioCalendario = (int)drDocentesCursos["anio_calendario"];
+                    curso.Cupo = (int)drDocentesCursos["cupo"];
+                    curso.Materia = (string)drDocentesCursos["desc_materia"];
+                    curso.Comision = (string)drDocentesCursos["desc_comision"];
+
+                    curso.Descripcion = drDocentesCursos["desc_materia"] + " " + drDocentesCursos["desc_comision"] + " " +  curso.AnioCalendario;
+
+                    cursos.Add(curso);
 
                 }
-                drdocInsc.Close();
+                drDocentesCursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return cursos;
+        }
+
+
+        public DocenteCurso GetOne(int ID)
+        {
+           DocenteCurso docCur = new DocenteCurso();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmddocCur = new SqlCommand("select * from docentes_cursos dc join personas p on dc.id_docente = p.id_persona where id_dictado = @id", sqlConn);
+                cmddocCur.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drdocCur = cmddocCur.ExecuteReader();
+
+                if (drdocCur.Read())
+                {
+                    docCur.ID = (int)drdocCur["id_dictado"];
+                    docCur.IDCurso = (int)drdocCur["id_curso"];
+                    docCur.IDDocente = (int)drdocCur["id_docente"];
+                    docCur.Cargo = (DocenteCurso.TiposCargo)drdocCur["cargo"];
+
+                    string apellido = (string)drdocCur["apellido"];
+                    string nombre = (string)drdocCur["nombre"];
+
+                    docCur.Docente = apellido + " " + nombre;
+
+
+
+                }
+                drdocCur.Close();
             }
             catch (Exception Ex)
             {
@@ -122,7 +181,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            return docInsc;
+            return docCur;
         }
 
         public void Delete(int ID)
@@ -144,7 +203,7 @@ namespace Data.Database
             }
         }
 
-        public void Insert(DocenteCurso docInsc)
+        public void Insert(DocenteCurso docCur)
         {
             try
             {
@@ -152,11 +211,11 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand("insert into docentes_cursos (id_curso, id_docente, cargo) values (@id_curso, @id_docente, @cargo) select @@identity", sqlConn);
 
                 
-                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docInsc.IDCurso;
-                cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = docInsc.IDDocente;
-                cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = docInsc.Cargo;
+                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docCur.IDCurso;
+                cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = docCur.IDDocente;
+                cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = docCur.Cargo;
 
-               docInsc.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                docCur.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
 
             catch (Exception Ex)
@@ -168,21 +227,92 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public void Save(DocenteCurso docInsc)
+
+        public void Update(DocenteCurso docCur)
         {
-            if (docInsc.State == BusinessEntity.States.New)
+            try
             {
-                this.Insert(docInsc);
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("UPDATE docentes_cursos set id_docente = @id_docente, id_curso = @id_curso, cargo = @cargo WHERE id_dictado = @id", sqlConn);
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = docCur.ID;
+                cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = docCur.IDDocente;
+                cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docCur.IDCurso;
+                cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = docCur.Cargo;
+                
+
+                cmdSave.ExecuteNonQuery();
             }
-            else if (docInsc.State == BusinessEntity.States.Deleted)
+
+            catch (Exception Ex)
             {
-                this.Delete(docInsc.ID);
+                Exception ExcepcionManejada =
+                new Exception("Error al modificar datos de la inscripcion", Ex);
+                throw ExcepcionManejada;
             }
-            else if (docInsc.State == BusinessEntity.States.Modified)
+            finally
             {
-               // this.Update(aluInsc);
+                this.CloseConnection();
             }
-            docInsc.State = BusinessEntity.States.Unmodified;
+        }
+        public void Save(DocenteCurso docCur)
+        {
+            if (docCur.State == BusinessEntity.States.New)
+            {
+                this.Insert(docCur);
+            }
+            else if (docCur.State == BusinessEntity.States.Deleted)
+            {
+                this.Delete(docCur.ID);
+            }
+            else if (docCur.State == BusinessEntity.States.Modified)
+            {
+                this.Update(docCur);
+            }
+            docCur.State = BusinessEntity.States.Unmodified;
+        }
+
+
+        public List<DocenteCurso> GetAllDocentesCursos()
+        {
+            List<DocenteCurso> docentesCursos = new List<DocenteCurso>();
+
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc join personas p on dc.id_docente = p.id_persona", sqlConn);
+                SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
+
+                while (drDocentesCursos.Read())
+                {
+                    DocenteCurso docCurso = new DocenteCurso();
+                    docCurso.ID = (int)drDocentesCursos["id_dictado"];
+                    docCurso.IDCurso = (int)drDocentesCursos["id_curso"];
+                    docCurso.IDDocente = (int)drDocentesCursos["id_docente"];
+                    docCurso.Cargo = (DocenteCurso.TiposCargo)drDocentesCursos["cargo"];
+
+                    string apellido = (string)drDocentesCursos["apellido"];
+                    string nombre = (string)drDocentesCursos["nombre"];
+
+                    docCurso.Docente = apellido + " " + nombre;
+
+
+
+                    docentesCursos.Add(docCurso);
+
+                }
+                drDocentesCursos.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de docentes cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return docentesCursos;
         }
 
 

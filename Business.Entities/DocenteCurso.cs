@@ -38,8 +38,6 @@ namespace Business.Entities
             get { return _docente; }
             set { _docente = value; }
         }
-        public string apellidoDocente { get; set; }
-
 
         private TiposCargo _Cargo;
         public TiposCargo Cargo

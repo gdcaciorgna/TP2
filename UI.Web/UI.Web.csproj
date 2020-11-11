@@ -140,6 +140,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Usuarios.aspx" />
+    <Content Include="VerCursosdeDocente.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCursosdeDocente.aspx.cs">
+      <DependentUpon>VerCursosdeDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCursosdeDocente.aspx.designer.cs">
+      <DependentUpon>VerCursosdeDocente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

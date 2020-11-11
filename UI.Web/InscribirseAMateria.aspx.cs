@@ -283,8 +283,6 @@ namespace UI.Web
             }
 
 
-            return vof;
-
         }
 
         private void ClearForm()
@@ -362,6 +360,7 @@ namespace UI.Web
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
+
                     break;
                 case FormModes.Modificacion:
 
@@ -391,6 +390,8 @@ namespace UI.Web
                 default:
                     break;
             }
+            this.EnableForm(true);
+
             this.formPanel.Visible = false;
 
 

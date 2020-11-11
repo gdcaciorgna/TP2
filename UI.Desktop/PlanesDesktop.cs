@@ -17,6 +17,15 @@ namespace UI.Desktop
         public PlanesDesktop()
         {
             InitializeComponent();
+
+
+            EspecialidadesLogic espLog = new EspecialidadesLogic();
+            List<Especialidad> especialidades = new List<Especialidad>();
+
+            especialidades = espLog.GetAll();
+            cbEspecialidad.DataSource = especialidades;
+            cbEspecialidad.ValueMember = "ID";
+            cbEspecialidad.DisplayMember = "Descripcion";
         }
 
         public PlanesDesktop(ModoForm modo) : this()
@@ -40,13 +49,7 @@ namespace UI.Desktop
 
         private void PlanesDesktop_Load(object sender, EventArgs e)
         {
-            EspecialidadesLogic espLog = new EspecialidadesLogic();
-            List <Especialidad> especialidades = new  List<Especialidad>();
 
-            especialidades = espLog.GetAll();
-            cbEspecialidad.DataSource = especialidades;
-            cbEspecialidad.ValueMember = "ID";
-            cbEspecialidad.DisplayMember = "Descripcion";
 
         }
 
@@ -114,6 +117,8 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+
+
             this.txtIDPlan.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
            // this.cbEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();

@@ -17,6 +17,14 @@ namespace UI.Desktop
         public MateriasDesktop()
         {
             InitializeComponent();
+
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            cbPlan.DataSource = planes;
+            cbPlan.ValueMember = "ID";
+            cbPlan.DisplayMember = "Descripcion";
         }
 
         public MateriasDesktop(ModoForm modo) : this()
@@ -92,11 +100,15 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+           
+
             this.txtIDMateria.Text = this.MateriaActual.ID.ToString();
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHoras_Semanales.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHoras_Totales.Text = this.MateriaActual.HSTotales.ToString();
-            this.cbPlan.Text = this.MateriaActual.IDPlan.ToString();
+
+            this.cbPlan.SelectedValue = this.MateriaActual.IDPlan;
+
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
@@ -174,13 +186,7 @@ namespace UI.Desktop
 
         private void MateriasDesktop_Load(object sender, EventArgs e)
         {
-            PlanesLogic planLog = new PlanesLogic();
-            List<Plan> planes = new List<Plan>();
-
-            planes = planLog.GetAll();
-            cbPlan.DataSource = planes;
-            cbPlan.ValueMember = "ID";
-            cbPlan.DisplayMember = "Descripcion";
+          
         }
     }
 }

@@ -22,11 +22,6 @@
     <asp:Panel ID="formPanel" runat="server" Visible="False">
         <div class="container">
             <br />
-            <div class="form-group">
-                <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion"></asp:Label>
-                <asp:TextBox ID="tbDescripcion" runat="server" CssClass="form-control"></asp:TextBox>
-
-            </div>
 
             <div class="form-group">
                 <asp:Label ID="lblIDMateria" runat="server" Text="Materia"></asp:Label>

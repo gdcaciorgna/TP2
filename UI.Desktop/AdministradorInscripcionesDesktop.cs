@@ -7,28 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
 using Business.Logic;
+using Business.Entities;
+
 
 namespace UI.Desktop
 {
-    public partial class AlumnoInscripcionesDesktop : ApplicationForm
+    public partial class AdministradorInscripcionesDesktop : ApplicationForm
     {
-        public AlumnoInscripcionesDesktop()
+        public AdministradorInscripcionesDesktop()
         {
             InitializeComponent();
 
+            PersonaLogic perLog = new PersonaLogic();
             MateriaLogic matLog = new MateriaLogic();
             ComisionLogic comLog = new ComisionLogic();
             CursoLogic curLog = new CursoLogic();
 
+
+            List<Persona> personas = new List<Persona>();
             List<Materia> materias = new List<Materia>();
             List<Comision> comisiones = new List<Comision>();
             List<int> anios = new List<int>();
 
+
             anios = curLog.GetAllAnios();
             materias = matLog.GetAll();
             comisiones = comLog.GetAll();
+
+
+            personas = perLog.GetAllTipo(Persona.TiposPersona.Alumno);
+
+
+            DataTable dt = new DataTable();
+            dt = Util.FuncionesComunes.ConvertToDataTable(personas);
+            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
+
+            cmbAlumno.DataSource = dt;
+
+            cmbAlumno.ValueMember = "ID";
+            cmbAlumno.DisplayMember = "NombreApellidoLegajo";
 
 
             cmbAnioCalendario.DataSource = anios;
@@ -43,14 +61,13 @@ namespace UI.Desktop
             cmbMateria.DisplayMember = "Descripcion";
         }
 
-        public AlumnoInscripcionesDesktop(ModoForm modo) : this()
+        public AdministradorInscripcionesDesktop(ModoForm modo)
         {
             this.Modo = modo;
 
-
         }
 
-        public AlumnoInscripcionesDesktop(int ID, ModoForm modo) : this()
+        public AdministradorInscripcionesDesktop(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
             AlumnoInscripcionLogic aiLogic = new AlumnoInscripcionLogic();
@@ -59,18 +76,19 @@ namespace UI.Desktop
             this.MapearDeDatos();
         }
 
+
         public AlumnoInscripcion AlumnoInscripcionActual { get; set; }
 
         public Curso CursoActual { get; set; }
 
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
             LoadForm();
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
-                if (this.Validar())
+                if (this.Validar(this.Modo))
                 {
                     this.GuardarCambios();
                     this.Close();
@@ -82,15 +100,16 @@ namespace UI.Desktop
                 this.Close();
             }
 
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
-
-        public override bool Validar()
+        public override bool Validar(ModoForm modo)
         {
 
 
@@ -102,32 +121,40 @@ namespace UI.Desktop
 
             AlumnoInscripcionLogic aluInscLog = new AlumnoInscripcionLogic();
 
-
-                int cant_alumnos = aluInscLog.ContarAlumnosInscriptosACurso(CursoActual);
-
-
-                if (CursoActual.ID == 0)
-                {
-                    vof = false;
-                    error = error + "No se encontró curso para materia, comisión y año especificado \n";
-
-                }
-
-                else if ((cant_alumnos + 1) > CursoActual.Cupo)
-                {
-                    error = error + "El curso ya se encuentra completo. " + cant_alumnos + "/" + CursoActual.Cupo + "\n";
-                    vof = false;
-
-                }
-            
+            int cant_alumnos = aluInscLog.ContarAlumnosInscriptosACurso(CursoActual);
 
                 
+            if (CursoActual.ID == 0)
+            {
+                vof = false;
+                error = error + "No se encontró curso para materia, comisión y año especificado \n";
 
-                else if (AlumnoInscripcionActual.ID != 0)
+            }
+
+            else if ((cant_alumnos + 1) > CursoActual.Cupo)
+            {
+                error = error + "El curso ya se encuentra completo. " + cant_alumnos + "/" + CursoActual.Cupo + "\n";
+                vof = false;
+
+            }
+
+            if(modo == ModoForm.Alta)
+            {
+                if (AlumnoInscripcionActual.ID != 0)
                 {
-                    error = error + "Ya se encuentra inscripto al curso. \n";
+                    error = error + "Este alumno ya se encuentra inscripto al curso. \n";
                     vof = false;
                 }
+
+            }
+
+
+            
+            else if(txtCondicion.Text == "")
+            {
+                error = error + "El campo condición no puede estar vacío \n";
+                vof = false;
+            }
 
 
 
@@ -152,27 +179,36 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+            
+
+            Curso cur = new Curso();
+           
+            Materia mat = new Materia();
+            Comision com = new Comision();
+            Persona per = new Persona();
+
+
 
             CursoLogic curLog = new CursoLogic();
             MateriaLogic matLog = new MateriaLogic();
             ComisionLogic comLog = new ComisionLogic();
-
-            Curso cur = new Curso();
-            Materia mat = new Materia();
-            Comision com = new Comision();
+            PersonaLogic perLog = new PersonaLogic();
 
 
             cur = curLog.GetOne(AlumnoInscripcionActual.IDCurso);
 
 
-
+            per = perLog.GetOne(AlumnoInscripcionActual.IDAlumno);
             mat = matLog.GetOne(cur.IDMateria);
             com = comLog.GetOne(cur.IDComision);
             int anio = cur.AnioCalendario;
 
             this.cmbAnioCalendario.SelectedItem = anio;
-            this.cmbMateria.SelectedValue= mat.ID;
+            this.cmbMateria.SelectedValue = mat.ID;
             this.cmbComision.SelectedValue = com.ID;
+            this.cmbAlumno.SelectedValue = per.ID;
+            this.txtCondicion.Text = AlumnoInscripcionActual.Condicion;
+            this.txtNota.Text = AlumnoInscripcionActual.Nota.ToString();
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
@@ -205,7 +241,7 @@ namespace UI.Desktop
                 {
                     AlumnoInscripcionActual.State = BusinessEntity.States.Modified;
                 }
-                      
+
             }
 
 
@@ -215,9 +251,22 @@ namespace UI.Desktop
             }
 
 
-            AlumnoInscripcionActual.IDAlumno = Usuario.UsuarioActual.ID_Persona;
+            Persona al = new Persona();
+            al.ID = Int32.Parse(this.cmbAlumno.SelectedValue.ToString());
+
+            AlumnoInscripcionActual.IDAlumno = al.ID;           
             AlumnoInscripcionActual.IDCurso = CursoActual.ID;
-            AlumnoInscripcionActual.Condicion = "Inscripto";
+
+            if(this.txtNota.Text != "")
+            {
+                AlumnoInscripcionActual.Nota = Int32.Parse(this.txtNota.Text);
+            }
+
+            if (this.txtCondicion.Text == "")
+            {
+                AlumnoInscripcionActual.Condicion = "Inscripto";
+            }
+
 
 
         }
@@ -231,6 +280,8 @@ namespace UI.Desktop
             mat = (Materia)cmbMateria.SelectedItem;
             int anio = Int32.Parse(cmbAnioCalendario.SelectedItem.ToString());
 
+            int id_per = Int32.Parse(cmbAlumno.SelectedValue.ToString());
+
 
             CursoLogic curLog = new CursoLogic();
 
@@ -238,37 +289,14 @@ namespace UI.Desktop
 
             AlumnoInscripcionLogic alInscLogic = new AlumnoInscripcionLogic();
 
-            AlumnoInscripcionActual = alInscLogic.GetOne(Usuario.UsuarioActual.ID_Persona, CursoActual.ID);
-            
+            AlumnoInscripcionActual = alInscLogic.GetOne(id_per, CursoActual.ID);
+
 
         }
 
-        private void AlumnoInscripcionesDesktop_Load(object sender, EventArgs e)
+        private void AdministradorInscripcionesDesktop_Load(object sender, EventArgs e)
         {
-            MateriaLogic matLog = new MateriaLogic();
-            ComisionLogic comLog = new ComisionLogic();
-            CursoLogic curLog = new CursoLogic();
-
-            List<Materia> materias = new List<Materia>();
-            List<Comision> comisiones = new List<Comision>();
-            List<int> anios = new List<int>();
-
-            anios = curLog.GetAllAnios();
-            materias = matLog.GetAll();
-            comisiones = comLog.GetAll();
-
-
-            cmbAnioCalendario.DataSource = anios;
-
-            cmbComision.DataSource = comisiones;
-            cmbComision.ValueMember = "ID";
-            cmbComision.DisplayMember = "Descripcion";
-
-
-            cmbMateria.DataSource = materias;
-            cmbMateria.ValueMember = "ID";
-            cmbMateria.DisplayMember = "Descripcion";
-
+           
 
 
         }

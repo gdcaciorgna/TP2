@@ -23,6 +23,11 @@ namespace Business.Logic
             return DocenteCursoData.GetAll();
         }
 
+        public List<Curso> GetAll(int id_docente)
+        {
+            return DocenteCursoData.GetAll(id_docente);
+        }
+
         public void Delete(int id)
         {
             this.DocenteCursoData.Delete(id);
@@ -94,6 +99,11 @@ namespace Business.Logic
         public List<DocenteCurso> GetAllDocentesPorCurso(int cur)
         {
             return this.DocenteCursoData.GetAllDocentesPorCurso(cur);
+        }
+
+        public List<DocenteCurso> GetAllDocentesCursos()
+        {
+            return this.DocenteCursoData.GetAllDocentesCursos();
         }
 
         public DocenteCurso GetOne(int id)

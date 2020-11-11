@@ -17,6 +17,24 @@ namespace UI.Desktop
         public PersonasDesktop()
         {
             InitializeComponent();
+          
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            cmbPlan.DataSource = planes;
+            cmbPlan.ValueMember = "ID";
+            cmbPlan.DisplayMember = "Descripcion";
+
+
+            Dictionary<int, string> comboSource = new Dictionary<int, string>();
+            comboSource.Add((int)Persona.TiposPersona.Administrador, "Administrador");
+            comboSource.Add((int)Persona.TiposPersona.Docente, "Docente");
+            comboSource.Add((int)Persona.TiposPersona.Alumno, "Alumno");
+            cmbTipoPersona.DataSource = new BindingSource(comboSource, null);
+            cmbTipoPersona.DisplayMember = "Value";
+            cmbTipoPersona.ValueMember = "Key";
+            cmbTipoPersona.SelectedIndex = 0;
         }
 
         public PersonasDesktop(ModoForm modo) : this()
@@ -38,6 +56,8 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+         
+
             this.txtID.Text = this.PersonaActual.ID.ToString();
             this.txtNombre.Text = this.PersonaActual.Nombre;
             this.txtApellido.Text = this.PersonaActual.Apellido;
@@ -48,12 +68,19 @@ namespace UI.Desktop
 
             this.dtpFechaNac.Text = this.PersonaActual.FechaNacimiento.ToString();
 
-            this.cmbPlan.DisplayMember = this.PersonaActual.IDPlan.ToString();
-            
+
+            Plan plan = new Plan();
+            PlanesLogic plog = new PlanesLogic();
+            plan = plog.GetOne(PersonaActual.IDPlan);
 
 
-            //this.cmbPlan. = this.PersonaActual.IDPlan
-            //this.cmbTipoPersona
+            this.cmbPlan.SelectedValue = this.PersonaActual.IDPlan;
+
+            this.cmbTipoPersona.SelectedValue = (int) this.PersonaActual.TipoP;
+
+
+
+
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
@@ -240,25 +267,11 @@ namespace UI.Desktop
         private void PersonasDesktop_Load(object sender, EventArgs e)
         {
 
-            PlanesLogic planLog = new PlanesLogic();
-            List<Plan> planes = new List<Plan>();
-
-            planes = planLog.GetAll();
-            cmbPlan.DataSource = planes;
-
-            cmbPlan.ValueMember = "ID";
-            cmbPlan.DisplayMember = "Descripcion";
+        
 
 
 
-            Dictionary<int, string> comboSource = new Dictionary<int, string>();
-            comboSource.Add((int)Persona.TiposPersona.Administrador, "Administrador");
-            comboSource.Add((int)Persona.TiposPersona.Docente, "Docente");
-            comboSource.Add((int)Persona.TiposPersona.Alumno, "Alumno");
-            cmbTipoPersona.DataSource = new BindingSource(comboSource, null);
-            cmbTipoPersona.DisplayMember = "Value";
-            cmbTipoPersona.ValueMember = "Key";
-            cmbTipoPersona.SelectedIndex = 0;
+           
 
 
         }
