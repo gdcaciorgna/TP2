@@ -23,6 +23,11 @@ namespace Business.Logic
             return DocenteCursoData.GetAll();
         }
 
+        public List<Curso> GetAll(int id_docente)
+        {
+            return DocenteCursoData.GetAll(id_docente);
+        }
+
         public void Delete(int id)
         {
             this.DocenteCursoData.Delete(id);

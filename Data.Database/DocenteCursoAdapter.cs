@@ -108,7 +108,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc inner join cursos cu on dc.id_curso = cu.id_curso inner join materia mat on mat.id_materia = cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision where id_docente = @id_docente ", sqlConn);
+                SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos dc inner join cursos cu on dc.id_curso = cu.id_curso inner join materias mat on mat.id_materia = cu.id_materia inner join comisiones com on com.id_comision = cu.id_comision where id_docente = @id_docente", sqlConn);
                 cmdDocentesCursos.Parameters.Add("@id_docente", SqlDbType.Int).Value = id_docente;
                 SqlDataReader drDocentesCursos = cmdDocentesCursos.ExecuteReader();
 
@@ -120,6 +120,8 @@ namespace Data.Database
                     curso.IDComision = (int)drDocentesCursos["id_comision"];
                     curso.AnioCalendario = (int)drDocentesCursos["anio_calendario"];
                     curso.Cupo = (int)drDocentesCursos["cupo"];
+                    curso.Materia = (string)drDocentesCursos["desc_materia"];
+                    curso.Comision = (string)drDocentesCursos["desc_comision"];
 
                     curso.Descripcion = drDocentesCursos["desc_materia"] + " " + drDocentesCursos["desc_comision"] + " " +  curso.AnioCalendario;
 
