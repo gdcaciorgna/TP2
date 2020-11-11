@@ -16,9 +16,9 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
+        <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" CssClass="btn btn-warning"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
+        <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-secondary active align-content-center"/>
     </asp:Panel>
     <asp:Panel ID="panelError" runat="server" Visible="False">
         <asp:Label ID="lblerror" runat="server" Text="Label"></asp:Label>
