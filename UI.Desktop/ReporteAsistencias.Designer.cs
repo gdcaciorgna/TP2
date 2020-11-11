@@ -41,7 +41,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(1, 65);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(740, 391);
+            this.reportViewer1.Size = new System.Drawing.Size(696, 288);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 464);
+            this.ClientSize = new System.Drawing.Size(698, 374);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReporteAsistencias";
