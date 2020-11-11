@@ -78,7 +78,11 @@ namespace UI.Desktop
                     tsmiRegistroCursos.Visible = true;
                     tsmiRegistroNotas.Visible = true;
                     tsmiReportePlanes.Visible = true;
-                    
+
+                    tsmiInscribirDocente.Visible = true;
+
+
+
                     break;
 
                 case Persona.TiposPersona.Docente:
@@ -225,6 +229,12 @@ namespace UI.Desktop
         {
             AdministradorVerInscripciones desk = new AdministradorVerInscripciones();
             desk.ShowDialog();
+        }
+
+        private void inscribirDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DocenteCurso docCur = new DocenteCurso();
+            docCur.ShowDialog();
         }
     }
 }
