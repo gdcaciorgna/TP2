@@ -32,16 +32,16 @@
             this.tscComision = new System.Windows.Forms.ToolStripContainer();
             this.tlComision = new System.Windows.Forms.TableLayoutPanel();
             this.dgvComision = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bntActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsComision = new System.Windows.Forms.ToolStrip();
             this.btnAgregarComision = new System.Windows.Forms.ToolStripButton();
             this.btnEditarComision = new System.Windows.Forms.ToolStripButton();
             this.btnEliminarComision = new System.Windows.Forms.ToolStripButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscComision.ContentPanel.SuspendLayout();
             this.tscComision.TopToolStripPanel.SuspendLayout();
             this.tscComision.SuspendLayout();
@@ -60,7 +60,7 @@
             this.tscComision.ContentPanel.Size = new System.Drawing.Size(600, 339);
             this.tscComision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscComision.Location = new System.Drawing.Point(0, 0);
-            this.tscComision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscComision.Margin = new System.Windows.Forms.Padding(2);
             this.tscComision.Name = "tscComision";
             this.tscComision.Size = new System.Drawing.Size(600, 366);
             this.tscComision.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.tlComision.Controls.Add(this.btnSalir, 1, 1);
             this.tlComision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlComision.Location = new System.Drawing.Point(0, 0);
-            this.tlComision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlComision.Margin = new System.Windows.Forms.Padding(2);
             this.tlComision.Name = "tlComision";
             this.tlComision.RowCount = 2;
             this.tlComision.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -99,50 +99,18 @@
             this.tlComision.SetColumnSpan(this.dgvComision, 2);
             this.dgvComision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComision.Location = new System.Drawing.Point(2, 2);
-            this.dgvComision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvComision.Margin = new System.Windows.Forms.Padding(2);
             this.dgvComision.Name = "dgvComision";
             this.dgvComision.RowHeadersWidth = 51;
             this.dgvComision.RowTemplate.Height = 24;
             this.dgvComision.Size = new System.Drawing.Size(596, 312);
             this.dgvComision.TabIndex = 0;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Id comision";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 125;
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.DataPropertyName = "IDPlan";
-            this.IDPlan.HeaderText = "Id plan";
-            this.IDPlan.MinimumWidth = 6;
-            this.IDPlan.Name = "IDPlan";
-            this.IDPlan.Width = 125;
-            // 
-            // AnioEspecialidad
-            // 
-            this.AnioEspecialidad.DataPropertyName = "AnioEspecialidad";
-            this.AnioEspecialidad.HeaderText = "Año especialidad";
-            this.AnioEspecialidad.MinimumWidth = 6;
-            this.AnioEspecialidad.Name = "AnioEspecialidad";
-            this.AnioEspecialidad.Width = 125;
-            // 
             // bntActualizar
             // 
             this.bntActualizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.bntActualizar.Location = new System.Drawing.Point(482, 318);
-            this.bntActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bntActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.bntActualizar.Name = "bntActualizar";
             this.bntActualizar.Size = new System.Drawing.Size(56, 19);
             this.bntActualizar.TabIndex = 1;
@@ -153,7 +121,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(542, 318);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(56, 19);
             this.btnSalir.TabIndex = 2;
@@ -171,7 +139,7 @@
             this.btnEliminarComision});
             this.tsComision.Location = new System.Drawing.Point(5, 0);
             this.tsComision.Name = "tsComision";
-            this.tsComision.Size = new System.Drawing.Size(115, 27);
+            this.tsComision.Size = new System.Drawing.Size(84, 27);
             this.tsComision.TabIndex = 0;
             this.tsComision.Text = "toolStrip1";
             // 
@@ -205,13 +173,45 @@
             this.btnEliminarComision.Text = "Eliminar";
             this.btnEliminarComision.Click += new System.EventHandler(this.btnEliminarComision_Click_1);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Id comision";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 125;
+            // 
+            // IDPlan
+            // 
+            this.IDPlan.DataPropertyName = "DescPlan";
+            this.IDPlan.HeaderText = "Plan";
+            this.IDPlan.MinimumWidth = 6;
+            this.IDPlan.Name = "IDPlan";
+            this.IDPlan.Width = 125;
+            // 
+            // AnioEspecialidad
+            // 
+            this.AnioEspecialidad.DataPropertyName = "AnioEspecialidad";
+            this.AnioEspecialidad.HeaderText = "Año especialidad";
+            this.AnioEspecialidad.MinimumWidth = 6;
+            this.AnioEspecialidad.Name = "AnioEspecialidad";
+            this.AnioEspecialidad.Width = 125;
+            // 
             // Comisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tscComision);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Comisiones";
             this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.Comisiones_Load);

@@ -6,8 +6,7 @@
         <asp:GridView ID="dgv_Cursos" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="dgv_Cursos_SelectedIndexChanged" DataKeyNames="ID" EmptyDataText="Aún no hay cursos cargados." ShowHeaderWhenEmpty="True" CssClass="table table-striped table-bordered table-hover">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="ID" />
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
-                <asp:BoundField DataField="IDMateria" HeaderText="Materia" />
+                <asp:BoundField DataField="Materia" HeaderText="Materia" />
                 <asp:BoundField DataField="IDComision" HeaderText="Comision" />
                 <asp:BoundField DataField="Cupo" HeaderText="Cupo" />
                 <asp:BoundField DataField="AnioCalendario" HeaderText="Año calendario" />

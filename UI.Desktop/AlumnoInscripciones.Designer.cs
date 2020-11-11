@@ -31,6 +31,9 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_Inscripciones = new System.Windows.Forms.DataGridView();
+            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_anio = new System.Windows.Forms.ComboBox();
@@ -39,9 +42,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -104,6 +104,24 @@
             this.dgv_Inscripciones.Name = "dgv_Inscripciones";
             this.dgv_Inscripciones.Size = new System.Drawing.Size(890, 473);
             this.dgv_Inscripciones.TabIndex = 5;
+            // 
+            // Curso
+            // 
+            this.Curso.DataPropertyName = "DescCurso";
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
+            // 
+            // Condicion
+            // 
+            this.Condicion.DataPropertyName = "Condicion";
+            this.Condicion.HeaderText = "Condicion";
+            this.Condicion.Name = "Condicion";
+            // 
+            // Nota
+            // 
+            this.Nota.DataPropertyName = "Nota";
+            this.Nota.HeaderText = "Nota";
+            this.Nota.Name = "Nota";
             // 
             // label2
             // 
@@ -184,24 +202,6 @@
             this.btnEliminar.Size = new System.Drawing.Size(23, 22);
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // Curso
-            // 
-            this.Curso.DataPropertyName = "DescCurso";
-            this.Curso.HeaderText = "Curso";
-            this.Curso.Name = "Curso";
-            // 
-            // Condicion
-            // 
-            this.Condicion.DataPropertyName = "Condicion";
-            this.Condicion.HeaderText = "Condicion";
-            this.Condicion.Name = "Condicion";
-            // 
-            // Nota
-            // 
-            this.Nota.DataPropertyName = "Nota";
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
             // 
             // AlumnoInscripciones
             // 

@@ -19,7 +19,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas", sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas per inner join planes pla on pla.id_plan = per.id_plan", sqlConn);
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 
                 while (drPersonas.Read())
@@ -39,6 +39,9 @@ namespace Data.Database
 
                     per.Legajo = (int)drPersonas["legajo"];
                     per.IDPlan = (int)drPersonas["id_plan"];
+
+                    per.DescPlan = (string)drPersonas["desc_plan"];
+
 
 
                     personas.Add(per);
@@ -66,7 +69,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas where id_persona = @id", sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas per inner join planes pla on per.id_plan = pla.id_plan where id_persona = @id", sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 
@@ -81,6 +84,8 @@ namespace Data.Database
                     per.FechaNacimiento = (DateTime)drPersonas["fecha_nac"];
                     per.Legajo = (int)drPersonas["legajo"];
                     per.IDPlan = (int)drPersonas["id_plan"];
+                    per.DescPlan = (string)drPersonas["desc_plan"];
+
 
                 }
                 drPersonas.Close();
@@ -236,7 +241,7 @@ namespace Data.Database
                 int tipo_persona_int = (int)tipo_persona;
 
                 this.OpenConnection();
-                SqlCommand cmdPersona = new SqlCommand("select * from personas where tipo_persona = @tip", sqlConn);
+                SqlCommand cmdPersona = new SqlCommand("select * from personas per inner join planes pla on per.id_plan = pla.id_plan  where tipo_persona = @tip", sqlConn);
                 cmdPersona.Parameters.Add("@tip", SqlDbType.Int).Value = tipo_persona_int;
                 SqlDataReader drPersonas = cmdPersona.ExecuteReader();
                 while (drPersonas.Read())
@@ -255,6 +260,8 @@ namespace Data.Database
                     per.Email = (string)drPersonas["email"];
                     per.TipoP = (Persona.TiposPersona)drPersonas["tipo_persona"];
                     per.IDPlan = (int)drPersonas["id_plan"];
+                    per.DescPlan = (string)drPersonas["desc_plan"];
+
 
                     personas.Add(per);
                 }

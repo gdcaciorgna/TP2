@@ -17,6 +17,23 @@ namespace UI.Desktop
         public CursosDesktop()
         {
             InitializeComponent();
+
+            MateriaLogic matLog = new MateriaLogic();
+            List<Materia> materias = new List<Materia>();
+
+            materias = matLog.GetAll();
+            cbMateria.DataSource = materias;
+            cbMateria.ValueMember = "ID";
+            cbMateria.DisplayMember = "Descripcion";
+
+            ComisionLogic comLog = new ComisionLogic();
+            List<Comision> comision = new List<Comision>();
+
+            comision = comLog.GetAll();
+            cbComision.DataSource = comision;
+            cbComision.ValueMember = "ID";
+            cbComision.DisplayMember = "Descripcion";
+
         }
 
         public CursosDesktop(ModoForm modo) : this()
@@ -38,21 +55,7 @@ namespace UI.Desktop
 
         private void CursosDesktop_Load(object sender, EventArgs e)
         {
-            MateriaLogic matLog = new MateriaLogic();
-            List<Materia> materias = new List<Materia>();
-
-            materias = matLog.GetAll();
-            cbMateria.DataSource = materias;
-            cbMateria.ValueMember = "ID";
-            cbMateria.DisplayMember = "Descripcion";
-
-            ComisionLogic comLog = new ComisionLogic();
-            List<Comision> comision = new List<Comision>();
-
-            comision = comLog.GetAll();
-            cbComision.DataSource = comision;
-            cbComision.ValueMember = "ID";
-            cbComision.DisplayMember = "Descripcion";
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -135,11 +138,34 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+
+
+            MateriaLogic matLog = new MateriaLogic();
+            ComisionLogic comLog = new ComisionLogic();
+
+            
             this.txtIDCursos.Text = this.CursoActual.ID.ToString();
             this.txtDescripcion.Text = this.CursoActual.Descripcion;
             this.txtAnio.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.Cupo.ToString();
-            // this.cbEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+
+
+
+            Materia mat = matLog.GetOne(CursoActual.IDMateria);
+
+            Comision com = new Comision();
+            com = comLog.GetOne(CursoActual.IDComision);
+
+
+            this.cbMateria.SelectedItem = mat;
+
+            this.cbComision.SelectedItem = com;
+
+
+            this.cbMateria.SelectedValue = Int32.Parse(mat.ID.ToString());
+            this.cbComision.SelectedValue = Int32.Parse(com.ID.ToString());
+
+
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)

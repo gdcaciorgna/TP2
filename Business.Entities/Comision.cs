@@ -22,6 +22,8 @@ namespace Business.Entities
             set { _IDPlan = value; }
         }
 
+        public string DescPlan { get; set; }
+
         private int _AnioEspecialidad;
         public int AnioEspecialidad
         {

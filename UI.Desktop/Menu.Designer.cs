@@ -57,8 +57,8 @@
             this.tsmiCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAlumnoInscribirseCurso = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiInscribirAlumnoCurso = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInscripciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInscribirseACurso = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInformes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegistroNotas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegistroCursos = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +67,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextoBienvenida = new System.Windows.Forms.Label();
             this.textoRol = new System.Windows.Forms.Label();
+            this.tsmiinscribirAlumnos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,7 +78,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiArchivo,
-            this.tsmiAlumnoInscribirseCurso,
+            this.tsmiInscripciones,
             this.tsmiInformes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -318,22 +319,23 @@
             this.verCursosToolStripMenuItem.Text = "Ver cursos";
             this.verCursosToolStripMenuItem.Click += new System.EventHandler(this.verCursosToolStripMenuItem_Click);
             // 
-            // tsmiAlumnoInscribirseCurso
+            // tsmiInscripciones
             // 
-            this.tsmiAlumnoInscribirseCurso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiInscribirAlumnoCurso});
-            this.tsmiAlumnoInscribirseCurso.Name = "tsmiAlumnoInscribirseCurso";
-            this.tsmiAlumnoInscribirseCurso.Size = new System.Drawing.Size(88, 20);
-            this.tsmiAlumnoInscribirseCurso.Text = "Inscripciones";
-            this.tsmiAlumnoInscribirseCurso.Visible = false;
+            this.tsmiInscripciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiInscribirseACurso,
+            this.tsmiinscribirAlumnos});
+            this.tsmiInscripciones.Name = "tsmiInscripciones";
+            this.tsmiInscripciones.Size = new System.Drawing.Size(88, 20);
+            this.tsmiInscripciones.Text = "Inscripciones";
+            this.tsmiInscripciones.Visible = false;
             // 
-            // tsmiInscribirAlumnoCurso
+            // tsmiInscribirseACurso
             // 
-            this.tsmiInscribirAlumnoCurso.Name = "tsmiInscribirAlumnoCurso";
-            this.tsmiInscribirAlumnoCurso.Size = new System.Drawing.Size(185, 22);
-            this.tsmiInscribirAlumnoCurso.Text = "Inscribirse a un curso";
-            this.tsmiInscribirAlumnoCurso.Visible = false;
-            this.tsmiInscribirAlumnoCurso.Click += new System.EventHandler(this.tsmiInscribirAlumnoCurso_Click);
+            this.tsmiInscribirseACurso.Name = "tsmiInscribirseACurso";
+            this.tsmiInscribirseACurso.Size = new System.Drawing.Size(185, 22);
+            this.tsmiInscribirseACurso.Text = "Inscribirse a un curso";
+            this.tsmiInscribirseACurso.Visible = false;
+            this.tsmiInscribirseACurso.Click += new System.EventHandler(this.tsmiInscribirAlumnoCurso_Click);
             // 
             // tsmiInformes
             // 
@@ -349,20 +351,20 @@
             // tsmiRegistroNotas
             // 
             this.tsmiRegistroNotas.Name = "tsmiRegistroNotas";
-            this.tsmiRegistroNotas.Size = new System.Drawing.Size(170, 22);
+            this.tsmiRegistroNotas.Size = new System.Drawing.Size(180, 22);
             this.tsmiRegistroNotas.Text = "Registro de notas";
             // 
             // tsmiRegistroCursos
             // 
             this.tsmiRegistroCursos.Name = "tsmiRegistroCursos";
-            this.tsmiRegistroCursos.Size = new System.Drawing.Size(170, 22);
+            this.tsmiRegistroCursos.Size = new System.Drawing.Size(180, 22);
             this.tsmiRegistroCursos.Text = "Registro de cursos";
             this.tsmiRegistroCursos.Click += new System.EventHandler(this.tsmiRegistroCursos_Click);
             // 
             // tsmiReportePlanes
             // 
             this.tsmiReportePlanes.Name = "tsmiReportePlanes";
-            this.tsmiReportePlanes.Size = new System.Drawing.Size(170, 22);
+            this.tsmiReportePlanes.Size = new System.Drawing.Size(180, 22);
             this.tsmiReportePlanes.Text = "Reporte de planes";
             // 
             // tableLayoutPanel1
@@ -413,6 +415,13 @@
             this.textoRol.Size = new System.Drawing.Size(63, 13);
             this.textoRol.TabIndex = 2;
             this.textoRol.Text = "Texto de rol";
+            // 
+            // tsmiinscribirAlumnos
+            // 
+            this.tsmiinscribirAlumnos.Name = "tsmiinscribirAlumnos";
+            this.tsmiinscribirAlumnos.Size = new System.Drawing.Size(185, 22);
+            this.tsmiinscribirAlumnos.Text = "Inscribir alumnos";
+            this.tsmiinscribirAlumnos.Click += new System.EventHandler(this.inscribirAlumnosToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -466,8 +475,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCursos;
         private System.Windows.Forms.ToolStripMenuItem nuevoCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCursosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAlumnoInscribirseCurso;
-        private System.Windows.Forms.ToolStripMenuItem tsmiInscribirAlumnoCurso;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInscripciones;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInscribirseACurso;
         private System.Windows.Forms.ToolStripMenuItem tsmiInformes;
         private System.Windows.Forms.ToolStripMenuItem tsmiRegistroNotas;
         private System.Windows.Forms.ToolStripMenuItem tsmiRegistroCursos;
@@ -476,5 +485,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label TextoBienvenida;
         private System.Windows.Forms.Label textoRol;
+        private System.Windows.Forms.ToolStripMenuItem tsmiinscribirAlumnos;
     }
 }

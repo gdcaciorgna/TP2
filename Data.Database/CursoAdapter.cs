@@ -19,7 +19,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("select * from cursos", sqlConn);
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join materias mat on cur.id_materia = mat.id_materia inner join comisiones com on com.id_comision = cur.id_comision", sqlConn);
                 SqlDataReader drCursos = cmdCursos.ExecuteReader();
 
                 while (drCursos.Read())
@@ -31,6 +31,11 @@ namespace Data.Database
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.Cupo = (int)drCursos["cupo"];
+
+                    curso.Materia =(string) drCursos["desc_materia"];
+                    curso.Comision = (string)drCursos["desc_comision"];
+                    
+
 
                     cursos.Add(curso);
 
@@ -95,7 +100,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("select * from cursos where anio_calendario = @anio_calendario", sqlConn);
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join materias mat on cur.id_materia = mat.id_materia inner join comisiones com on com.id_comision = cur.id_comision where anio_calendario = @anio_calendario", sqlConn);
                 cmdCursos.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = anioCalendario;
                 
                 SqlDataReader drCursos = cmdCursos.ExecuteReader();
@@ -111,6 +116,9 @@ namespace Data.Database
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.Cupo = (int)drCursos["cupo"];
+                    curso.Materia = (string)drCursos["desc_materia"];
+                    curso.Comision = (string)drCursos["desc_comision"];
+
 
                     cursos.Add(curso);
 
@@ -138,7 +146,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("select * from cursos where id_curso = @id", sqlConn);
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join materias mat on cur.id_materia = mat.id_materia inner join comisiones com on com.id_comision = cur.id_comision where id_curso = @id", sqlConn);
                 cmdCursos.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drCursos = cmdCursos.ExecuteReader();
 
@@ -150,6 +158,9 @@ namespace Data.Database
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.Cupo = (int)drCursos["cupo"];
+                    curso.Materia = (string)drCursos["desc_materia"];
+                    curso.Comision = (string)drCursos["desc_comision"];
+
 
 
                 }
@@ -172,7 +183,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdCursos = new SqlCommand("select * from cursos where id_comision = @id_comision and id_materia = @id_materia and anio_calendario = @anio_calendario", sqlConn);
+                SqlCommand cmdCursos = new SqlCommand("select * from cursos cur inner join materias mat on cur.id_materia = mat.id_materia inner join comisiones com on com.id_comision = cur.id_comision where cur.id_comision = @id_comision and cur.id_materia = @id_materia and anio_calendario = @anio_calendario", sqlConn);
                 cmdCursos.Parameters.Add("@id_comision", SqlDbType.Int).Value = id_comision;
                 cmdCursos.Parameters.Add("@id_materia", SqlDbType.Int).Value = id_materia;
                 cmdCursos.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = anio_calendario;
@@ -187,6 +198,9 @@ namespace Data.Database
                     curso.IDComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.Cupo = (int)drCursos["cupo"];
+                    curso.Materia = (string)drCursos["desc_materia"];
+                    curso.Comision = (string)drCursos["desc_comision"];
+
 
 
                 }

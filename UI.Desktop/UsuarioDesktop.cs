@@ -18,6 +18,22 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
+
+            PersonaLogic perLog = new PersonaLogic();
+            List<Persona> personas = new List<Persona>();
+
+            personas = perLog.GetAll();
+
+
+            DataTable dt = new DataTable();
+            dt = Util.FuncionesComunes.ConvertToDataTable(personas);
+            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
+
+            cmbPersonas.DataSource = dt;
+
+            cmbPersonas.ValueMember = "ID";
+            cmbPersonas.DisplayMember = "NombreApellidoLegajo";
+
         }
         public UsuarioDesktop(ModoForm modo) : this()
         {
@@ -37,6 +53,9 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+            
+
+
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.txtNombre.Text = this.UsuarioActual.Nombre;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
@@ -219,20 +238,7 @@ namespace UI.Desktop
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
         {
-            PersonaLogic perLog = new PersonaLogic();
-            List<Persona> personas = new List<Persona>();
-
-            personas = perLog.GetAll();
-
-
-            DataTable dt = new DataTable();
-            dt = Util.FuncionesComunes.ConvertToDataTable(personas);
-            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
-
-            cmbPersonas.DataSource = dt;
-
-            cmbPersonas.ValueMember = "ID";
-            cmbPersonas.DisplayMember = "NombreApellidoLegajo";
+  
 
         }
     }

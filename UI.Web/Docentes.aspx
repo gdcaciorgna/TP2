@@ -21,7 +21,7 @@
                 <asp:BoundField DataField="Telefono" HeaderText="Teléfono" />
                 <asp:BoundField DataField="Legajo" HeaderText="Legajo" />
                 <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha Nacimiento" />
-                <asp:BoundField DataField="IDPlan" HeaderText="ID Plan" />
+                <asp:BoundField DataField="DescPlan" HeaderText="Plan" />
                 <asp:CommandField ShowSelectButton="True" />
             </Columns>
         </asp:GridView>

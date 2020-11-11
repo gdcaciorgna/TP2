@@ -42,16 +42,45 @@ namespace UI.Desktop
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            AlumnoInscripcionesDesktop aluInsDesk = new AlumnoInscripcionesDesktop();
+            aluInsDesk.ShowDialog();
+            this.Listar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                int ID = ((AlumnoInscripcion)this.dgv_Inscripciones.SelectedRows[0].DataBoundItem).ID;
+
+                AlumnoInscripcionesDesktop aluInskDesk = new AlumnoInscripcionesDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+
+                aluInskDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+                int ID = ((AlumnoInscripcion)this.dgv_Inscripciones.SelectedRows[0].DataBoundItem).ID;
+
+                AlumnoInscripcionesDesktop aluInsDesk = new AlumnoInscripcionesDesktop(ID, ApplicationForm.ModoForm.Baja);
+
+                aluInsDesk.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

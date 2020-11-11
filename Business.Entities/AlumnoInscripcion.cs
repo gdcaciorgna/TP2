@@ -57,5 +57,12 @@ namespace Business.Entities
         }
 
 
+        public string Materia { get; set; }
+
+        public string Comision { get; set; }
+
+        public int AnioCalendario { get; set; }
+
+
     }
 }
