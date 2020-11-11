@@ -103,7 +103,8 @@ namespace UI.Desktop
 
         private void nuevoAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PersonasDesktop formper = new PersonasDesktop();
+            formper.ShowDialog();
         }
 
         private void nuevaEspecialidadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,6 +222,18 @@ namespace UI.Desktop
         {
             AlumnoInscripciones aluDesk = new AlumnoInscripciones();
             aluDesk.ShowDialog();
+        }
+
+        private void nuevoDocenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PersonasDesktop formper = new PersonasDesktop();
+            formper.ShowDialog();
+        }
+
+        private void tsmiRegistroNotas_Click(object sender, EventArgs e)
+        {
+            NotasAlumnos noal = new NotasAlumnos();
+            noal.ShowDialog();
         }
 
         private void inscribirAlumnosToolStripMenuItem_Click(object sender, EventArgs e)

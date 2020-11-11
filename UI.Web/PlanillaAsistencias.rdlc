@@ -6,8 +6,8 @@
         <Source>Embedded</Source>
         <Value>logoutn</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.3937cm</Top>
-        <Left>0.97578cm</Left>
+        <Top>1.11979cm</Top>
+        <Left>1.0284cm</Left>
         <Height>0.66146cm</Height>
         <Width>3.38667cm</Width>
         <Style>
@@ -31,8 +31,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>5.35842cm</Left>
+        <Top>1.17271cm</Top>
+        <Left>5.41104cm</Left>
         <Height>0.60854cm</Height>
         <Width>3.6418cm</Width>
         <ZIndex>1</ZIndex>
@@ -334,8 +334,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.03412cm</Top>
-        <Left>0.97578cm</Left>
+        <Top>2.76021cm</Top>
+        <Left>1.0284cm</Left>
         <Height>1.2cm</Height>
         <Width>14.4532cm</Width>
         <ZIndex>2</ZIndex>
@@ -360,8 +360,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>1.39912cm</Top>
-        <Left>2.9337cm</Left>
+        <Top>2.12521cm</Top>
+        <Left>2.98632cm</Left>
         <Height>0.635cm</Height>
         <Width>6.06653cm</Width>
         <ZIndex>3</ZIndex>
@@ -390,8 +390,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>1.39912cm</Top>
-        <Left>9.73349cm</Left>
+        <Top>2.12521cm</Top>
+        <Left>9.78611cm</Left>
         <Height>0.6cm</Height>
         <Width>2.8175cm</Width>
         <ZIndex>4</ZIndex>
@@ -406,10 +406,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.21875in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.3244in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -422,44 +422,24 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="BusinessEntities">
+    <DataSource Name="BusinessLogic">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>db827bfa-b1b8-45ba-93e6-b8c19597c8ec</rd:DataSourceID>
+      <rd:DataSourceID>ec5a1c16-f8a4-44d4-b796-161bdfadcd2f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>BusinessEntities</DataSourceName>
+        <DataSourceName>BusinessLogic</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Alumno">
-          <DataField>Alumno</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="AnioCalendario">
-          <DataField>AnioCalendario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Comision">
-          <DataField>Comision</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Condicion">
           <DataField>Condicion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DescCurso">
-          <DataField>DescCurso</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="IDAlumno">
           <DataField>IDAlumno</DataField>
@@ -469,23 +449,40 @@
           <DataField>IDCurso</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Materia">
-          <DataField>Materia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Nota">
           <DataField>Nota</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="State">
-          <DataField>State</DataField>
-          <rd:TypeName>Business.Entities.BusinessEntity+States</rd:TypeName>
+        <Field Name="DescCurso">
+          <DataField>DescCurso</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Alumno">
+          <DataField>Alumno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Materia">
+          <DataField>Materia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Comision">
+          <DataField>Comision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AnioCalendario">
+          <DataField>AnioCalendario</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Business.Entities</rd:DataSetName>
-        <rd:TableName>AlumnoInscripcion</rd:TableName>
-        <rd:ObjectDataSourceType>Business.Entities.AlumnoInscripcion, Business.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:DataSetName>Business.Logic</rd:DataSetName>
+        <rd:TableName>AlumnoInscripcionLogic</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>GetAll</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceType>Business.Logic.AlumnoInscripcionLogic, Business.Logic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -549,5 +546,5 @@ AAAAAAAAMArjJwAAAAAAAAAAAAAAAAAAAADAKIyfAAAAAAAAAAAAAAAAAAAAAACjMH4CAAAAAAAAAAAA
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>300953b6-7eee-42ab-8d36-1161590e91b5</rd:ReportID>
+  <rd:ReportID>29399ec3-7bfe-4d07-a449-868d1ac87ac0</rd:ReportID>
 </Report>

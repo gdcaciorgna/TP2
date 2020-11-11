@@ -64,8 +64,6 @@
             this.tsmiInformes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegistroNotas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRegistroCursos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiVerCursosxDocente = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextoBienvenida = new System.Windows.Forms.Label();
@@ -146,6 +144,7 @@
             this.nuevoDocenteToolStripMenuItem.Name = "nuevoDocenteToolStripMenuItem";
             this.nuevoDocenteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.nuevoDocenteToolStripMenuItem.Text = "Nuevo docente";
+            this.nuevoDocenteToolStripMenuItem.Click += new System.EventHandler(this.nuevoDocenteToolStripMenuItem_Click);
             // 
             // verDocentesToolStripMenuItem
             // 
@@ -360,8 +359,7 @@
             // 
             this.tsmiInformes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiRegistroNotas,
-            this.tsmiRegistroCursos,
-            this.tsmiReportePlanes});
+            this.tsmiRegistroCursos});
             this.tsmiInformes.Name = "tsmiInformes";
             this.tsmiInformes.Size = new System.Drawing.Size(66, 20);
             this.tsmiInformes.Text = "Informes";
@@ -370,29 +368,16 @@
             // tsmiRegistroNotas
             // 
             this.tsmiRegistroNotas.Name = "tsmiRegistroNotas";
-            this.tsmiRegistroNotas.Size = new System.Drawing.Size(170, 22);
-            this.tsmiRegistroNotas.Text = "Registro de notas";
+            this.tsmiRegistroNotas.Size = new System.Drawing.Size(189, 22);
+            this.tsmiRegistroNotas.Text = "Planilla de notas";
+            this.tsmiRegistroNotas.Click += new System.EventHandler(this.tsmiRegistroNotas_Click);
             // 
             // tsmiRegistroCursos
             // 
             this.tsmiRegistroCursos.Name = "tsmiRegistroCursos";
-            this.tsmiRegistroCursos.Size = new System.Drawing.Size(170, 22);
-            this.tsmiRegistroCursos.Text = "Registro de cursos";
+            this.tsmiRegistroCursos.Size = new System.Drawing.Size(189, 22);
+            this.tsmiRegistroCursos.Text = "Planilla de Asistencias";
             this.tsmiRegistroCursos.Click += new System.EventHandler(this.tsmiRegistroCursos_Click);
-            // 
-            // tsmiReportePlanes
-            // 
-            this.tsmiReportePlanes.Name = "tsmiReportePlanes";
-            this.tsmiReportePlanes.Size = new System.Drawing.Size(170, 22);
-            this.tsmiReportePlanes.Text = "Reporte de planes";
-            // 
-            // tsmiVerCursosxDocente
-            // 
-            this.tsmiVerCursosxDocente.Name = "tsmiVerCursosxDocente";
-            this.tsmiVerCursosxDocente.Size = new System.Drawing.Size(72, 20);
-            this.tsmiVerCursosxDocente.Text = "Ver cursos";
-            this.tsmiVerCursosxDocente.Visible = false;
-            this.tsmiVerCursosxDocente.Click += new System.EventHandler(this.tsmiVerCursosxDocente_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -500,7 +485,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiInformes;
         private System.Windows.Forms.ToolStripMenuItem tsmiRegistroNotas;
         private System.Windows.Forms.ToolStripMenuItem tsmiRegistroCursos;
-        private System.Windows.Forms.ToolStripMenuItem tsmiReportePlanes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label TextoBienvenida;

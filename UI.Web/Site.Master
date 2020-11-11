@@ -58,9 +58,8 @@
                          <asp:MenuItem NavigateUrl="~/VerCursosdeDocente.aspx" Text="ver curso para prueba" Value="ver curso para prueba"></asp:MenuItem>
                      </asp:MenuItem>
                      <asp:MenuItem Text="Informes" Value="Informes">
-                         <asp:MenuItem Text="Registro de notas" Value="Registro de notas"></asp:MenuItem>
-                         <asp:MenuItem Text="Registro de materias" Value="Registro de materias"></asp:MenuItem>
-                         <asp:MenuItem Text="Registro de cursos" Value="Registro de cursos"></asp:MenuItem>
+                         <asp:MenuItem Text="Planilla de Asistencias" Value="PlanilladeAsistencias" NavigateUrl="~/PlanillaDeAsistencias.aspx"></asp:MenuItem>
+                         <asp:MenuItem Text="Planilla de Notas" Value="Planilla de Notas"></asp:MenuItem>
                      </asp:MenuItem>
                  </Items>
             </asp:Menu>
