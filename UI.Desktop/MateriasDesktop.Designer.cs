@@ -50,7 +50,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.55172F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.44828F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
@@ -123,7 +123,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(220, 136);
+            this.btnAceptar.Location = new System.Drawing.Point(219, 136);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 5;
@@ -133,7 +133,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(302, 136);
+            this.btnCancelar.Location = new System.Drawing.Point(301, 136);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(72, 23);
             this.btnCancelar.TabIndex = 6;
@@ -146,28 +146,28 @@
             this.txtIDMateria.Location = new System.Drawing.Point(104, 3);
             this.txtIDMateria.Name = "txtIDMateria";
             this.txtIDMateria.ReadOnly = true;
-            this.txtIDMateria.Size = new System.Drawing.Size(110, 20);
+            this.txtIDMateria.Size = new System.Drawing.Size(109, 20);
             this.txtIDMateria.TabIndex = 7;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(104, 32);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(110, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(109, 20);
             this.txtDescripcion.TabIndex = 8;
             // 
             // txtHoras_Semanales
             // 
             this.txtHoras_Semanales.Location = new System.Drawing.Point(104, 56);
             this.txtHoras_Semanales.Name = "txtHoras_Semanales";
-            this.txtHoras_Semanales.Size = new System.Drawing.Size(110, 20);
+            this.txtHoras_Semanales.Size = new System.Drawing.Size(109, 20);
             this.txtHoras_Semanales.TabIndex = 9;
             // 
             // txtHoras_Totales
             // 
             this.txtHoras_Totales.Location = new System.Drawing.Point(104, 82);
             this.txtHoras_Totales.Name = "txtHoras_Totales";
-            this.txtHoras_Totales.Size = new System.Drawing.Size(110, 20);
+            this.txtHoras_Totales.Size = new System.Drawing.Size(109, 20);
             this.txtHoras_Totales.TabIndex = 10;
             // 
             // cbPlan
@@ -175,7 +175,7 @@
             this.cbPlan.FormattingEnabled = true;
             this.cbPlan.Location = new System.Drawing.Point(104, 110);
             this.cbPlan.Name = "cbPlan";
-            this.cbPlan.Size = new System.Drawing.Size(110, 21);
+            this.cbPlan.Size = new System.Drawing.Size(109, 21);
             this.cbPlan.TabIndex = 11;
             // 
             // MateriasDesktop
