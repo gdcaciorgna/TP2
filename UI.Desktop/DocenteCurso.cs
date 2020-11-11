@@ -39,7 +39,6 @@ namespace UI.Desktop
            DocenteCursoLogic docCur = new DocenteCursoLogic();
            List<Business.Entities.DocenteCurso> docenteCursos = new List<Business.Entities.DocenteCurso>();
 
-
             docenteCursos = docCur.GetAllDocentesCursos();
             this.dgvDocentes.DataSource = docenteCursos;
 

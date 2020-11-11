@@ -24,9 +24,8 @@ namespace UI.Desktop
 
         }
 
-        public Personas(int modo) 
+        public Personas(int modo) : this()
         {
-            InitializeComponent();
             Modo = modo; 
         }
 

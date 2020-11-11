@@ -17,6 +17,36 @@ namespace UI.Desktop
         public DocenteCursoDesktop()
         {
             InitializeComponent();
+
+            CursoLogic curLog = new CursoLogic();
+            Curso cur = new Curso();
+
+            List<Curso> cursos = new List<Curso>();
+
+            cursos = curLog.GetAll();
+
+            cbCursosNuevo.DataSource = cursos;
+            cbCursosNuevo.DisplayMember = "Descripcion";
+            cbCursosNuevo.ValueMember = "ID";
+
+            PersonaLogic perLog = new PersonaLogic();
+            List<Persona> docentes = new List<Persona>();
+
+            docentes = perLog.GetAllTipo(Persona.TiposPersona.Docente);
+
+            DataTable dt = new DataTable();
+            dt = Util.FuncionesComunes.ConvertToDataTable(docentes);
+            dt.Columns.Add(new DataColumn("NombreApellidoLegajo", System.Type.GetType("System.String"), "Apellido + ' ' + Nombre + ' - ' + Legajo"));
+
+            cbDocentes.DataSource = dt;
+
+            cbDocentes.ValueMember = "ID";
+            cbDocentes.DisplayMember = "NombreApellidoLegajo";
+
+
+            cbCargos.DataSource = Enum.GetNames(typeof(Business.Entities.DocenteCurso.TiposCargo));
+
+
         }
 
         public DocenteCursoDesktop (ModoForm modo) : this()
@@ -154,28 +184,7 @@ namespace UI.Desktop
 
         private void DocenteCursoDesktop_Load(object sender, EventArgs e)
         {
-            CursoLogic curLog = new CursoLogic();
-            Curso cur = new Curso();
-
-            List<Curso> cursos = new List<Curso>();
-
-            cursos = curLog.GetAll();
-
-            cbCursosNuevo.DataSource = cursos;
-            cbCursosNuevo.DisplayMember = "Descripcion";
-            cbCursosNuevo.ValueMember = "ID";
-
-            PersonaLogic perLog = new PersonaLogic();
-            List<Persona> docent = new List<Persona>();
-
-            docent = perLog.GetAllTipo(Persona.TiposPersona.Docente);
-            cbDocentes.DataSource = docent;
-            cbDocentes.DisplayMember = "Nombre";
-            cbDocentes.ValueMember = "ID";
-
-            cbCargos.DataSource = Enum.GetNames(typeof(Business.Entities.DocenteCurso.TiposCargo));
-
-
+          
         }
     }
 }

@@ -69,7 +69,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas per inner join planes pla on per.id_plan = pla.id_plan where id_persona = @id", sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas per inner join planes pla on per.id_plan = pla.id_plan  where id_persona = @id", sqlConn);
                 cmdPersonas.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
 
@@ -85,6 +85,7 @@ namespace Data.Database
                     per.Legajo = (int)drPersonas["legajo"];
                     per.IDPlan = (int)drPersonas["id_plan"];
                     per.DescPlan = (string)drPersonas["desc_plan"];
+                    per.TipoP = (Persona.TiposPersona)drPersonas["tipo_persona"];
 
 
                 }

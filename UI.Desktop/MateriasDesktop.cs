@@ -106,7 +106,9 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHoras_Semanales.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHoras_Totales.Text = this.MateriaActual.HSTotales.ToString();
-            this.cbPlan.Text = this.MateriaActual.IDPlan.ToString();
+
+            this.cbPlan.SelectedValue = this.MateriaActual.IDPlan;
+
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
