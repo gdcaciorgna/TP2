@@ -136,6 +136,12 @@
     <Compile Include="EspecialidadesDesktop.Designer.cs">
       <DependentUpon>EspecialidadesDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotasAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotasAlumnos.Designer.cs">
+      <DependentUpon>NotasAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,10 @@
     <EmbeddedResource Include="EspecialidadesDesktop.resx">
       <DependentUpon>EspecialidadesDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotasAlumnos.resx">
+      <DependentUpon>NotasAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +293,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AlumnoInscripciones.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.AlumnoInscripcion.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Curso.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
