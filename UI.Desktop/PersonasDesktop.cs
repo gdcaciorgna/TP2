@@ -76,7 +76,7 @@ namespace UI.Desktop
 
             this.cmbPlan.SelectedValue = this.PersonaActual.IDPlan;
 
-
+            this.cmbTipoPersona.SelectedValue = (int) this.PersonaActual.TipoP;
 
 
 
