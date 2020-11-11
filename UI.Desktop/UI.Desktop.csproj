@@ -82,6 +82,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorInscripcionesDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradorInscripcionesDesktop.Designer.cs">
+      <DependentUpon>AdministradorInscripcionesDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorVerInscripciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministradorVerInscripciones.Designer.cs">
+      <DependentUpon>AdministradorVerInscripciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlumnoInscripciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +226,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministradorInscripcionesDesktop.resx">
+      <DependentUpon>AdministradorInscripcionesDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministradorVerInscripciones.resx">
+      <DependentUpon>AdministradorVerInscripciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlumnoInscripciones.resx">
       <DependentUpon>AlumnoInscripciones.cs</DependentUpon>
     </EmbeddedResource>

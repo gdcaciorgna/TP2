@@ -96,6 +96,16 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+
+            PlanesLogic planLog = new PlanesLogic();
+            List<Plan> planes = new List<Plan>();
+
+            planes = planLog.GetAll();
+            cmbIdPlan.DataSource = planes;
+
+            cmbIdPlan.ValueMember = "ID";
+            cmbIdPlan.DisplayMember = "Descripcion";
+
             this.txtIdPlan.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
@@ -162,15 +172,6 @@ namespace UI.Desktop
         private void ComisionesDesktop_Load(object sender, EventArgs e)
         {
             
-                PlanesLogic planLog = new PlanesLogic();
-                List<Plan> planes = new List<Plan>();
-
-                planes = planLog.GetAll();
-                cmbIdPlan.DataSource = planes;
-
-                cmbIdPlan.ValueMember = "ID";
-                cmbIdPlan.DisplayMember = "Descripcion";
-
 
             
         }

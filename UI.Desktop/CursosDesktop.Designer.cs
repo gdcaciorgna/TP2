@@ -52,7 +52,7 @@
             this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.2037F));
             this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.7963F));
             this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tlpCursosDesktop.Controls.Add(this.label1, 0, 0);
             this.tlpCursosDesktop.Controls.Add(this.label2, 0, 1);
             this.tlpCursosDesktop.Controls.Add(this.label3, 0, 2);
@@ -107,7 +107,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(221, 92);
+            this.btnAceptar.Location = new System.Drawing.Point(220, 92);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(72, 23);
             this.btnAceptar.TabIndex = 3;
@@ -117,7 +117,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(299, 92);
+            this.btnCancelar.Location = new System.Drawing.Point(298, 92);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
@@ -128,7 +128,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 0);
+            this.label4.Location = new System.Drawing.Point(220, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 5;
@@ -137,7 +137,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(221, 32);
+            this.label5.Location = new System.Drawing.Point(220, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 6;
@@ -146,7 +146,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(221, 61);
+            this.label6.Location = new System.Drawing.Point(220, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 7;
@@ -155,21 +155,21 @@
             // txtIDCursos
             // 
             this.txtIDCursos.Enabled = false;
-            this.txtIDCursos.Location = new System.Drawing.Point(93, 3);
+            this.txtIDCursos.Location = new System.Drawing.Point(92, 3);
             this.txtIDCursos.Name = "txtIDCursos";
             this.txtIDCursos.Size = new System.Drawing.Size(121, 20);
             this.txtIDCursos.TabIndex = 8;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(93, 35);
+            this.txtDescripcion.Location = new System.Drawing.Point(92, 35);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtDescripcion.TabIndex = 9;
             // 
             // txtAnio
             // 
-            this.txtAnio.Location = new System.Drawing.Point(93, 64);
+            this.txtAnio.Location = new System.Drawing.Point(92, 64);
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(121, 20);
             this.txtAnio.TabIndex = 10;
@@ -177,7 +177,7 @@
             // cbMateria
             // 
             this.cbMateria.FormattingEnabled = true;
-            this.cbMateria.Location = new System.Drawing.Point(299, 3);
+            this.cbMateria.Location = new System.Drawing.Point(298, 3);
             this.cbMateria.Name = "cbMateria";
             this.cbMateria.Size = new System.Drawing.Size(121, 21);
             this.cbMateria.TabIndex = 11;
@@ -185,14 +185,14 @@
             // cbComision
             // 
             this.cbComision.FormattingEnabled = true;
-            this.cbComision.Location = new System.Drawing.Point(299, 35);
+            this.cbComision.Location = new System.Drawing.Point(298, 35);
             this.cbComision.Name = "cbComision";
             this.cbComision.Size = new System.Drawing.Size(121, 21);
             this.cbComision.TabIndex = 12;
             // 
             // txtCupo
             // 
-            this.txtCupo.Location = new System.Drawing.Point(299, 64);
+            this.txtCupo.Location = new System.Drawing.Point(298, 64);
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(121, 20);
             this.txtCupo.TabIndex = 13;

@@ -283,8 +283,6 @@ namespace UI.Web
             }
 
 
-            return vof;
-
         }
 
         private void ClearForm()

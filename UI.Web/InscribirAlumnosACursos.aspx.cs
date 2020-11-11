@@ -208,7 +208,6 @@ namespace UI.Web
             }
 
 
-            return vof;
 
         }
 
