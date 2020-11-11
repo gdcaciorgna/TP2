@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -85,16 +86,17 @@ namespace UI.Web
         {
             AlumnoInscripcion alum = new AlumnoInscripcion();
             AlumnoInscripcionLogic alumIns = new AlumnoInscripcionLogic();
-            // this.Validar();
-            AlumnoActual.Condicion = this.txtCondicion.Text;
-            AlumnoActual.Nota = Int32.Parse(this.txtNota.Text);
-            
-            
-            alumIns.Update(AlumnoActual);
+            if (this.Validar())
+            {
+                AlumnoActual.Condicion = this.txtCondicion.Text;
+                AlumnoActual.Nota = Int32.Parse(this.txtNota.Text);
 
 
-            Response.Redirect("~/VerAlumnosNotas.aspx");
+                alumIns.Update(AlumnoActual);
 
+
+                Response.Redirect("~/VerAlumnosNotas.aspx");
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -102,15 +104,51 @@ namespace UI.Web
             Response.Redirect("~/VerAlumnosNotas.aspx");
         }
 
-        /* public bool Validar() 
+         public bool Validar() 
          {
-             bool volf = false;
-         if (txtAlumno.Text != null)
-             {
-                 volf = true;
+            String error = "Se han encontrado los siguientes errores: \n\n";
+            bool vof = true;
 
-             }
-             return volf;
-         }*/
+
+
+            if (txtCondicion.Text == "")
+            {
+                error = error + "No puede quedar el campo condición vacío. \n";
+                vof = false;
+            }
+
+            try
+            {
+                int nota = Int32.Parse(this.txtNota.Text);
+
+                if (nota < 0 || nota > 10)
+                {
+                    error = error + "Ingrese una nota válida. \n";
+                    vof = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = error + "Nota no válida. Ingrese un número del 1 al 10. \n";
+                vof = false;
+
+            }
+
+
+
+
+            if (vof == true)
+            {
+                return true;
+            }
+
+            else
+            {
+                
+                this.panelError.Visible = true;
+                this.lblerror.Text = error;
+                return vof;
+            }
+        }
     }
 }

@@ -20,4 +20,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
     </asp:Panel>
+    <asp:Panel ID="panelError" runat="server" Visible="False">
+        <asp:Label ID="lblerror" runat="server" Text="Label"></asp:Label>
+    </asp:Panel>
 </asp:Content>
