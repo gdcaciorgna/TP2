@@ -60,7 +60,7 @@ namespace UI.Web
 
                         DocenteCursoLogic doccur = new DocenteCursoLogic();
 
-                        cursos = doccur.GetAll(UsuarioActual.ID);
+                        cursos = doccur.GetAll(UsuarioActual.ID_Persona);
 
                         gvCursosdeDocente.DataSource = cursos;
                         gvCursosdeDocente.DataBind();
