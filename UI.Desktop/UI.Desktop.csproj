@@ -88,12 +88,6 @@
     <Compile Include="AlumnoInscripciones.Designer.cs">
       <DependentUpon>AlumnoInscripciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="AlumnoInscripcionesDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AlumnoInscripcionesDesktop.Designer.cs">
-      <DependentUpon>AlumnoInscripcionesDesktop.cs</DependentUpon>
-    </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +117,18 @@
     </Compile>
     <Compile Include="Cursos.Designer.cs">
       <DependentUpon>Cursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCurso.Designer.cs">
+      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteCursoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCursoDesktop.Designer.cs">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="Especialidades.cs">
       <SubType>Form</SubType>
@@ -217,9 +223,6 @@
     <EmbeddedResource Include="AlumnoInscripciones.resx">
       <DependentUpon>AlumnoInscripciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AlumnoInscripcionesDesktop.resx">
-      <DependentUpon>AlumnoInscripcionesDesktop.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CursosDesktop.resx">
       <DependentUpon>CursosDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCurso.resx">
+      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCursoDesktop.resx">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>

@@ -170,22 +170,22 @@ namespace UI.Web
 
 
         }
-        private void LoadEntity(DocenteCurso docInsc)
+        private void LoadEntity(DocenteCurso docCur)
         {
-            
-              
-                docInsc.IDCurso = Int32.Parse(this.ddl_Cursos.SelectedValue.ToString());
-                docInsc.IDDocente = Int32.Parse(ddlDocentes.SelectedValue.ToString());
-              DocenteCursoLogic tdocLogic = new DocenteCursoLogic();
-             docInsc.Cargo = tdocLogic.getTipoCargoString(ddl_TipoCargos.SelectedValue.ToString());
+
+
+            docCur.IDCurso = Int32.Parse(this.ddl_Cursos.SelectedValue.ToString());
+            docCur.IDDocente = Int32.Parse(ddlDocentes.SelectedValue.ToString());
+             DocenteCursoLogic tdocLogic = new DocenteCursoLogic();
+            docCur.Cargo = tdocLogic.getTipoCargoString(ddl_TipoCargos.SelectedValue.ToString());
 
 
 
         }
 
-        private void SaveEntity(DocenteCurso docInsc)
+        private void SaveEntity(DocenteCurso docCur)
         {
-            this.Logic.Save(docInsc);
+            this.Logic.Save(docCur);
         }
      
 
@@ -297,6 +297,17 @@ namespace UI.Web
         protected void ddlCargos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            if ( this.IsEntitySelected )
+            {
+                this.PanelCampos.Visible = true;
+                this.FormMode = FormModes.Modificacion;
+                this.LoadForm(this.SelectedID);
+            
+            }
         }
     }
 }
