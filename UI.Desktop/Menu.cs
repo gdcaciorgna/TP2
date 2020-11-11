@@ -77,7 +77,6 @@ namespace UI.Desktop
                     tsmiInformes.Visible = true;
                     tsmiRegistroCursos.Visible = true;
                     tsmiRegistroNotas.Visible = true;
-                    tsmiReportePlanes.Visible = true;
 
                     tsmiInscribirDocente.Visible = true;
 
@@ -86,9 +85,7 @@ namespace UI.Desktop
                     break;
 
                 case Persona.TiposPersona.Docente:
-
-                    tsmiVerCursosxDocente.Visible = true;
-                    
+                    tsmiVerCursosAsignadosDocente.Visible = true;                    
 
                     break;
 
@@ -214,7 +211,7 @@ namespace UI.Desktop
 
         private void tsmiRegistroCursos_Click(object sender, EventArgs e)
         {
-            Reporte rep = new Reporte();
+            ReporteAsistencias rep = new ReporteAsistencias();
             rep.ShowDialog();
         }
 
@@ -248,10 +245,12 @@ namespace UI.Desktop
             docCur.ShowDialog();
         }
 
-        private void tsmiVerCursosxDocente_Click(object sender, EventArgs e)
+
+        private void verCursosAsignadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerCursosDocente desk = new VerCursosDocente();
-            desk.ShowDialog(); 
+            desk.ShowDialog();
+
         }
     }
 }

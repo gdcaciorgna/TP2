@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class Reporte
+    partial class ReporteAsistencias
     {
         /// <summary>
         /// Required designer variable.
@@ -88,14 +88,14 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // Reporte
+            // ReporteAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 464);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "Reporte";
+            this.Name = "ReporteAsistencias";
             this.Text = "Reporte Asistencias";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

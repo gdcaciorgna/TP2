@@ -15,9 +15,9 @@ using Microsoft.Reporting.WinForms;
 
 namespace UI.Desktop
 {
-    public partial class Reporte : Form
+    public partial class ReporteAsistencias : Form
     {
-        public Reporte()
+        public ReporteAsistencias()
         {
             InitializeComponent();
         }
@@ -45,6 +45,8 @@ namespace UI.Desktop
             {
                 
                 this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Desktop.Report1.rdlc";
+
+
 
 
             }

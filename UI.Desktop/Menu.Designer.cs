@@ -68,6 +68,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextoBienvenida = new System.Windows.Forms.Label();
             this.textoRol = new System.Windows.Forms.Label();
+            this.tsmiVerCursosAsignadosDocente = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,7 +81,7 @@
             this.tsmiArchivo,
             this.tsmiInscripciones,
             this.tsmiInformes,
-            this.tsmiVerCursosxDocente});
+            this.tsmiVerCursosAsignadosDocente});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -345,6 +346,7 @@
             this.tsmiinscribirAlumnos.Name = "tsmiinscribirAlumnos";
             this.tsmiinscribirAlumnos.Size = new System.Drawing.Size(185, 22);
             this.tsmiinscribirAlumnos.Text = "Inscribir alumnos";
+            this.tsmiinscribirAlumnos.Visible = false;
             this.tsmiinscribirAlumnos.Click += new System.EventHandler(this.inscribirAlumnosToolStripMenuItem_Click);
             // 
             // tsmiInscribirDocente
@@ -428,6 +430,14 @@
             this.textoRol.TabIndex = 2;
             this.textoRol.Text = "Texto de rol";
             // 
+            // tsmiVerCursosAsignadosDocente
+            // 
+            this.tsmiVerCursosAsignadosDocente.Name = "tsmiVerCursosAsignadosDocente";
+            this.tsmiVerCursosAsignadosDocente.Size = new System.Drawing.Size(128, 20);
+            this.tsmiVerCursosAsignadosDocente.Text = "Ver cursos asignados";
+            this.tsmiVerCursosAsignadosDocente.Visible = false;
+            this.tsmiVerCursosAsignadosDocente.Click += new System.EventHandler(this.verCursosAsignadosToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,5 +502,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiinscribirAlumnos;
         private System.Windows.Forms.ToolStripMenuItem tsmiInscribirDocente;
         private System.Windows.Forms.ToolStripMenuItem tsmiVerCursosxDocente;
+        private System.Windows.Forms.ToolStripMenuItem tsmiVerCursosAsignadosDocente;
     }
 }
