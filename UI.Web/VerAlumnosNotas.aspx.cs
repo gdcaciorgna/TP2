@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
-using Business.Entities;
 using Business.Logic;
 
 namespace UI.Web
 {
-    public partial class VerCursosdeDocente : System.Web.UI.Page
+    public partial class VerAlumnosNotas : System.Web.UI.Page
     {
+
         private int SelectedID
         {
             get
@@ -40,14 +40,17 @@ namespace UI.Web
 
         public Usuario UsuarioActual { get; set; }
         public Persona.TiposPersona TipoPersonaActual { get; set; }
-
+        
+        public Curso CursoActual { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioActual = (Usuario)Session["UsuarioActual"];
+            CursoActual = (Curso)Session["CursoActual"];
 
             if (UsuarioActual != null)
             {
                 TipoPersonaActual = (Persona.TiposPersona)Session["TipoPersonaUsuarioActual"];
+                txtCursoAcutual.Text = CursoActual.Descripcion;
 
 
                 if (TipoPersonaActual.Equals(Persona.TiposPersona.Docente)) //cambiar a docente
@@ -55,75 +58,54 @@ namespace UI.Web
                     if (IsPostBack == false)
                     {
 
-                        List<Curso> cursos = new List<Curso>();
 
 
-                        DocenteCursoLogic doccur = new DocenteCursoLogic();
+                        AlumnoInscripcionLogic alumIns = new AlumnoInscripcionLogic();
+                        List<AlumnoInscripcion> alum = new List<AlumnoInscripcion>();
 
-                        cursos = doccur.GetAll(UsuarioActual.ID_Persona);
+                        alum = alumIns.GetAllAlumnosPorCurso(CursoActual.ID);
 
-                        gvCursosdeDocente.DataSource = cursos;
-                        gvCursosdeDocente.DataBind();
+                        gvAlumnosCurso.DataSource = alum;
+                        gvAlumnosCurso.DataBind();
 
 
 
-                        //  LoadGrid();
+                        
                     }
 
 
-
-                }
-
-                else
-                {
-                    Response.Redirect("~/Login.aspx");
                 }
             }
-
-            else
-            {
-                Response.Redirect("~/Login.aspx");
-            }
-
-
         }
 
-        
-
-        protected void btnEditarCurso_Click(object sender, EventArgs e)
+        protected void btnEditar_Click(object sender, EventArgs e)
         {
             if (this.SelectedID != 0)
             {
-                Curso cur = new Curso();
-                CursoLogic curlog = new CursoLogic();
-                cur = curlog.GetOne(this.SelectedID);
+                AlumnoInscripcion alum = new AlumnoInscripcion();
+                AlumnoInscripcionLogic AlumLog = new AlumnoInscripcionLogic();
 
+                alum = AlumLog.GetOne(this.SelectedID);
 
+                Session["AlumnoActual"] = alum;
 
-
-
-
-                Session["CursoActual"] = cur;
-
-
-
-                Response.Redirect("~/VerAlumnosNotas.aspx");
+                Response.Redirect("~/EditarAlumno.aspx");
 
             }
-            else
+            else 
             {
-                this.panelError.Visible = true;
+                this.panelError.Visible = Visible;
             }
         }
 
-        protected void gvCursosdeDocente_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvAlumnosCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.gvCursosdeDocente.SelectedValue;
+            this.SelectedID = (int)this.gvAlumnosCurso.SelectedValue;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("~/VerCursosdeDocente.aspx");
         }
     }
 }
