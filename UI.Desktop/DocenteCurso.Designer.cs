@@ -56,7 +56,7 @@
             this.tsbEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +66,7 @@
             this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuevo.Size = new System.Drawing.Size(29, 28);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
@@ -76,7 +76,7 @@
             this.tspEditar.Image = ((System.Drawing.Image)(resources.GetObject("tspEditar.Image")));
             this.tspEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tspEditar.Name = "tspEditar";
-            this.tspEditar.Size = new System.Drawing.Size(29, 24);
+            this.tspEditar.Size = new System.Drawing.Size(29, 28);
             this.tspEditar.Text = "Editar";
             this.tspEditar.Click += new System.EventHandler(this.tspEditar_Click);
             // 
@@ -86,7 +86,7 @@
             this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEliminar.Size = new System.Drawing.Size(29, 28);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
@@ -95,7 +95,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.70814F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.29186F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
             this.tableLayoutPanel1.Controls.Add(this.cbCursos, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.name, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Filtrar, 2, 1);
@@ -110,7 +110,7 @@
             // cbCursos
             // 
             this.cbCursos.FormattingEnabled = true;
-            this.cbCursos.Location = new System.Drawing.Point(654, 3);
+            this.cbCursos.Location = new System.Drawing.Point(653, 3);
             this.cbCursos.Name = "cbCursos";
             this.cbCursos.Size = new System.Drawing.Size(121, 24);
             this.cbCursos.TabIndex = 1;
@@ -118,7 +118,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(587, 0);
+            this.name.Location = new System.Drawing.Point(586, 0);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(49, 17);
             this.name.TabIndex = 0;
@@ -126,7 +126,7 @@
             // 
             // Filtrar
             // 
-            this.Filtrar.Location = new System.Drawing.Point(654, 53);
+            this.Filtrar.Location = new System.Drawing.Point(653, 53);
             this.Filtrar.Name = "Filtrar";
             this.Filtrar.Size = new System.Drawing.Size(75, 23);
             this.Filtrar.TabIndex = 2;
