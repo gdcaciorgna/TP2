@@ -33,6 +33,9 @@ namespace UI.Desktop
         public virtual void GuardarCambios() { }
         public virtual bool Validar() { return false; }
 
+        public virtual bool Validar(ModoForm modo) { return false; }
+
+
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
 

@@ -88,7 +88,7 @@ namespace UI.Desktop
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
             {
-                if (this.Validar())
+                if (this.Validar(this.Modo))
                 {
                     this.GuardarCambios();
                     this.Close();
@@ -109,7 +109,7 @@ namespace UI.Desktop
 
         }
 
-        public override bool Validar()
+        public override bool Validar(ModoForm modo)
         {
 
 
@@ -121,12 +121,9 @@ namespace UI.Desktop
 
             AlumnoInscripcionLogic aluInscLog = new AlumnoInscripcionLogic();
 
-
             int cant_alumnos = aluInscLog.ContarAlumnosInscriptosACurso(CursoActual);
 
-
-
-
+                
             if (CursoActual.ID == 0)
             {
                 vof = false;
@@ -141,11 +138,16 @@ namespace UI.Desktop
 
             }
 
-            else if (AlumnoInscripcionActual.ID != 0)
+            if(modo == ModoForm.Alta)
             {
-                error = error + "Ya se encuentra inscripto al curso. \n";
-                vof = false;
+                if (AlumnoInscripcionActual.ID != 0)
+                {
+                    error = error + "Este alumno ya se encuentra inscripto al curso. \n";
+                    vof = false;
+                }
+
             }
+
 
             
             else if(txtCondicion.Text == "")
@@ -205,6 +207,8 @@ namespace UI.Desktop
             this.cmbMateria.SelectedValue = mat.ID;
             this.cmbComision.SelectedValue = com.ID;
             this.cmbAlumno.SelectedValue = per.ID;
+            this.txtCondicion.Text = AlumnoInscripcionActual.Condicion;
+            this.txtNota.Text = AlumnoInscripcionActual.Nota.ToString();
 
 
             if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
@@ -248,13 +252,20 @@ namespace UI.Desktop
 
 
             Persona al = new Persona();
-            al = (Persona) cmbAlumno.SelectedItem;
+            al.ID = Int32.Parse(this.cmbAlumno.SelectedValue.ToString());
 
             AlumnoInscripcionActual.IDAlumno = al.ID;           
             AlumnoInscripcionActual.IDCurso = CursoActual.ID;
 
-            AlumnoInscripcionActual.Nota = Int32.Parse(this.txtNota.Text);
-            AlumnoInscripcionActual.Condicion = this.txtCondicion.Text;
+            if(this.txtNota.Text != "")
+            {
+                AlumnoInscripcionActual.Nota = Int32.Parse(this.txtNota.Text);
+            }
+
+            if (this.txtCondicion.Text == "")
+            {
+                AlumnoInscripcionActual.Condicion = "Inscripto";
+            }
 
 
 
@@ -269,6 +280,8 @@ namespace UI.Desktop
             mat = (Materia)cmbMateria.SelectedItem;
             int anio = Int32.Parse(cmbAnioCalendario.SelectedItem.ToString());
 
+            int id_per = Int32.Parse(cmbAlumno.SelectedValue.ToString());
+
 
             CursoLogic curLog = new CursoLogic();
 
@@ -276,7 +289,7 @@ namespace UI.Desktop
 
             AlumnoInscripcionLogic alInscLogic = new AlumnoInscripcionLogic();
 
-            AlumnoInscripcionActual = alInscLogic.GetOne(Usuario.UsuarioActual.ID_Persona, CursoActual.ID);
+            AlumnoInscripcionActual = alInscLogic.GetOne(id_per, CursoActual.ID);
 
 
         }

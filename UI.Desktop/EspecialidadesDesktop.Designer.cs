@@ -28,48 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.descripcion = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.descripcion = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(80, 3);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(160, 20);
-            this.txtId.TabIndex = 0;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(80, 55);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(160, 20);
-            this.txtDescripcion.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ID";
-            // 
-            // descripcion
-            // 
-            this.descripcion.AutoSize = true;
-            this.descripcion.Location = new System.Drawing.Point(3, 52);
-            this.descripcion.Name = "descripcion";
-            this.descripcion.Size = new System.Drawing.Size(63, 13);
-            this.descripcion.TabIndex = 3;
-            this.descripcion.Text = "Descripción";
             // 
             // tableLayoutPanel1
             // 
@@ -77,7 +44,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.55738F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.44262F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.descripcion, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
@@ -94,9 +61,33 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(434, 139);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // descripcion
+            // 
+            this.descripcion.AutoSize = true;
+            this.descripcion.Location = new System.Drawing.Point(3, 52);
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Size = new System.Drawing.Size(63, 13);
+            this.descripcion.TabIndex = 3;
+            this.descripcion.Text = "Descripción";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(79, 55);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(159, 20);
+            this.txtDescripcion.TabIndex = 1;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(79, 3);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(159, 20);
+            this.txtId.TabIndex = 0;
+            // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(246, 107);
+            this.btnAceptar.Location = new System.Drawing.Point(244, 107);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 4;
@@ -106,12 +97,21 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(338, 107);
+            this.btnCancelar.Location = new System.Drawing.Point(336, 107);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "ID";
             // 
             // EspecialidadesDesktop
             // 

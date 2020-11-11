@@ -177,7 +177,12 @@ namespace UI.Web
                 aluInsc.IDAlumno = Int32.Parse(ddl_Alumno.SelectedValue.ToString());
                 aluInsc.IDCurso = Int32.Parse(this.ddl_Cursos.SelectedValue.ToString());
                 aluInsc.Condicion = tbCondicion.Text;
-                aluInsc.Nota = Int32.Parse(this.tbNota.Text.ToString());
+
+
+                if (this.tbNota.Text != "")
+                {
+                    aluInsc.Nota = Int32.Parse(this.tbNota.Text);
+                }
             }
 
         }
