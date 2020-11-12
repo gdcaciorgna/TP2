@@ -149,13 +149,7 @@ namespace UI.Desktop
             }
 
 
-            
-            else if(txtCondicion.Text == "")
-            {
-                error = error + "El campo condición no puede estar vacío \n";
-                vof = false;
-            }
-
+                    
 
 
             if (vof == true)
@@ -256,13 +250,16 @@ namespace UI.Desktop
 
             AlumnoInscripcionActual.IDAlumno = al.ID;           
             AlumnoInscripcionActual.IDCurso = CursoActual.ID;
-            
 
 
-            if(this.txtNota.Text != "")
+
+            if (this.txtNota.Text != "")
             {
                 AlumnoInscripcionActual.Nota = Int32.Parse(this.txtNota.Text);
+
+
             }
+
 
             if (this.txtCondicion.Text == "")
             {

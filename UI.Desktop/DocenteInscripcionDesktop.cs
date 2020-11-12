@@ -52,12 +52,7 @@ namespace UI.Desktop
 
 
 
-            if (txtCondicion.Text == "")
-            {
-                error = error + "No puede quedar el campo condición vacío. \n";
-                vof = false;
-            }
-
+        
             try 
             {
                 int nota = Int32.Parse(this.txtNota.Text);
