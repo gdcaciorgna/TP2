@@ -87,11 +87,6 @@ namespace UI.Desktop
 
 
 
-            if (txtDescripcion.Text == "")
-            {
-                error = error + "No puede quedar el campo descripción vacío. \n";
-                vof = false;
-            }
 
             if (cbMateria.Items.Count <= 0)
             {
@@ -145,7 +140,6 @@ namespace UI.Desktop
 
             
             this.txtIDCursos.Text = this.CursoActual.ID.ToString();
-            this.txtDescripcion.Text = this.CursoActual.Descripcion;
             this.txtAnio.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.Cupo.ToString();
 
@@ -203,7 +197,6 @@ namespace UI.Desktop
                     CursoActual.State = BusinessEntity.States.Modified;
                 }
 
-                CursoActual.Descripcion = txtDescripcion.Text;
                 CursoActual.Cupo = Int32.Parse(txtCupo.Text);
                 CursoActual.AnioCalendario = Int32.Parse(txtAnio.Text);
                 String mat = cbMateria.SelectedValue.ToString();

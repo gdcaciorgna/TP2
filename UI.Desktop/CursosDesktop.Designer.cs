@@ -30,7 +30,6 @@
         {
             this.tlpCursosDesktop = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -38,7 +37,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtIDCursos = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtAnio = new System.Windows.Forms.TextBox();
             this.cbMateria = new System.Windows.Forms.ComboBox();
             this.cbComision = new System.Windows.Forms.ComboBox();
@@ -52,21 +50,19 @@
             this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.2037F));
             this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.7963F));
             this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tlpCursosDesktop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tlpCursosDesktop.Controls.Add(this.label1, 0, 0);
-            this.tlpCursosDesktop.Controls.Add(this.label2, 0, 1);
-            this.tlpCursosDesktop.Controls.Add(this.label3, 0, 2);
             this.tlpCursosDesktop.Controls.Add(this.btnAceptar, 2, 3);
             this.tlpCursosDesktop.Controls.Add(this.btnCancelar, 3, 3);
-            this.tlpCursosDesktop.Controls.Add(this.label4, 2, 0);
-            this.tlpCursosDesktop.Controls.Add(this.label5, 2, 1);
-            this.tlpCursosDesktop.Controls.Add(this.label6, 2, 2);
             this.tlpCursosDesktop.Controls.Add(this.txtIDCursos, 1, 0);
-            this.tlpCursosDesktop.Controls.Add(this.txtDescripcion, 1, 1);
-            this.tlpCursosDesktop.Controls.Add(this.txtAnio, 1, 2);
-            this.tlpCursosDesktop.Controls.Add(this.cbMateria, 3, 0);
-            this.tlpCursosDesktop.Controls.Add(this.cbComision, 3, 1);
-            this.tlpCursosDesktop.Controls.Add(this.txtCupo, 3, 2);
+            this.tlpCursosDesktop.Controls.Add(this.label3, 0, 1);
+            this.tlpCursosDesktop.Controls.Add(this.txtAnio, 1, 1);
+            this.tlpCursosDesktop.Controls.Add(this.label4, 0, 2);
+            this.tlpCursosDesktop.Controls.Add(this.cbMateria, 1, 2);
+            this.tlpCursosDesktop.Controls.Add(this.label5, 2, 0);
+            this.tlpCursosDesktop.Controls.Add(this.cbComision, 3, 0);
+            this.tlpCursosDesktop.Controls.Add(this.label6, 2, 1);
+            this.tlpCursosDesktop.Controls.Add(this.txtCupo, 3, 1);
             this.tlpCursosDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCursosDesktop.Location = new System.Drawing.Point(0, 0);
             this.tlpCursosDesktop.Name = "tlpCursosDesktop";
@@ -87,19 +83,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 61);
+            this.label3.Location = new System.Drawing.Point(3, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -107,7 +94,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(220, 92);
+            this.btnAceptar.Location = new System.Drawing.Point(219, 92);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(72, 23);
             this.btnAceptar.TabIndex = 3;
@@ -117,7 +104,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(298, 92);
+            this.btnCancelar.Location = new System.Drawing.Point(297, 92);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
@@ -128,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 0);
+            this.label4.Location = new System.Drawing.Point(3, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 5;
@@ -137,7 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(220, 32);
+            this.label5.Location = new System.Drawing.Point(219, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 6;
@@ -146,7 +133,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 61);
+            this.label6.Location = new System.Drawing.Point(219, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 7;
@@ -160,16 +147,9 @@
             this.txtIDCursos.Size = new System.Drawing.Size(121, 20);
             this.txtIDCursos.TabIndex = 8;
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(92, 35);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
-            this.txtDescripcion.TabIndex = 9;
-            // 
             // txtAnio
             // 
-            this.txtAnio.Location = new System.Drawing.Point(92, 64);
+            this.txtAnio.Location = new System.Drawing.Point(92, 35);
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(121, 20);
             this.txtAnio.TabIndex = 10;
@@ -177,7 +157,7 @@
             // cbMateria
             // 
             this.cbMateria.FormattingEnabled = true;
-            this.cbMateria.Location = new System.Drawing.Point(298, 3);
+            this.cbMateria.Location = new System.Drawing.Point(92, 64);
             this.cbMateria.Name = "cbMateria";
             this.cbMateria.Size = new System.Drawing.Size(121, 21);
             this.cbMateria.TabIndex = 11;
@@ -185,14 +165,14 @@
             // cbComision
             // 
             this.cbComision.FormattingEnabled = true;
-            this.cbComision.Location = new System.Drawing.Point(298, 35);
+            this.cbComision.Location = new System.Drawing.Point(297, 3);
             this.cbComision.Name = "cbComision";
             this.cbComision.Size = new System.Drawing.Size(121, 21);
             this.cbComision.TabIndex = 12;
             // 
             // txtCupo
             // 
-            this.txtCupo.Location = new System.Drawing.Point(298, 64);
+            this.txtCupo.Location = new System.Drawing.Point(297, 35);
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(121, 20);
             this.txtCupo.TabIndex = 13;
@@ -216,7 +196,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpCursosDesktop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
@@ -224,7 +203,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtIDCursos;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtAnio;
         private System.Windows.Forms.ComboBox cbMateria;
         private System.Windows.Forms.ComboBox cbComision;
