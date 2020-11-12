@@ -393,7 +393,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Avg(Fields!Nota.Value, "DataSet1")</Value>
+                <Value>=Round(Avg(Fields!Nota.Value, "DataSet1"),2)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -401,8 +401,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>2.16641cm</Top>
-        <Left>2.88078cm</Left>
+        <Top>2.03411cm</Top>
+        <Left>2.38217cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>
