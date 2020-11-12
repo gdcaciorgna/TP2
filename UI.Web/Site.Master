@@ -61,7 +61,7 @@
                          <asp:MenuItem NavigateUrl="~/InscribirDocenteACurso.aspx" Text="Inscribir docente a curso" Value="Inscribir docente a curso"></asp:MenuItem>
                      </asp:MenuItem>
                      <asp:MenuItem Text="Informes" Value="Informes">
-                         <asp:MenuItem Text="Planilla de Asistencias" Value="PlanilladeAsistencias" NavigateUrl="~/AsistenciasReporte.aspx"></asp:MenuItem>
+                         <asp:MenuItem Text="Planilla de Asistencias" Value="PlanilladeAsistencias" NavigateUrl="~/PlanillaAsistencias.aspx"></asp:MenuItem>
                          <asp:MenuItem Text="Planilla de Notas" Value="Planilla de Notas"></asp:MenuItem>
                      </asp:MenuItem>
                  </Items>
