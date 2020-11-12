@@ -123,6 +123,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="EditarAlumno.aspx" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Materias.aspx" />
     <Content Include="Docentes.aspx" />
@@ -135,6 +136,7 @@
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="VerAlumnosNotas.aspx" />
     <Content Include="VerCursosdeDocente.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
@@ -263,12 +265,26 @@
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerAlumnosNotas.aspx.cs">
+      <DependentUpon>VerAlumnosNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerAlumnosNotas.aspx.designer.cs">
+      <DependentUpon>VerAlumnosNotas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerCursosdeDocente.aspx.cs">
       <DependentUpon>VerCursosdeDocente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerCursosdeDocente.aspx.designer.cs">
       <DependentUpon>VerCursosdeDocente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarAlumno.aspx.cs">
+      <DependentUpon>EditarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarAlumno.aspx.designer.cs">
+      <DependentUpon>EditarAlumno.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

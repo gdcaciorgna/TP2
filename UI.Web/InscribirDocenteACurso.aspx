@@ -33,17 +33,17 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <br />
-            <asp:Button ID="btnAceptar" runat="server" OnClick="Button1_Click" Text="Aceptar" />
+            <asp:Button ID="btnAceptar" runat="server" OnClick="Button1_Click" Text="Aceptar" CssClass="btn btn-warning"/>
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
+            <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-secondary active align-content-center" />
             &nbsp;
             <br />
         </asp:Panel>
-        <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" />
+        <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" OnClick="btnNuevo_Click" CssClass="btn btn-warning" />
         &nbsp;
-        <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" />
+        <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" CssClass="btn btn-danger"/>
         &nbsp;
-        <asp:Button ID="btnEditar" runat="server" OnClick="btnEditar_Click" Text="Editar" />
+        <asp:Button ID="btnEditar" runat="server" OnClick="btnEditar_Click" Text="Editar"  CssClass="btn btn-secondary active align-content-center" />
     </asp:Panel>
 
 
