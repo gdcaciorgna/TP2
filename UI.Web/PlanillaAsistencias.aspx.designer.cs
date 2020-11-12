@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class AsistenciasReporte
+    public partial class PlanillaAsistencias
     {
 
         /// <summary>

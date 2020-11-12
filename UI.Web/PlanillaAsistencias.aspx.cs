@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace UI.Web
 {
-    public partial class AsistenciasReporte : System.Web.UI.Page
+    public partial class PlanillaAsistencias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

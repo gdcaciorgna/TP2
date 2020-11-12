@@ -256,6 +256,8 @@ namespace UI.Desktop
 
             AlumnoInscripcionActual.IDAlumno = al.ID;           
             AlumnoInscripcionActual.IDCurso = CursoActual.ID;
+            
+
 
             if(this.txtNota.Text != "")
             {
@@ -265,6 +267,11 @@ namespace UI.Desktop
             if (this.txtCondicion.Text == "")
             {
                 AlumnoInscripcionActual.Condicion = "Inscripto";
+            }
+
+            else
+            {
+                this.AlumnoInscripcionActual.Condicion = this.txtCondicion.Text;
             }
 
 
